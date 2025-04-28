@@ -1,0 +1,125 @@
+body {  
+    font-family: Arial, sans-serif;  
+    background-color: #f4f4f4;  
+    margin: 0;  
+    padding: 20px;  
+}  
+
+header {  
+    background: transparent;  
+    color: black;  
+    padding: 12px 0;  
+    display: flex;  
+    justify-content: space-between;  
+    align-items: center;  
+}  
+
+h1 {  
+    font-size: 34px;  
+    margin: 0;  
+}  
+
+.header-title {  
+    text-decoration: none;  
+    color: black;  
+    transition: color 0.3s, text-shadow 0.3s;  
+}  
+
+.header-title:hover {  
+    color: red;  
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.7);  
+}  
+
+.header-buttons {  
+    display: flex;  
+    gap: 10px;  
+    align-items: center;  
+}  
+
+.button {  
+    display: inline-block;  
+    background: rgba(255, 255, 255, 0.5);  
+    color: black;  
+    padding: 10px 15px;  
+    text-decoration: none;  
+    border-radius: 5px;  
+    transition: background 0.3s, color 0.3s;  
+    border: 1px solid transparent;  
+    font-size: 16px;  
+}  
+
+.button:hover {  
+    background: rgba(0, 0, 0, 0.7);  
+    color: white;  
+}  
+
+#forum-section {  
+    margin-top: 20px;  
+    position: relative;  
+    padding-bottom: 20px; /* Уменьшено до 20px для раздела с формой */  
+}  
+
+#posts {  
+    background: white;  
+    padding: 10px;  
+    border: 1px solid #ddd;  
+    max-height: 400px;  
+    overflow-y: auto;  
+    margin-bottom: 20px; /* Уменьшено значение для отступа снизу */  
+}  
+
+#post-form {  
+    position: relative;  
+    background: white;  
+    padding: 10px;  
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  
+    z-index: 1000;  
+}  
+
+#post-content {  
+    width: calc(100% - 20px);  
+    height: 100px;  
+    margin-bottom: 10px;  
+}  
+
+#submit-post {  
+    width: 100%;  
+    padding: 5px 10px; /* Уменьшение отступов */  
+    font-size: 14px; /* Уменьшение размера шрифта */  
+}  
+
+#scroll-up {  
+    padding: 5px; /* Уменьшение отступов */  
+    font-size: 14px; /* Уменьшение размера шрифта */  
+    cursor: pointer; /* Указатель при наведении */  
+    background-color: transparent; /* Прозрачный фон */  
+    border: none; /* Убираем рамку */  
+    color: blue; /* Цвет текста */  
+    margin-left: 10px; /* Отступ слева */  
+}  
+
+.post {  
+    border: 1px solid #ccc;  
+    border-radius: 5px;  
+    padding: 10px;  
+    margin: 10px 0;  
+    background-color: #f9f9f9;  
+}  
+
+.post-header {  
+    font-size: 14px;  
+    color: #555;  
+    margin-bottom: 5px;  
+}  
+
+.post-content {  
+    font-size: 16px;  
+}  
+
+.posts-section {  
+    margin-bottom: 20px;  
+}  
+
+.post-form {  
+    margin-top: 20px;  
+}

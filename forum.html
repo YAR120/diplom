@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форум</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/header/header22.css">
+    <link rel="stylesheet" href="/jscss/forum.css">
+</head>
+<body>
+    <div id="header-container"></div>
+
+    <script>
+        fetch('/header/header2.html')
+            .then(response => {
+                if (!response.ok) throw new Error('Network response was not ok');
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+            })
+            .catch(error => console.error('Ошибка при загрузке заголовка:', error));
+    </script>
+
+    <main class="container">
+        <h1 class="eco-title" id="discussionTitle">Форум</h1>
+        <section id="forum-section" class="forum-section">
+            <div id="posts" class="posts-section">
+                <h2 class="eco-heading">Повідомлення</h2>
+                <div id="post-list"></div>
+            </div>
+            <div id="post-form" class="post-form">
+                <h2 class="eco-heading">Створити повідомлення</h2>
+                <textarea id="post-content" class="eco-textarea" placeholder="Введіть ваше повідомлення..."></textarea>
+                <div class="button-container">
+                    <button id="submit-post" class="eco-button">Відправити</button>
+                    <button id="scroll-up" title="Прокрутити вверх" class="eco-scroll-up">↑</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="/jscss/forum.js"></script>
+    <script>
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        const articleId = getQueryParam('articleId');
+        const discussionTitleElement = document.getElementById('discussionTitle');
+        switch (articleId) {
+            case 'article_1':
+                discussionTitleElement.innerText = 'Старі вітряки можуть виробляти на 30% більше енергії';
+                break;
+            case 'article_2':
+                discussionTitleElement.innerText = 'Сонячні панелі на будь-якій поверхні';
+                break;
+            case 'article_3':
+                discussionTitleElement.innerText = 'Огляд 2E PSPLW300: портативна сонячна панель';
+                break;
+            case 'article_4':
+                discussionTitleElement.innerText = 'Чи вигідно встановлювати сонячну батарею на балконі';
+                break;
+            default:
+                discussionTitleElement.innerText = 'Форум';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+/* Встраиваемый CSS для быстрого тестирования */  
+body {  
+    font-family: Arial, sans-serif;  
+    background-color: #f4f4f4;  
+    margin: 0;  
+    padding: 0;  
+}  
+
+body::before {  
+    content: '';  
+    position: fixed; /* Используем fixed для полного охвата экрана */  
+    top: 0;  
+    left: 0;  
+    width: 100%;  
+    height: 100vh; /* Высота вьюпорта для охвата всей страницы */  
+    background: rgba(0, 0, 0, 0.5); /* Темное затемнение фона */  
+    z-index: -1;  
+}  
+
+header, main {  
+    background: white;  
+    padding: 20px;  
+    border-radius: 8px;  
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);  
+    max-width: 800px;  
+    margin: 20px auto;  
+    display: flex; /* Flexbox для размещения элементов */  
+    flex-direction: column; /* Вертикальное размещение */  
+}  
+
+.header-logo {  
+    display: flex; /* Flexbox для размещения логотипа и заголовка */  
+    align-items: center; /* Центрируем по вертикали */  
+}  
+
+.header-title {  
+    font-size: 36px; /* Размер шрифта для логотипа */  
+    font-weight: bold; /* Жирный шрифт */  
+    color: black; /* Изначально черный цвет текста */  
+    text-decoration: none; /* Убирает подчеркивание */  
+    transition: color 0.3s; /* Плавный переход цвета */  
+}  
+
+.header-title:hover {  
+    color: #6A1B9A; /* Бардовый цвет при наведении */  
+}  
+
+.news-item {  
+    margin-bottom: 20px;  
+}  
+
+.news-item img {  
+    max-width: 100%;  
+    border-radius: 8px;  
+}  
+
+.news-item h2 {  
+    font-size: 24px;  
+    color: #555;  
+}  
+
+.news-item p {  
+    color: #777;  
+}

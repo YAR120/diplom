@@ -1,0 +1,73 @@
+<!DOCTYPE html>  
+<html lang="uk">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <link rel="stylesheet" href="jscss/profilest.css">  
+    <script src="script.js" defer></script>  
+    <script src="jscss/profilest.js" defer></script>  
+    <title>Профіль</title>  
+</head>  
+<body>  
+    <header>  
+        <div class="profile-header">  
+            <a href="Untitled-1.html" class="header-title">EcoEnergy</a>  
+            <button id="editProfileBtn" class="edit-button">Редагувати профіль</button>  
+        </div>  
+    </header>  
+    <div class="profile-container">  
+        <h2 id="profileName">БОБА</h2>  
+        <p id="status" class="status">Активний</p>  
+        <button id="setStatusBtn" class="status-button">Встановити статус</button>  
+        <p class="local-time">9:54 AM місцевий час</p>  
+
+        <div class="contact-info">  
+            <h3>Контактна інформація</h3>  
+            <p>Email адреса: <span id="email">yaroslavkrivko03@gmail.com</span></p>  
+            <p>Телефон: <span id="phone">+38 (012) 345-67-89</span></p>  
+            <button class="button" id="addPhoneBtn">+ Додати телефон</button>  
+        </div>  
+
+        <div class="about-me">  
+            <h3>Про мене</h3>  
+            <p id="aboutMeText">Тут ваша інформація про себе.</p>  
+            <button class="button" id="addStartDateBtn">+ Додати дату початку</button>  
+        </div>  
+    </div>  
+
+    <div class="modal" id="editModal">  
+        <div class="modal-content">  
+            <span class="close" id="closeModal">&times;</span>  
+            <h2>Редагувати профіль</h2>  
+            <label for="emailInput">Email:</label>  
+            <input type="text" id="emailInput" class="input-field" value="yaroslavkrivko03@gmail.com">  
+            <label for="phoneInput">Телефон:</label>  
+            <input type="text" id="phoneInput" class="input-field" value="+38 (012) 345-67-89">  
+            <label for="aboutMeInput">Про мене:</label>  
+            <textarea id="aboutMeInput" class="input-field" rows="4">Тут ваша інформація про себе.</textarea>  
+            <button class="auth-button" id="saveChangesBtn">Зберегти зміни</button>  
+        </div>  
+    </div>  
+  
+     
+    <!-- Модальное окно для выбора статуса -->  
+<div id="statusModal" class="modal">  
+    <div class="modal-content">  
+        <span id="closeStatusModal" class="close">&times;</span>  
+        <h2>Выберите статус</h2>  
+        <select id="statusSelect">  
+            <option value="активен">Активен</option>  
+            <option value="неактивен">Неактивен</option>  
+            <option value="в отпуске">В отпуске</option>  
+        </select>  
+        <div class="button-container">  
+            <button id="confirmStatusBtn">OK</button>  
+        </div>  
+    </div>  
+</div>
+
+    <footer>  
+        <p>&copy; 2023</p>  
+    </footer>  
+</body>  
+</html>

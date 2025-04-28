@@ -1,0 +1,188 @@
+body {  
+    font-family: Arial, sans-serif;  
+    margin: 0;  
+    padding: 20px;  
+    background: linear-gradient(135deg, #87CEEB 0%, #32CD32 70%, #1E3C72 100%);  
+    background-image: url('https://ecopolitic.com.ua/wp-content/uploads/2021/04/shutterstock_1224817528.jpg'); /* Обновлено изображение */  
+    background-size: cover;  
+    background-repeat: no-repeat;  
+    background-attachment: fixed;  
+    background-position: center;  
+    position: relative;  
+}  
+
+body::before {  
+    content: '';  
+    position: fixed; /* Используем fixed для полного охвата экрана */  
+    top: 0;  
+    left: 0;  
+    width: 100%;  
+    height: 100vh; /* Высота вьюпорта для охвата всей страницы */  
+    z-index: -1;  
+}  
+
+.container {  
+    max-width: 1200px;  
+    margin: 0 auto; /* Центрирование контейнера */  
+    padding: 20px; /* Поддержание отступов */  
+    box-sizing: border-box; /* Включает отступы в расчет ширины */  
+    width: 100%; /* Занимает 100% */  
+}  
+
+.logo-container {  
+    max-width: 100%; /* Предотвращает выход логотипа за пределы */  
+    text-align: center; /* Центрирует логотип горизонтально */  
+    overflow: hidden; /* Скрывает выходящую часть логотипа */  
+}  
+
+.logo {  
+    max-width: 100%; /* Ширина логотипа не больше 100% */  
+    height: auto; /* Сохраняет соотношение сторон */  
+    display: block; /* Убирает нижний отступ у изображения */  
+    margin: 0 auto; /* Центрирование логотипа */  
+}  
+
+.button {  
+    display: inline-block;  
+    background: #D4F6FF; /* Изменен цвет фона кнопок */  
+    color: black;  
+    padding: 10px 15px;  
+    text-decoration: none;  
+    border-radius: 5px;  
+    transition: background 0.3s, color 0.3s;  
+    border: 1px solid transparent;  
+    font-size: 18px;  
+}  
+
+.button:hover {  
+    background: #c3f1fe; /* Изменен цвет фона кнопок */  
+}  
+
+#forum-section {  
+    margin-top: 20px;  
+    position: relative;  
+}  
+
+#posts {  
+    background: white;  
+    padding: 10px;  
+    border: 1px solid #ddd;  
+    max-height: 400px;  
+    overflow-y: auto;  
+}  
+
+#post-form {  
+    position: relative;  
+    background: white;  
+    padding: 10px;  
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  
+    display: flex;  
+    flex-direction: column;  
+    align-items: center; /* Центрирование содержимого формы */  
+}  
+
+#post-content {  
+    width: calc(100% - 20px);  
+    height: 100px;  
+    margin-bottom: 10px;  
+    border: 1px solid #ccc;  
+    border-radius: 5px;  
+}  
+
+#submit-post {  
+    width: 160px; /* Увеличенная ширина кнопки */  
+    height: 40px; /* Увеличенная высота кнопки */  
+    font-size: 16px; /* Увеличенный размер шрифта */  
+    margin: 0 auto; /* Центрирование кнопки */  
+    display: block; /* Чтобы margin auto работал */  
+}  
+
+.button-container {  
+    display: flex;  
+    justify-content: center; /* Центрирование кнопки "Відправити" */  
+    align-items: center; /* Вертикальное выравнивание кнопок */  
+    width: 100%;  
+    margin-top: 10px; /* Отступ сверху для кнопок */  
+    padding: 15px 20px;  
+}  
+
+#scroll-up {  
+    padding: 10px;  
+    font-size: 20px;  
+    cursor: pointer;  
+    background: #97dff3; /* Изменен цвет фона кнопок */  
+    border: none;  
+    border-radius: 50%; /* Круглая форма */  
+    color: rgb(0, 0, 0);  
+    box-shadow: 0 4px 8px rgba(56, 55, 55, 0.2); /* Тень для эффекта выпуклости */  
+    transition: transform 0.2s, background-color 0.3s; /* Плавная анимация */  
+    margin-left: 20px; /* Отступ слева для кнопки стрелки */  
+}  
+
+#scroll-up:hover {  
+    transform: scale(1.1); /* Увеличение кнопки при наведении */  
+    background: #c3f1fe; /* Изменен цвет фона кнопок */  
+}  
+
+.post {  
+    border: 1px solid #ccc;  
+    border-radius: 5px;  
+    padding: 10px;  
+    margin: 10px 0;  
+    background-color: #f9f9f9;  
+    opacity: 0; /* Начальная непрозрачность для анимации */  
+    transform: scale(0.95); /* Начальное уменьшение для анимации */  
+    animation: fadeIn 0.5s forwards; /* Анимация появления */  
+}  
+
+@keyframes fadeIn {  
+    to {  
+        opacity: 1;  
+        transform: scale(1);  
+    }  
+}  
+
+.delete-button {  
+    background: none;  
+    border: none;  
+    color: red;  
+    cursor: pointer;  
+    font-size: 16px;  
+    margin-left: 10px;  
+    transition: color 0.3s;  
+}  
+
+.delete-button:hover {  
+    color: darkred; /* Цвет кнопки удаления при наведении */  
+}  
+
+.post-header {  
+    font-size: 14px;  
+    color: #555;  
+    margin-bottom: 5px;  
+}  
+
+.post-content {  
+    font-size: 16px;  
+}  
+
+.posts-section {  
+    margin-bottom: 20px;  
+}  
+
+.post-form {  
+    margin-top: 20px;  
+    display: flex;  
+    flex-direction: column;  
+    align-items: center; /* Центрирование содержимого формы */  
+}  
+
+@media (max-width: 768px) {  
+    .logo {  
+        width: 90%; /* Настройка размера логотипа для маленьких экранов */  
+    }  
+
+    .container {  
+        padding: 10px; /* Уменьшение отступов на маленьких экранах */  
+    }  
+}  

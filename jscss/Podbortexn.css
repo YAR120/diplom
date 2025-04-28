@@ -1,0 +1,285 @@
+/* Общие стили */
+* {
+    box-sizing: border-box; /* Учет границ и отступов для всех элементов */
+}
+
+body {
+    font-family: 'Montserrat', sans-serif; /* Замена Arial на Montserrat */
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #87CEEB 0%, #32CD32 70%, #1E3C72 100%);
+    background-image: url('https://ecopolitic.com.ua/wp-content/uploads/2021/04/shutterstock_1224817528.jpg'); /* Обновлено изображение */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: -1;
+}
+
+/* Стили для хедера */
+header {
+    display: flex;
+    align-items: center; /* Вертикальное выравнивание для элементов в заголовке */
+    justify-content: center; /* Центрирование элементов в заголовке */
+    padding: 20px;
+    background: #ADAEFF; /* Светло-фиолетовый фон хедера */
+    border: 18px solid #ADAEFF; /* Виправлено синтаксис */
+    border-radius: 15px; /* Закругленные углы */
+    width: 100%; /* Растягиваем по ширине экрана */
+    position: relative; /* Для позиционирования внутренних элементов */
+    margin: 0; /* Убираем отступы */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Стили для логотипа (заголовка) */
+.header-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-title {
+    text-decoration: none;
+    color: #00212B; /* Цвет текста заголовка */
+    font-size: 40px; /* Размер текста */
+    font-weight: bold;
+    display: inline-block;
+    position: relative;
+    transition: color 0.5s ease, text-shadow 0.5s;
+}
+
+.header-title:hover {
+    color: #ff0000; /* Красный цвет при наведении */
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.8),
+                 0 0 20px rgba(255, 69, 0, 0.5);
+    animation: flame 1s ease-in-out forwards;
+    text-decoration: none; /* Убираем подчеркивание при наведении */
+}
+
+/* Добавляем искры при наведении */
+.header-title:hover::before,
+.header-title:hover::after {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 69, 0, 0.8);
+    border-radius: 50%;
+    animation: spark 0.8s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.header-title:hover::before {
+    top: -10px;
+    left: 20%;
+    animation-delay: 0.2s;
+}
+
+.header-title:hover::after {
+    bottom: -10px;
+    right: 30%;
+    animation-delay: 0.4s;
+}
+
+/* Анимация искр */
+@keyframes spark {
+    0% {
+        opacity: 0;
+        transform: translate(0, 0) scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: translate(10px, -10px) scale(1.5);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(20px, -20px) scale(0.5);
+    }
+}
+
+/* Анимация "пламени" при наведении */
+@keyframes flame {
+    0% {
+        text-shadow: 0 0 5px rgba(255, 165, 0, 0.3);
+    }
+    50% {
+        text-shadow: 0 0 10px rgba(255, 140, 0, 0.7),
+                     0 0 15px rgba(255, 69, 0, 0.5);
+    }
+    100% {
+        text-shadow: 0 0 10px rgba(255, 0, 0, 0.8),
+                     0 0 20px rgba(255, 69, 0, 0.5);
+    }
+}
+
+/* Основные стили для main */
+main {
+    background: rgba(255, 255, 255, 1); /* Полупрозрачный белый фон */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+/* Стили для input */
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input[type="number"]:focus {
+    outline: none;
+    border-color: #5CB1C9;
+    box-shadow: 0 0 5px rgba(92, 177, 201, 0.5);
+}
+
+h1 {
+    font-size: 34px;
+    margin: 0;
+    text-align: center;
+    color: #00212B; /* Цвет заголовка */
+    font-weight: bold; /* Жирный текст */
+}
+
+h2 {
+    color: #444;
+    margin-top: 20px;
+}
+
+/* Стили списков */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    cursor: pointer;
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #AAEBFF; /* Новый цвет элементов списка */
+    border-radius: 5px;
+    font-weight: bold; /* Жирный текст */
+    transition: background-color 0.3s;
+}
+
+li.selected {
+    background-color: #00212B; /* Темно-синий фон выделенного элемента */
+    color: white; /* Белый текст выделенного элемента */
+}
+
+li:hover {
+    background-color: #5CB1C9; /* Голубой фон при наведении */
+}
+
+/* Стили для select */
+select.equipment-type {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+select.equipment-type:focus {
+    outline: none;
+    border-color: #5CB1C9;
+    box-shadow: 0 0 5px rgba(92, 177, 201, 0.5);
+}
+
+#additional-equipment {
+    display: none; /* Скрываем дополнительное оборудование по умолчанию */
+}
+
+/* Кнопка */
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.button {
+    background: #AAEBFF; /* Новый голубой фон кнопки */
+    color: black; /* Черный цвет текста */
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #5CB1C9; /* Фон при наведении */
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    main {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    .header-title {
+        font-size: 32px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    input[type="number"], select.equipment-type {
+        font-size: 14px;
+    }
+
+    .button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-title {
+        font-size: 24px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    input[type="number"], select.equipment-type {
+        font-size: 12px;
+    }
+
+    .button {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+}

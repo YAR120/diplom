@@ -1,0 +1,47 @@
+body {  
+    font-family: Arial, sans-serif;  
+    margin: 20px;  
+}  
+
+header {  
+    text-align: center;  
+}  
+
+#input-section, #canvas-section {  
+    margin-bottom: 20px;  
+}  
+
+label {  
+    display: block;  
+    margin: 10px 0 5px;  
+}  
+
+input, select, button {  
+    padding: 8px;  
+    margin-bottom: 10px;  
+    width: 100%;  
+}  
+
+#canvas {  
+    position: relative;  
+    width: 800px;  /* Можно изменить при необходимости */  
+    height: 600px; /* Можно изменить при необходимости */  
+    border: 2px dashed #333;  
+    background-color: #f9f9f9;  
+}  
+
+.panel {  
+    background-color: rgba(100, 150, 255, 0.5);  
+    position: absolute;  
+}  
+
+#save-project {  
+    background-color: #4CAF50;  
+    color: white;  
+    border: none;  
+    cursor: pointer;  
+}  
+
+#zoom-controls {  
+    margin: 10px 0;  
+}

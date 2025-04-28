@@ -1,0 +1,184 @@
+* {
+    box-sizing: border-box; /* Учет границ и отступов для всех элементов */
+}
+
+body {
+    font-family: 'Montserrat', sans-serif; /* Замена Arial на Montserrat */
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #87CEEB 0%, #32CD32 70%, #1E3C72 100%);
+    background-image: url('https://ecopolitic.com.ua/wp-content/uploads/2021/04/shutterstock_1224817528.jpg'); /* Обновлено изображение */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: -1;
+}
+
+header {
+    background: #ADAEFF; /* Изменен цвет фона хедера */
+    border-radius: 10px;
+    padding: 26px 0;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    margin: 20px; /* Добавляем отступы со всех сторон */
+}
+
+header:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-3px);
+}
+
+.header-logo {
+    flex: 1; /* Логотип занимает место слева */
+}
+
+.header-title a {
+    text-decoration: none; /* Убирает подчеркивание у ссылки */
+    color: #00212B; /* Устанавливает цвет текста ссылки */
+    font-size: 34px; /* Размер шрифта для логотипа */
+    font-weight: bold; /* Жирный текст */
+    transition: color 0.3s, text-shadow 0.3s; /* Эффекты при наведении */
+}
+
+.header-title a:hover {
+    color: rgba(255, 0, 0, 1); /* Цвет при наведении */
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.8); /* Эффект тени при наведении */
+}
+
+@keyframes flame {
+    0% {
+        text-shadow: 0 0 5px rgba(255, 165, 0, 0.3);
+    }
+    50% {
+        text-shadow: 0 0 10px rgba(255, 140, 0, 0.7),
+                     0 0 15px rgba(255, 69, 0, 0.5);
+    }
+    100% {
+        text-shadow: 0 0 10px rgba(255, 0, 0, 0.8),
+                     0 0 20px rgba(255, 69, 0, 0.5);
+    }
+}
+
+.header-title:hover::before,
+.header-title:hover::after {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 69, 0, 0.8);
+    border-radius: 50%;
+    animation: spark 0.8s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.header-title:hover::before {
+    top: -10px;
+    left: 20%;
+    animation-delay: 0.2s;
+}
+
+.header-title:hover::after {
+    bottom: -10px;
+    right: 30%;
+    animation-delay: 0.4s;
+}
+
+@keyframes spark {
+    0% {
+        opacity: 0;
+        transform: translate(0, 0) scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: translate(10px, -10px) scale(1.5);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(20px, -20px) scale(0.5);
+    }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+main {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.webinars-container {
+    max-width: 1200px; /* Максимальная ширина контейнера с вебинарами */
+    margin: 0 auto; /* Центрирование */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.webinar-box {
+    border: 2px solid #000000;
+    border-radius: 10px;
+    margin: 10px;
+    width: 300px;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(34, 25, 25, 0.1);
+    transition: transform 0.2s;
+    display: flex; /* Давайвем Flexbox для выравнивания элементов */
+    flex-direction: column; /* Вертикальное выравнивание элементов */
+    justify-content: space-between; /* Распределение пространства между элементами */
+    height: 400px; /* Устанавливаем фиксированную высоту для всех блоков */
+}
+
+.webinar-box:hover {
+    transform: scale(1.05);
+}
+
+.webinar-box img {
+    width: 100%;
+    height: auto; /* Автоматическая высота для сохранения пропорций */
+    max-height: 200px; /* Максимальная высота для ограничения размера изображения */
+    object-fit: contain; /* Сохраняет пропорции изображения, не обрезает его */
+    border-radius: 10px;
+}
+
+.webinar-box h3 {
+    font-size: 20px; /* Увеличенный размер шрифта для заголовков */
+    font-weight: bold; /* Жирный шрифт для заголовков */
+    margin: 10px 0; /* Отступы для заголовков */
+}
+
+.webinar-box a {
+    display: block;
+    margin-top: auto; /* Отодвигаем кнопку вниз */
+    padding: 10px;
+    color: white; /* Цвет текста ссылки */
+    background: #3da6c6; /* Изменен цвет фона кнопки */
+    text-decoration: none;
+    border-radius: 5px;
+    transition: transform 0.3s, box-shadow 0.3s, background 0.6s; /* Увеличено время перехода для фона на 0.6s */
+}
+
+.webinar-box a:hover {
+    transform: translateY(-3px); /* Поднимаем кнопку вверх при наведении */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4); /* Добавляем тень при наведении */
+    background: #69c8e2; /* Более светлый фон при наведении */
+}

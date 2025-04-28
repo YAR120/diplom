@@ -1,0 +1,138 @@
+body {  
+    font-family: Arial, sans-serif;  
+    background-color: #f4f4f4;  
+    margin: 0;  
+    padding: 20px;  
+    line-height: 1.5; /* Увеличена высота строки для лучшей читаемости */  
+}  
+
+header {  
+    background-color: #4CAF50;  
+    color: white;  
+    padding: 20px;  
+    display: flex;  
+    align-items: center;  
+}  
+
+.header-title {  
+    font-size: 30px !important;  
+    margin: 0;  
+    text-decoration: none;  
+    color: black;  
+    transition: color 0.3s, text-shadow 0.3s;  
+}  
+
+.header-title:hover {  
+    color: red;  
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.7);  
+}  
+
+.header-title:active {  
+    color: darkred;  
+}  
+
+.calculator {  
+    max-width: 600px;  
+    margin: 20px auto;  
+    background: white;  
+    border-radius: 8px;  
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);  
+    padding: 20px;  
+    box-sizing: border-box;  
+}  
+
+h1, h2 {  
+    font-size: 24px;  
+    margin: 0 0 15px;  
+    line-height: 1.2;  
+}  
+
+.header-buttons {  
+    display: flex;  
+    gap: 10px;  
+    justify-content: flex-end;  
+}  
+
+.button-container {  
+    display: flex;  
+    justify-content: flex-end;   
+    margin-top: 20px;   
+}  
+
+label {  
+    display: block;  
+    margin: 15px 0 5px;  
+    line-height: 1.2;  
+    white-space: nowrap;  
+}  
+
+.input-field {  
+    width: 100%;  
+    padding: 10px;  
+    border: 1px solid #ccc;  
+    border-radius: 4px;  
+    box-sizing: border-box;  
+    line-height: 1.2;  
+    transition: borderColor 0.3s; /* Переход для плавности изменения цвета границы */  
+}  
+
+.input-field:focus {  
+    border-color: #4CAF50; /* Подсветка для активного поля ввода */  
+}  
+
+button {  
+    background-color: #4CAF50;  
+    color: white;  
+    padding: 10px 15px;  
+    border: none;  
+    border-radius: 5px;  
+    cursor: pointer;  
+    margin-top: 10px;  
+    width: 100%;  
+    line-height: 1.2;  
+    transition: background-color 0.3s; /* Плавный переход для кнопок */  
+}  
+
+button:hover {  
+    background-color: #45a049;  
+}  
+
+button:active {  
+    background-color: #388e3c; /* Темный цвет кнопки при нажатии */  
+}  
+
+.result {  
+    margin-top: 20px;  
+    font-size: 18px;  
+    text-align: center;  
+    line-height: 1.2;  
+    color: #333; /* Более темный цвет текста для лучшей контрастности */  
+}  
+
+footer {  
+    text-align: center;  
+    margin: 20px 0;  
+    color: #666;  
+    line-height: 1.2;  
+}  
+
+input {  
+    margin-bottom: 10px;  
+}  
+
+/* Убедитесь, что кнопка определена только один раз */  
+button {  
+    padding: 10px;  
+    background: #4CAF50;  
+    color: white;  
+    border: none;  
+    border-radius: 5px;  
+    cursor: pointer;  
+    width: 100%;  
+    line-height: 1.2;  
+    transition: background-color 0.3s;  
+}  
+
+button:hover {  
+    background: #45a049;  
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>  
+<html lang="uk">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>EcoEnergy</title>  
+    <link rel="stylesheet" href="../styles.css"> <!-- Путь к стилям -->  
+</head>  
+<body>  
+    <header>  
+        <div class="header-content">  
+            <h1><a href="Untitled-1.html" class="header-title">EcoEnergy</a></h1>  
+            <div class="header-buttons">  
+                <a href="profile.html" class="button profile-button" id="profileButton">Профіль</a>  
+                <div class="dropdown">  
+                    <a href="#" class="button">Спільнота та підтримка</a>  
+                    <div class="dropdown-content">  
+                        <a href="forum.html" class="dropdown-item">Форум</a>  
+                        <a href="webinars.html" class="dropdown-item">Вебінари</a>  
+                    </div>  
+                </div>  
+                <div class="dropdown">  
+                    <a href="#" class="button">Новини та аналітика</a>  
+                    <div class="dropdown-content">  
+                        <a href="news.html" class="dropdown-item">Новини та аналітика</a>  
+                    </div>  
+                </div>  
+                <div class="dropdown">  
+                    <a href="#" class="button">Підбір технологій</a>  
+                    <div class="dropdown-content">  
+                        <a href="Gotovi texnologii.html" class="dropdown-item">Готові технології</a>  
+                        <a href="Texnologii.html" class="dropdown-item">Обладнання</a>  
+                        <a href="Podbortexn.html" class="dropdown-item">Підбір технологій</a>  
+                        <a href="calculator.html" class="dropdown-item">Калькулятори</a>  
+                        <a href="project-planner.html" class="dropdown-item">Планувальник проектів</a>  
+                    </div>  
+                </div>  
+                <!-- Нові кнопки для відкриття модальних вікон -->  
+                
+                <a href="#" class="button" onclick="showModal('registrationModal')">Реєстрація</a>  
+            </div>  
+        </div>  
+        <div id="localTime"></div>  
+    </header>  
+
+    <!-- Додаємо скрипт для функції showModal -->  
+    <script>  
+        function showModal(modalId) {  
+            const modal = document.getElementById(modalId);  
+            if (modal) {  
+                modal.style.display = 'flex';  
+            } else {  
+                console.error(`Modal with id "${modalId}" not found`);  
+            }  
+        }  
+
+        // Оновлення часу в реальному часі  
+        function updateTime() {  
+            const localTimeElement = document.getElementById("localTime");  
+            if (localTimeElement) {  
+                const now = new Date();  
+                const formattedTime =  
+                    now.getHours().toString().padStart(2, "0") +  
+                    ":" +  
+                    now.getMinutes().toString().padStart(2, "0") +  
+                    ":" +  
+                    now.getSeconds().toString().padStart(2, "0");  
+                localTimeElement.textContent = `${formattedTime} місцевий час`;  
+            }  
+        }  
+        setInterval(updateTime, 1000);  
+    </script>  
+</body>  
+</html>

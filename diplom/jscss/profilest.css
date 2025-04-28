@@ -1,0 +1,297 @@
+/* Основные стили для кнопок профиля */  
+.button {  
+    background: rgba(255, 193, 7, 0.7);  
+    border: none;  
+    color: black;  
+    padding: 10px 15px;  
+    border-radius: 5px;  
+    cursor: pointer;  
+    transition: background 0.3s ease;  
+    font-size: 16px; /* Увеличенный размер шрифта */  
+}  
+
+.button:hover {  
+    background: rgba(255, 193, 7, 0.9);  
+    color: white;  
+}  
+
+/* Контейнер для профиля */  
+.profile-container {  
+    max-width: 600px;  
+    margin: 20px auto;  
+    background: white;  
+    border-radius: 8px;  
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);  
+    padding: 20px;  
+}  
+
+/* Заголовок профиля */  
+.profile-header {  
+    display: flex;  
+    justify-content: space-between; /* Размещает элементы по краям */  
+    align-items: center; /* Центрирует по вертикали */  
+}  
+
+/* Статус */  
+.status {  
+    color: green;  
+    font-weight: bold;  
+}  
+
+/* Время по местному времени */  
+.local-time {  
+    color: gray;  
+}  
+
+/* Информация о контактах и о себе */  
+.contact-info,  
+.about-me {  
+    margin-top: 20px;  
+}  
+
+/* Заголовки секций */  
+h3 {  
+    margin-bottom: 10px;  
+    font-weight: bold;  
+}  
+
+/* Модальное окно */  
+.modal {  
+    display: none;  
+    position: fixed;  
+    z-index: 1000;  
+    left: 0;  
+    top: 0;  
+    width: 100%;  
+    height: 100%;  
+    overflow: auto;  
+    background-color: rgba(0, 0, 0, 0.8); /* Затемнение фона */  
+}  
+
+/* Содержимое модального окна */  
+.modal-content {  
+    background-color: white;  
+    margin: 15% auto;  
+    padding: 20px;  
+    border: 1px solid #888;  
+    width: 80%;  
+    max-width: 400px;  
+    border-radius: 8px; /* Закругленные углы */  
+}  
+
+/* Кнопка закрытия */  
+.close {  
+    color: #aaa;  
+    float: right;  
+    font-size: 28px;  
+    font-weight: bold;  
+}  
+
+.close:hover,  
+.close:focus {  
+    color: black;  
+    text-decoration: none;  
+    cursor: pointer;  
+}  
+
+/* Поля ввода */  
+.input-field {  
+    width: calc(100% - 20px);  
+    padding: 10px;  
+    margin-top: 10px;  
+    border: 1px solid #ccc; /* Серый цвет рамки */  
+    border-radius: 5px; /* Закругленные углы */  
+}  
+
+/* Кнопка для сохранения изменений */  
+.auth-button {  
+    background: #28a745; /* Зеленый фон */  
+    color: white; /* Белый текст */  
+    padding: 10px 15px;  
+    border: none;  
+    border-radius: 5px;  
+    cursor: pointer;  
+    transition: background 0.3s ease;  
+    margin-top: 15px; /* Отступ сверху */  
+}  
+
+.auth-button:hover {  
+    background: #218838; /* Темнее при наведении */  
+}  
+
+/* Стиль для футера */  
+footer {  
+    text-align: center;  
+    padding: 10px;  
+    background-color: #f1f1f1;  
+    margin-top: 20px;  
+    border-top: 1px solid #ccc;  
+}  
+
+.footer-text {  
+    font-size: 14px; /* Уменьшенный размер шрифта */  
+    color: #777; /* Серый цвет */  
+}  
+
+/* Стили для кнопки редактирования профиля */  
+.edit-button {  
+    background-color: #f0ad4e; /* Цвет кнопки */  
+    color: white;  
+    border: none;  
+    padding: 10px 15px;  
+    border-radius: 5px;  
+    cursor: pointer;  
+}  
+
+/* Стили для модального окна выбора статуса */  
+.status-modal-content {  
+    background-color: white;  
+    margin: 15% auto;  
+    padding: 20px;  
+    border: 1px solid #888;  
+    width: 80%;  
+    max-width: 400px;  
+    border-radius: 8px; /* Закругленные углы */  
+}  
+
+/* Стили для выпадающего списка статусов */  
+#statusSelect {  
+    width: calc(100% - 20px);  
+    padding: 10px;  
+    margin-top: 10px;  
+    border: 1px solid #ccc; /* Серый цвет рамки */  
+    border-radius: 5px; /* Закругленные углы */  
+}  
+
+/* Кнопка подтверждения выбора статуса */  
+#confirmStatusBtn {  
+    background: #007bff; /* Синий фон */  
+    color: white; /* Белый текст */  
+    padding: 10px 15px;  
+    border: none;  
+    border-radius: 5px;  
+    cursor: pointer;  
+    transition: background 0.3s ease;  
+}  
+
+#confirmStatusBtn:hover {  
+    background: #0056b3; /* Темнее при наведении */  
+}  
+
+/* Новый класс для контейнера кнопки */  
+.button-container {  
+    display: flex;  
+    justify-content: flex-end; /* Сместить кнопку вправо */  
+    margin-top: 10px; /* Отступ сверху */  
+}  
+
+/* Стили для заголовка EcoEnergy */  
+.header-title {  
+    font-size: 60px !important;  
+    margin: 0;  
+    text-decoration: none;  
+    color: black;  
+    transition: color 0.3s, text-shadow 0.3s;  
+    font-family: Arial, sans-serif; /* Убедитесь, что шрифт совпадает с общим стилем */  
+}  
+
+.header-title:hover {  
+    color: #ffcc00; /* Цвет при наведении может быть изменен для лучшего контраста */    
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Затенение текста при наведении */  
+}  
+
+/* Стили для навигационной панели */  
+.navbar {  
+    display: flex;  
+    justify-content: space-around;  
+    background-color: #333;  
+    padding: 10px;  
+}  
+
+.nav-link {  
+    color: white;  
+    text-decoration: none;  
+    padding: 10px 15px;  
+    border-radius: 5px;  
+    transition: background 0.3s ease;  
+}  
+
+.nav-link:hover {  
+    background-color: #575757; /* Цвет наведения для ссылок */  
+}  
+
+/* Стили для карточек */  
+.card {  
+    background: white;  
+    border: 1px solid #ccc;  
+    border-radius: 5px;  
+    padding: 15px;  
+    margin: 10px;  
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  
+}  
+
+.card-title {  
+    font-size: 20px;  
+    font-weight: bold;  
+    margin-bottom: 10px;  
+}  
+
+.card-content {  
+    font-size: 16px;  
+    color: #333;  
+}  
+
+/* Стили для уведомлений */  
+.notification {  
+    background: #f8d7da;  
+    color: #721c24;  
+    padding: 15px;  
+    border: 1px solid #f5c6cb;  
+    border-radius: 5px;  
+    margin: 10px 0;  
+}  
+
+/* Стили для успешных уведомлений */  
+.notification-success {  
+    background: #d4edda;  
+    color: #155724;  
+    border: 1px solid #c3e6cb;  
+}  
+
+/* Стили для предупреждений */  
+.notification-warning {  
+    background: #fff3cd;  
+    color: #856404;  
+    border: 1px solid #ffeeba;  
+}  
+
+/* Защита для форм с предупреждениями */  
+.field-warning {  
+    border: 1px solid #ffc107; /* Желтая рамка для предупреждения */  
+}  
+
+/* Общее стили для формы */  
+.form-container {  
+    background: #f9f9f9;  
+    padding: 20px;  
+    border-radius: 8px;  
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);  
+    margin: 20px;  
+}  
+
+.form-label {  
+    font-weight: bold;  
+    margin-top: 10px;  
+}  
+
+/* Добавление стилей для элементов списка */  
+ul {  
+    list-style-type: disc;  
+    padding-left: 20px;  
+}  
+
+li {  
+    margin-bottom: 5px;  
+}  
+
+/* Завершение всех стилей */

@@ -1,0 +1,333 @@
+/* Общие стили */
+* {
+    box-sizing: border-box; /* Учет границ и отступов для всех элементов */
+}
+
+body {
+    font-family: 'Montserrat', sans-serif; /* Замена Arial на Montserrat */
+    margin: 0;
+    padding: 0; /* Убираем общий отступ сверху */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Полная высота экрана */
+    background: linear-gradient(135deg, #87CEEB 0%, #32CD32 70%, #1E3C72 100%);
+    background-image: url('https://ecopolitic.com.ua/wp-content/uploads/2021/04/shutterstock_1224817528.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2); /* Легкое затемнение */
+    z-index: -1;
+}
+
+/* Стили для хедера */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: #ADAEFF; /* Светло-фиолетовый фон хедера */
+    border: 18px solid #ADAEFF;
+    border-radius: 15px;
+    width: calc(100% - 40px); /* Учитываем отступы */
+    position: relative;
+    margin: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Стили для логотипа */
+.header-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Стили заголовка (логотипа) */
+.header-title {
+    text-decoration: none;
+    color: #00212B;
+    font-size: 40px;
+    font-weight: bold;
+    display: inline-block;
+    position: relative;
+    transition: color 0.5s ease, text-shadow 0.5s;
+}
+
+.header-title:hover {
+    color: #ff0000;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.8),
+                 0 0 20px rgba(255, 69, 0, 0.5);
+    animation: flame 1s ease-in-out forwards;
+    text-decoration: none;
+}
+
+/* Добавляем искры при наведении */
+.header-title:hover::before,
+.header-title:hover::after {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 69, 0, 0.8);
+    border-radius: 50%;
+    animation: spark 0.8s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.header-title:hover::before {
+    top: -10px;
+    left: 20%;
+    animation-delay: 0.2s;
+}
+
+.header-title:hover::after {
+    bottom: -10px;
+    right: 30%;
+    animation-delay: 0.4s;
+}
+
+/* Анимация искр */
+@keyframes spark {
+    0% {
+        opacity: 0;
+        transform: translate(0, 0) scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: translate(10px, -10px) scale(1.5);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(20px, -20px) scale(0.5);
+    }
+}
+
+/* Анимация "пламени" при наведении */
+@keyframes flame {
+    0% {
+        text-shadow: 0 0 5px rgba(255, 165, 0, 0.3);
+    }
+    50% {
+        text-shadow: 0 0 10px rgba(255, 140, 0, 0.7),
+                     0 0 15px rgba(255, 69, 0, 0.5);
+    }
+    100% {
+        text-shadow: 0 0 10px rgba(255, 0, 0, 0.8),
+                     0 0 20px rgba(255, 69, 0, 0.5);
+    }
+}
+
+/* Стили для основной области */
+main {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+/* Секции */
+section {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Заголовки */
+h1 {
+    font-size: 34px;
+    margin: 0;
+    color: #00212B;
+    text-align: center;
+    font-weight: bold;
+}
+
+h2 {
+    color: #444;
+    margin-top: 20px;
+    font-size: 24px;
+}
+
+/* Поля ввода и списки */
+input,
+select {
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #5CB1C9;
+    box-shadow: 0 0 5px rgba(92, 177, 201, 0.5);
+}
+
+/* Кнопки */
+button {
+    padding: 10px 15px;
+    background: #AAEBFF;
+    color: black;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    margin: 10px 0;
+}
+
+button:hover {
+    background-color: #5CB1C9;
+}
+
+.footer-button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.footer-button button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #AAEBFF;
+    color: black;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    transition: background-color 0.3s;
+    width: auto;
+}
+
+.footer-button button:hover {
+    background-color: #5CB1C9;
+}
+
+/* Стили для таблицы окупности */
+#payback-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#payback-table th,
+#payback-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+#payback-table th {
+    background-color: #AAEBFF;
+    font-weight: bold;
+}
+
+#payback-table td {
+    background-color: #fff;
+}
+
+#payback-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Всплывающие подсказки */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: help;
+    margin-bottom: 5px;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+    opacity: 0;
+    font-size: 14px;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    main {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    .header-title {
+        font-size: 32px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    input, select, button {
+        font-size: 14px;
+    }
+
+    .tooltip .tooltiptext {
+        width: 120px;
+        margin-left: -60px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-title {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    input, select, button {
+        font-size: 12px;
+    }
+
+    .tooltip .tooltiptext {
+        width: 100px;
+        margin-left: -50px;
+        font-size: 10px;
+    }
+
+    #payback-table th,
+    #payback-table td {
+        padding: 8px;
+        font-size: 12px;
+    }
+}

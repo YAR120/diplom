@@ -1,0 +1,478 @@
+/* Основные стили */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f3f4f6;
+    margin: 0;
+    padding: 20px;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+.main-container {
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+h1 {
+    color: #00212B;
+    transition: color 0.3s ease;
+    font-weight: bold;
+}
+
+.header-title {
+    text-decoration: none;
+    color: inherit;
+}
+
+.header-title:hover {
+    color: red;
+}
+
+/* Стили для фильтров */
+.filter-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.filter-container label {
+    font-size: 16px;
+    color: #00212B;
+    font-weight: bold;
+}
+
+select {
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    background: #AAEBFF;
+    color: black;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+select:hover {
+    background: #5CB1C9;
+}
+
+/* Описание секций */
+.section-description {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Стили для карточек */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: calc(33.33% - 20px);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    width: 100%;
+    max-height: 150px;
+    object-fit: contain;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #00212B;
+    font-weight: bold;
+}
+
+.card p {
+    font-size: 14px;
+    color: #666;
+    margin: 5px 0;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 15px;
+    margin-top: 10px;
+    background: #AAEBFF;
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.button:hover {
+    background: #5CB1C9;
+}
+
+.order-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    background: #AAEBFF;
+    color: black;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    z-index: 1000;
+    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.order-button:hover {
+    background: #5CB1C9;
+    transform: scale(1.05);
+}
+
+/* Стили для модального окна */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    overflow-y: auto;
+    padding: 20px 0;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.modal-open .modal-content {
+    animation: slideUp 0.3s ease-out forwards;
+}
+
+.modal-close .modal-content {
+    animation: slideDown 0.3s ease-out forwards;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+}
+
+.modal-content {
+    background: linear-gradient(135deg, #ffffff, #f0f8ff);
+    padding: 30px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    position: relative;
+    border: 2px solid #ADAEFF;
+}
+
+.modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #e74c3c;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.close:hover {
+    color: #c0392b;
+    transform: scale(1.2);
+}
+
+.modal-content h2 {
+    font-size: 26px;
+    color: #00212B;
+    text-align: center;
+    margin-bottom: 25px;
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+    background: linear-gradient(90deg, #1E3C72, #87CEEB);
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+.modal-content h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #1E3C72;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.form-group {
+    position: relative;
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #f0f7f3;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-group .icon {
+    font-size: 18px;
+    color: #1E3C72;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    background: #f9f9f9;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-field:focus {
+    background: #fff;
+    box-shadow: 0 0 5px rgba(30, 60, 114, 0.3);
+    outline: none;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.modal button {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.modal button.submit {
+    background: linear-gradient(90deg, #1E3C72, #87CEEB);
+    color: white;
+}
+
+.modal button.submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(30, 60, 114, 0.4);
+}
+
+.modal button.cancel {
+    background: linear-gradient(90deg, #e74c3c, #c0392b);
+    color: white;
+}
+
+.modal button.cancel:hover {
+    background: linear-gradient(90deg, #c0392b, #a93226);
+}
+
+/* Стили для кнопки "Добавить" */
+#addEquipmentBtn {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(90deg, #1E3C72, #87CEEB);
+    color: white;
+}
+
+#addEquipmentBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(30, 60, 114, 0.4);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .card {
+        width: calc(50% - 20px);
+    }
+
+    .modal-content {
+        max-width: 90%;
+        padding: 20px;
+    }
+
+    .modal-content h2 {
+        font-size: 22px;
+    }
+
+    .modal-content h2::after {
+        width: 40px;
+    }
+
+    .modal button {
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+
+    #addEquipmentBtn {
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 576px) {
+    .card {
+        width: 100%;
+    }
+
+    .modal-content {
+        padding: 15px;
+        max-height: 90vh;
+    }
+
+    .modal-content h2 {
+        font-size: 20px;
+    }
+
+    .modal-content h2::after {
+        width: 30px;
+    }
+
+    .modal button {
+        padding: 8px 15px;
+        font-size: 13px;
+    }
+
+    #addEquipmentBtn {
+        padding: 8px 15px;
+        font-size: 13px;
+    }
+
+    .form-group {
+        padding: 8px;
+    }
+
+    .input-field {
+        font-size: 13px;
+        padding: 8px;
+    }
+
+    .form-group .icon {
+        font-size: 16px;
+    }
+
+    .close {
+        font-size: 24px;
+        top: 10px;
+        right: 15px;
+    }
+}
+
+@media (max-width: 360px) {
+    .modal-content {
+        padding: 10px;
+    }
+
+    .modal-content h2 {
+        font-size: 18px;
+    }
+
+    .modal button {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+
+    #addEquipmentBtn {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+
+    .input-field {
+        font-size: 12px;
+        padding: 6px;
+    }
+}

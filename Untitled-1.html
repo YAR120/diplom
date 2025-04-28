@@ -1,0 +1,217 @@
+<!DOCTYPE html>  
+<html lang="uk">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <link rel="stylesheet" href="/styles.css">  
+    <script src="/script.js" defer></script>  
+    <link rel="stylesheet" href="https://cdn.tailwindcss.com">  
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">  
+    <!-- Додаємо Font Awesome для іконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">  
+    <title>EcoEnergy</title>  
+</head>  
+<body>  
+    <div id="header-container"></div> 
+
+    <script>  
+        fetch('/header/header1.html')  
+            .then(response => response.text())  
+            .then(data => {  
+                document.getElementById('header-container').innerHTML = data;  
+            })  
+            .catch(error => console.error('Ошибка при загрузке заголовка:', error));  
+    </script>  
+
+    <main>  
+        <!-- Модальне вікно реєстрації -->
+        <div id="registrationModal" class="modal">
+            <div class="modal-content">
+                <span class="close-button" onclick="closeModal('registrationModal')">×</span>
+                <h2>Реєстрація</h2>
+                <form id="registrationForm">
+                    <div class="form-group">
+                        <i class="fas fa-user icon"></i>
+                        <input type="text" id="regUsername" class="input-field" placeholder="Логін" required>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-user icon"></i>
+                        <input type="text" id="regFullName" class="input-field" placeholder="Ім'я та прізвище" required>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-envelope icon"></i>
+                        <input type="email" id="regEmail" class="input-field" placeholder="Електронна пошта" required>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-phone icon"></i>
+                        <input type="tel" id="regPhone" class="input-field" placeholder="Номер телефону" required>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-lock icon"></i>
+                        <input type="password" id="registerPassword" class="input-field" placeholder="Пароль" required>
+                        <span class="toggle-password" onclick="togglePasswordVisibility('registerPassword')">
+                            <i class="fas fa-eye"></i>
+                        </span>
+                    </div>
+                    <div class="modal-buttons">
+                        <button type="submit" class="modal-button save">Зареєструвати</button>
+                        <button type="button" class="modal-button cancel" onclick="closeModal('registrationModal')">Скасувати</button>
+                    </div>
+                </form>
+                <p style="text-align: center; margin-top: 15px;">
+                    Вже маєте акаунт? 
+                    <a href="#" onclick="toggleAuthForms()" style="color: #27ae60; text-decoration: underline;">Авторизуйтесь</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- Модальне вікно авторизації -->
+        <div id="loginModal" class="modal">
+            <div class="modal-content">
+                <span class="close-button" onclick="closeModal('loginModal')">×</span>
+                <h2>Авторизація</h2>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <i class="fas fa-user icon"></i>
+                        <input type="text" id="loginUsername" class="input-field" placeholder="Логін" required>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-lock icon"></i>
+                        <input type="password" id="loginPassword" class="input-field" placeholder="Пароль" required>
+                        <span class="toggle-password" onclick="togglePasswordVisibility('loginPassword')">
+                            <i class="fas fa-eye"></i>
+                        </span>
+                    </div>
+                    <label style="display: block; margin: 10px 0;">
+                        <input type="checkbox" id="rememberMe" style="margin-right: 5px;"> Запам'ятати мене
+                    </label>
+                    <div class="modal-buttons">
+                        <button type="submit" class="modal-button save">Увійти</button>
+                        <button type="button" class="modal-button cancel" onclick="closeModal('loginModal')">Скасувати</button>
+                    </div>
+                </form>
+                <p style="text-align: center; margin-top: 15px;">
+                    Немає акаунту? 
+                    <a href="#" onclick="toggleAuthForms()" style="color: #27ae60; text-decoration: underline;">Зареєструйтесь</a>
+                </p>
+            </div>
+        </div>
+
+        <p class="description"></p>  
+
+        <div class="container">  
+            <h1>EcoEnergy</h1>  
+            <div class="content">  
+                <div class="image-section">  
+                    <h2>Вітряки</h2>  
+                    <img src="/image/512221_O.png" alt="Вітряки" style="max-width: 100%; height: auto;">
+                    <p>Вітряки є одним з найефективніших способів отримання відновлювальної енергії. Вони перетворюють кінетичну енергію вітру на електричну енергію, що дозволяє зменшити залежність від викопних палив.</p>  
+                </div>  
+
+                <div class="main-text">  
+                    <h2>Актуальність для України</h2>  
+                    <p>У сучасному світі зміна клімату та постійно зростаючі виклики ставлять перед нами серйозні проблеми, які потребують термінового вирішення. Одним з основних шляхів подолання цих складнощів є активне впровадження відновлювальних джерел енергії (ВДЕ).</p>  
+                    <p>У контексті війни в Україні, відновлювальна енергетика набуває особливого значення. Використання ВДЕ може слугувати як ресурс для енергетичної незалежності країни та підвищення її стійкості в умовах кризи.</p>  
+                </div>  
+
+                <div class="image-section">  
+                    <h2>Типи сонячних панелей</h2>  
+                    <img src="/image/vidy-panelej.png" alt="Типи сонячних панелей" style="max-width: 100%; height: auto;">  
+                    <p>Сонячні панелі бувають різних типів, включаючи монокристалічні, полікристалічні та тонкоплівкові. Кожен тип має свої переваги та недоліки, що впливають на їх ефективність та вартість.</p>  
+                </div>  
+            </div>  
+
+            <div class="container">  
+                <h2>Основні Переваги Платформи</h2>  
+                <div class="advantage">  
+                    <h3>Аналіз Споживання Енергії</h3>  
+                    <p>EcoEnergy пропонує детальний аналіз споживання енергії, що дозволяє зрозуміти енергетичні потреби та динаміку витрат. На основі зібраних даних платформа формує персоналізовані рекомендації щодо оптимізації енергозатрат.</p>  
+                </div>  
+
+                <div class="advantage">  
+                    <h3>Кастомізовані Рекомендації</h3>  
+                    <p>Ми враховуємо специфіку вашого регіону, бюджет та індивідуальні вимоги, надаючи рекомендації щодо найкращих ВДЕ, які можна впровадити у вашому випадку.</p>  
+                </div>  
+
+                <div class="advantage">  
+                    <h3>Інформаційна База</h3>  
+                    <p>Платформа містить бібліотеку матеріалів, включаючи статті, дослідження та відео, присвячені різним аспектам відновлювальної енерг FIBER OPTIC CABLE | Fiber optic, Fiber optic cable, Fiber optics
+etics, що допомагає користувачам отримувати актуальні знання.</p>  
+                </div>  
+
+                <div class="advantage">  
+                    <h3>Список Надійних Постачальників</h3>  
+                    <p>EcoEnergy пропонує базу даних перевірених постачальників ВДЕ з рейтингами та відгуками користувачів, що спрощує вибір якісного обладнання.</p>  
+                </div>  
+
+                <div class="advantage">  
+                    <h3>Аналітичні Інструменти</h3>  
+                    <p>Наші потужні аналітичні інструменти допомагають прогнозувати економію енергетичних витрат та оцінювати екологічний вплив обраних технологій.</p>  
+                </div>  
+
+                <div class="advantage">  
+                    <h3>Залучення Спільноти</h3>  
+                    <p>EcoEnergy забезпечує платформу для спілкування між користувачами через форуми, вебінари та навчальні тренінги, що сприяє обміну досвідом та знаннями у галузі відновлювальної енергетики.</p>  
+                </div>  
+
+                <div class="advantage">  
+                    <h3>Чому EcoEnergy Важливий для України</h3>  
+                    <p>EcoEnergy не лише сприяє переходу на екологічно чисті технології, але і допомагає Україні зменшити залежність від імпортованих енергоносіїв. У нинішніх умовах це є критично важливим для підвищення енергетичної незалежності та стійкості країни.</p>  
+                </div>  
+
+                <p>Приєднуйтесь до EcoEnergy і станьте частиною руху за сталий розвиток енергетичних систем в Україні!</p>  
+            </div>  
+
+            <div class="projects">  
+                <h2>Наші Проекти</h2>  
+                <div class="project-item">  
+                    <p>Установка сонячних панелей в Київській області</p>  
+                    <img src="/image/194d01e100c88.png" alt="Наші проекти" class="project-image">  
+                    <p>Цей проект передбачає встановлення сонячних панелей на дахах будівель у Київській області.</p>  
+                </div>  
+
+                <div class="project-item">  
+                    <p>Інтеграція вітрових турбін у сільських районах</p>  
+                    <img src="/image/vetrogenerator-vertikalnogo-tipa-4.jpg" alt="Проект 3" class="project-image">  
+                    <p>Проект спрямований на впровадження вітрових турбін у сільських районах.</p>  
+                </div>  
+
+                <div class="project-item">  
+                    <p>Розробка системи накопичення енергії для домогосподарств</p>  
+                    <img src="/image/energy-storage.jpg" alt="Проект 4" class="project-image">  
+                    <p>Цей проект передбачає створення системи накопичення енергії.</p>  
+                </div>  
+            </div>  
+        </div>  
+    </main>  
+
+    <footer class="footer">  
+        <div class="footer-container">  
+            <h3>Контактная інформація</h3>  
+            <p class="mb-2">Компанія EcoEnergy займається розвитком та впровадженням відновлювальних джерел енергії.</p>  
+            <div class="contact-info">  
+                <p>Телефон: <strong class="contact-item">+38 (012) 345 6789</strong></p>  
+                <p>Email: <strong class="contact-item"><a href="mailto:info@ecoenergy.com">info@ecoenergy.com</a></strong></p>  
+            </div>  
+            <div class="footer-rights">  
+                <p>© 2025 EcoEnergy. Все права защищены.</p>  
+            </div>  
+        </div>  
+
+        <div class="flex space-x-4">  
+            <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="hover:opacity-75">  
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" style="width: 25px; height: 25px;">  
+            </a>  
+            <a href="https://twitter.com" target="_blank" aria-label="Twitter" class="hover:opacity-75">  
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" style="width: 25px; height: 25px;">  
+            </a>  
+            <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="hover:opacity-75">  
+                <img src="https://cdn-icons-png.flaticon.com/512/1409/1409946.png" alt="Instagram" style="width: 25px; height: 25px;">  
+            </a>  
+            <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" class="hover:opacity-75">  
+                <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" alt="LinkedIn" style="width: 25px; height: 25px;">  
+            </a>  
+        </div>  
+    </footer>  
+</body>  
+</html>

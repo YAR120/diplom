@@ -1,0 +1,181 @@
+<!DOCTYPE html>  
+<html lang="uk">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">   
+    <title>Готові технології</title>  
+    <style>  
+        * {  
+            box-sizing: border-box;  
+        }  
+
+        body {  
+            font-family: 'Montserrat', sans-serif;  
+            margin: 0;  
+            padding: 20px;  
+            background: linear-gradient(135deg, #87CEEB 0%, #32CD32 70%, #1E3C72 100%);  
+            background-image: url('https://ecopolitic.com.ua/wp-content/uploads/2021/04/shutterstock_1224817528.jpg');  
+            background-size: cover;  
+            background-repeat: no-repeat;  
+            background-attachment: fixed;  
+            background-position: center;  
+        }  
+
+        header {  
+            background: #ADAEFF; /* Изменен цвет фона хедера */  
+            border-bottom: 2px solid #ccc;  
+            border-radius: 10px;  
+            color: white;  
+            padding: 20px 0;  
+            text-align: center;  
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);  
+            transition: box-shadow 0.3s ease;  
+        }  
+
+        header:hover {  
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6),  
+                0 0 25px rgba(238, 46, 81, 0.7);  
+        }  
+
+        h1 {  
+            color: #00212B; /* Устанавливаем цвет заголовка */  
+            transition: color 0.3s ease;  
+            cursor: pointer;  
+            font-size: 3em;  
+            position: relative;  
+            font-weight: bold; /* жирный текст для заголовка */  
+        }  
+
+        .header-title:hover {  
+            color: #ff0000;  
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.8),  
+                        0 0 20px rgba(255, 69, 0, 0.5);  
+            animation: flame 1s ease-in-out forwards;  
+        }  
+
+        @keyframes flame {  
+            0% {  
+                text-shadow: 0 0 5px rgba(255, 165, 0, 0.3);  
+            }  
+            50% {  
+                text-shadow: 0 0 10px rgba(255, 140, 0, 0.7),  
+                            0 0 15px rgba(255, 69, 0, 0.5);  
+            }  
+            100% {  
+                text-shadow: 0 0 10px rgba(255, 0, 0, 0.8),  
+                            0 0 20px rgba(255, 69, 0, 0.5);  
+            }  
+        }  
+
+        h2 {  
+            font-size: 2em;   
+            margin-bottom: 30px;   
+            font-weight: bold; /* жирный текст для подзаголовка */  
+        }  
+
+        .card-container {  
+            display: flex;  
+            justify-content: center;  
+            margin: 30px 0;   
+            flex-wrap: wrap;   
+        }  
+
+        .card {  
+            background: #fff;  
+            border: 2px solid rgba(46, 174, 238, 0.8);  
+            border-radius: 8px;  
+            padding: 50px;  
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);  
+            width: 500px;  
+            margin: 20px;   
+            display: block;  
+            position: relative;  
+        }  
+
+        .card img {  
+            width: 100%;  
+            max-height: 200px;   
+            object-fit: contain;  
+            border-radius: 8px;   
+            margin: 10px 0;   
+        }  
+
+        .card h3 {  
+            margin: 10px 0;  
+            font-size: 2em;   
+            color: #00212B; /* Цвет заголовка карточки */  
+            font-weight: bold; /* жирный текст для заголовка карточки */  
+        }  
+
+        .card p {  
+            padding: 0 10px 10px;  
+            font-size: 1.5em;   
+            margin: 0;  
+            color: #00212B; /* Цвет текста карточки */  
+            font-weight: bold; /* жирный текст для текста карточки */  
+        }  
+
+        .link-button {  
+            display: inline-block;  
+            padding: 20px 30px;  
+            margin-top: 15px;  
+            background: #85e2fb; /* Изменен цвет фона кнопок */   
+            color: #000000;  
+            text-decoration: none;  
+            border-radius: 5px;  
+            font-size: 1.5em;   
+            position: relative;   
+            bottom: 0;  
+            left: 50%;  
+            transform: translateX(-50%);  
+        }  
+
+        .link-button:hover {  
+            background: #5ad6f8; /* Изменен цвет фона кнопок при наведении */   
+        }  
+    </style>  
+</head>  
+<body>  
+
+<header>  
+    <h1 class="header-title" onclick="goToHomePage()">EcoEnergy</h1>  
+</header>  
+
+<main>  
+    <h2>Вибір місця для встановлення обладнання</h2>  
+
+    <div class="card-container" id="imageContainer">  
+        <div class="card" id="apartmentCard">  
+            <img src="image/images (1).jpg" alt="Квартира">  
+            <h3>Квартира</h3>  
+            <p>Опис для квартири.</p>  
+            <a href="VIBOR3/Hata.html" class="link-button">Перейти до квартири</a>  
+        </div>  
+        <div class="card" id="houseCard">  
+            <img src="image/images (2).jpg" alt="Будинок">  
+            <h3>Дім</h3>  
+            <p>Опис для дому.</p>  
+            <a href="VIBOR3/DOM.html" class="link-button">Перейти до дому</a>  
+        </div>  
+        <div class="card" id="landCard">  
+            <img src="image/solar-panel.jpg" alt="Участок">  
+            <h3>Участок</h3>  
+            <p>Опис для участку.</p>  
+            <a href="VIBOR3/YCHACTOK.html" class="link-button">Перейти до участку</a>  
+        </div>  
+    </div>  
+</main>  
+
+<footer>  
+    <p></p>  
+</footer>  
+
+<script>  
+    function goToHomePage() {  
+        window.location.href = "Untitled-1.html";  
+    }  
+</script>  
+
+</body>  
+</html>  

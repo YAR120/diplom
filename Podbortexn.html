@@ -1,0 +1,90 @@
+<!DOCTYPE html>  
+<html lang="uk">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <link rel="stylesheet" href="jscss/Podbortexn.css">  
+    <script src="jscss/Podbortexn.js" defer></script> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">  
+    <title>EcoEnergy - Підбір технологій</title>  
+</head>  
+<body>  
+    <header>
+        <div class="header-logo">
+            <h1><a href="Untitled-1.html" class="header-title">EcoEnergy</a></h1>
+        </div>
+    </header>
+
+    <main>  
+        <h2>Підбір технологій</h2>  
+
+        <!-- Поле для введення доступної площі -->
+        <h3>Доступна площа (м²)</h3>
+        <input type="number" id="available-area" placeholder="Введіть площу в м²" min="0" step="0.1" oninput="updateAvailableSpace()">
+
+        <!-- Список вибору типу обладнання -->  
+        <h3>Тип обладнання</h3>  
+        <ul id="equipment-list">  
+            <li class="equipment-item">Сонячні панелі</li>  
+            <li class="equipment-item">Вітрові турбіни</li>  
+            <li class="equipment-item">Інші типи обладнання</li>  
+        </ul>  
+
+        <!-- Вибір типу сонячних панелей -->  
+        <h3>Тип сонячних панелей</h3>  
+        <select id="solar-panel-types" class="equipment-type" onchange="updateSolarPanelEfficiency()">  
+            <option value="">--Виберіть тип панелі--</option>  
+            <option value="monocrystalline">Монокристалічна</option>  
+            <option value="polycrystalline">Полікристалічна</option>  
+            <option value="thin-film">Тонкоплівкова</option>  
+        </select>  
+
+        <p id="solar-panel-efficiency" style="font-weight: bold; margin-top: 10px;"></p>  
+        <div id="solar-panel-description" style="margin-top: 10px;"></div>  
+
+        <!-- Вибір типу вітрових турбін -->  
+        <h3>Тип вітрових турбін</h3>  
+        <select id="wind-turbine-types" class="equipment-type" onchange="updateWindTurbineInfo()">  
+            <option value="">--Виберіть тип турбіни--</option>  
+            <option value="horizontal-axis">Горизонтально-осна (HAWT)</option>  
+            <option value="vertical-axis">Вертикально-осна (VAWT)</option>  
+            <option value="commercial">Комерційна</option>  
+            <option value="small-scale">Мала</option>  
+            <option value="offshore">Морська</option>  
+            <option value="land-based">Наземна</option>  
+        </select>  
+
+        <p id="wind-turbine-info" style="font-weight: bold; margin-top: 10px;"></p>  
+        <p id="wind-turbine-efficiency" style="font-weight: bold; margin-top: 10px;"></p>  
+        <div id="wind-turbine-description" style="margin-top: 10px;"></div>  
+
+        <!-- Список вибору типу підключення -->  
+        <h3>Тип підключення</h3>  
+        <ul id="connection-types">  
+            <li onclick="selectConnectionType('Мережева (Grid-Tied)')">Мережева (Grid-Tied)</li>  
+            <li onclick="selectConnectionType('Автономна (Off-Grid)')">Автономна (Off-Grid)</li>  
+            <li onclick="selectConnectionType('Гібридна')">Гібридна</li>  
+            <li onclick="selectConnectionType('Змішана (Smart Grid)')">Змішана (Smart Grid)</li>  
+        </ul>  
+
+        <h3>Вибране обладнання:</h3>  
+        <p id="selected-equipment">Нічого не вибрано</p>  
+
+        <!-- Додаткове обладнання -->  
+        <h3>Додаткове обладнання</h3>  
+        <div id="additional-equipment" style="display:none;">  
+            <p>Автоматично пропонується додаткове обладнання:</p>  
+            <ul id="additional-list"></ul>  
+        </div>  
+
+        <p class="description">  
+            Виберіть потрібні параметри для ефективного підбору обладнання.  
+        </p>  
+
+        <!-- Кнопка переходу на calculator.html -->  
+        <div class="button-container">  
+            <button id="plan-button" class="button" onclick="goToCalculator()">Перейти до Планування та розрахунок</button>  
+        </div>  
+    </main>  
+</body>  
+</html>

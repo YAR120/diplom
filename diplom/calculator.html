@@ -1,0 +1,89 @@
+<!DOCTYPE html>  
+<html lang="ua">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>EcoEnergy</title>  
+    <link rel="stylesheet" href="jscss/calculatorst.css">  
+    <link rel="stylesheet" href="jscss/styles.css">  
+    <script src="jscss/calculator.js" defer></script>
+</head>  
+<body>  
+
+<header>  
+    <h1><a href="Untitled-1.html" class="header-title">EcoEnergy</a></h1>  
+</header>  
+
+<main>  
+    <!-- Калькулятор ROI -->  
+    <section class="calculator">  
+        <h2>Калькулятор ROI</h2>  
+        <form id="roiCalculator">  
+            <label for="installationCost">Вартість установки (грн):</label>  
+            <input type="number" id="installationCost" class="input-field" required>  
+
+            <label for="annualSavings">Очікуємий річний дохід/економія (грн):</label>  
+            <input type="number" id="annualSavings" class="input-field" required>  
+
+            <label for="systemLife">Термін служби системи (роки):</label>  
+            <input type="number" id="systemLife" class="input-field" required>  
+
+            <label for="maintenanceCost">Витрати на обслуговування (грн/рік):</label>  
+            <input type="number" id="maintenanceCost" class="input-field" required>  
+
+            <button type="button" id="roiCalculate">Розрахувати ROI</button>  
+        </form>  
+        <div id="roiResult" class="result">Результат ROI буде тут</div>  
+    </section>  
+
+    <!-- Калькулятор енергетичних витрат -->  
+    <section class="calculator">  
+        <h2>Калькулятор енергетичних витрат</h2>  
+        <form id="energyCostCalculator">  
+            <label for="monthlyBill">Щомісячні рахунки за електроенергію (грн):</label>  
+            <input type="number" id="monthlyBill" class="input-field" required>  
+
+            <label for="averageConsumption">Середнє споживання (кВт·г):</label>  
+            <input type="number" id="averageConsumption" class="input-field" required>  
+
+            <label for="costPerKWh">Вартість кіловат-години (грн):</label>  
+            <input type="number" id="costPerKWh" class="input-field" required>  
+
+            <button type="button" id="energyCostCalculate">Розрахувати енергетичні витрати</button>  
+        </form>  
+        <div id="energyCostResult" class="result">Результат енергетичних витрат буде тут</div>  
+    </section>  
+
+    <!-- Калькулятор розміру системи -->  
+    <section class="calculator">  
+        <h2>Калькулятор розміру системи</h2>  
+        <form id="systemSizeCalculator">  
+            <label for="dailyConsumption">Середнє споживання енергії (кВт·г/день):</label>  
+            <input type="number" id="dailyConsumption" class="input-field" required>  
+
+            <label for="panelOutput">Середньодобова продуктивність сонячних панелей (кВт):</label>  
+            <input type="number" id="panelOutput" class="input-field" required>  
+
+            <button type="button" id="systemSizeCalculate">Розрахувати розмір системи</button>  
+        </form>  
+        <div id="systemSizeResult" class="result">Результат розміру системи буде тут</div>  
+    </section>  
+
+    <!-- Калькулятор з введенням числового значення -->  
+    <section class="calculator">  
+        <h2>Калькулятор</h2>  
+        <div class="container">  
+            <input type="text" id="inputField" placeholder="Введите число" maxlength="10" class="input-field">  
+            <div class="button-container">  
+                <button onclick="calculate()">Посчитать</button>  
+            </div>  
+            <div id="result" class="result">Результат буде тут</div>  
+        </div>  
+    </section>  
+</main>  
+
+<footer>  
+    <p>&copy; 2024 Ваша компанія</p>  
+</footer>  
+</body>  
+</html>

@@ -1,0 +1,215 @@
+* {  
+    box-sizing: border-box; /* Учет границ и отступов для всех элементов */  
+}  
+
+body {  
+    font-family: 'Montserrat', sans-serif; /* Замена Arial на Montserrat */  
+    margin: 0;  
+    padding: 20px;  
+    background: linear-gradient(135deg, #87CEEB 0%, #32CD32 70%, #1E3C72 100%);  
+    background-image: url('https://ecopolitic.com.ua/wp-content/uploads/2021/04/shutterstock_1224817528.jpg'); /* Обновлено изображение */  
+    background-size: cover;  
+    background-repeat: no-repeat;  
+    background-attachment: fixed;  
+    background-position: center;  
+    position: relative;  
+}  
+
+body::before {  
+    content: '';  
+    position: absolute;  
+    top: 0;  
+    left: 0;  
+    width: 100%;  
+    height: 100%;  
+    background: rgba(0, 0, 0, 0.2);  
+    z-index: -1;  
+}  
+
+header {  
+    display: flex;  
+    align-items: center; /* Вертикальное выравнивание для элементов в заголовке */  
+    justify-content: center; /* Центрирование элементов в заголовке */  
+    padding: 20px;  
+    background: #ADAEFF; /* Изменен цвет фона хедера */  
+    border: 2px solid rgba(204, 204, 204, 0.5); /* Прозрачная рамка */  
+    border-radius: 15px; /* Добавляем закругление углов */  
+    width: 100%; /* Растягиваем по ширине экрана */  
+    position: relative; /* Убедитесь, что элементы внутри позиционируются относительно хедера */  
+    margin: 0; /* Убираем отступы */  
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);  
+}  
+
+main {  
+    background: white;  
+    padding: 20px;  
+    border-radius: 8px;  
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);  
+    max-width: 800px;  
+    margin: 20px auto;  
+}  
+
+.header-logo {  
+    display: flex;  
+    align-items: center;  
+    justify-content: center;  
+}  
+
+.header-title {  
+    text-decoration: none;  
+    color: #00212B; /* Цвет заголовка */  
+    position: relative;  
+    font-size: 40px;  
+    display: inline-block;  
+    transition: color 0.5s ease;  
+}  
+
+.header-title:hover {  
+    color: #ff0000; /* Цвет при наведении */  
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.8),  
+                 0 0 20px rgba(255, 69, 0, 0.5);  
+    animation: flame 1s ease-in-out forwards;  
+    text-decoration: none; /* Убираем подчеркивание при наведении */  
+}  
+
+/* Добавляем искры при наведении */  
+.header-title:hover::before,  
+.header-title:hover::after {  
+    content: '';  
+    position: absolute;  
+    width: 5px;  
+    height: 5px;  
+    background: rgba(255, 69, 0, 0.8);  
+    border-radius: 50%;  
+    animation: spark 0.8s ease-in-out infinite;  
+    pointer-events: none;  
+}  
+
+.header-title:hover::before {  
+    top: -10px;  
+    left: 20%;  
+    animation-delay: 0.2s;  
+}  
+
+.header-title:hover::after {  
+    bottom: -10px;  
+    right: 30%;  
+    animation-delay: 0.4s;  
+}  
+
+@keyframes spark {  
+    0% {  
+        opacity: 0;  
+        transform: translate(0, 0) scale(1);  
+    }  
+    50% {  
+        opacity: 1;  
+        transform: translate(10px, -10px) scale(1.5);  
+    }  
+    100% {  
+        opacity: 0;  
+        transform: translate(20px, -20px) scale(0.5);  
+    }  
+}  
+
+@keyframes flame {  
+    0% {  
+        text-shadow: 0 0 5px rgba(255, 165, 0, 0.3);  
+    }  
+    50% {  
+        text-shadow: 0 0 10px rgba(255, 140, 0, 0.7),  
+                     0 0 15px rgba(255, 69, 0, 0.5);  
+    }  
+    100% {  
+        text-shadow: 0 0 10px rgba(255, 0, 0, 0.8),  
+                     0 0 20px rgba(255, 69, 0, 0.5);  
+    }  
+}  
+
+.news-item {  
+    margin-bottom: 20px;  
+    text-align: center; /* Центрируем текст и изображения */  
+}  
+
+.news-item img {  
+    width: 350px; /* Увеличиваем ширину изображений */  
+    height: 220px; /* Увеличиваем высоту изображений */  
+    object-fit: cover; /* Обеспечиваем сохранение пропорций изображения */  
+    border-radius: 8px;  
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Добавляем тень к изображениям */  
+}  
+
+.news-item h2 {  
+    font-size: 24px;  
+    color: #00212B; /* Цвет заголовка новости изменён */  
+}  
+
+.news-item p {  
+    color: #060606;  
+}  
+
+a {  
+    text-decoration: none;  
+    color: #3d3d3e; /* Цвет ссылок */  
+}  
+
+a:hover {  
+    text-decoration: underline; /* Подчеркивание при наведении */  
+}  
+
+/* Стили для ссылок "Читать далее" и "Обсудити" */  
+.read-more,  
+.discuss-button {  
+    display: inline-block; /* Делаем ссылку блочным элементом для добавления отступов */  
+    padding: 10px 15px; /* Отступы вокруг текста */  
+    background: #aaebff; /* Изменен цвет фона кнопки */  
+    color: rgb(0, 0, 0); /* Цвет текста */  
+    border-radius: 5px; /* Скругление углов */  
+    transition: background-color 0.3s, transform 0.3s; /* Плавный переход для фона и трансформации */  
+    font-weight: bold; /* Жирный текст */  
+}  
+
+.read-more:hover,  
+.discuss-button:hover {  
+    background: #5cb1c9; /* Более светлый фон при наведении */  
+    transform: translateY(-2px); /* Поднимаем ссылку при наведении */  
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Добавляем тень при наведении */  
+}  
+
+/* Стили для разделителей */  
+hr {  
+    border: 1px solid #040404eb; /* Цвет и стиль линии */  
+    margin: 20px 0; /* Отступы сверху и снизу */  
+}  
+
+/* Адаптивные стили */  
+@media (max-width: 768px) {  
+    body {  
+        padding: 10px; /* Уменьшаем отступы на мобильных */  
+    }  
+
+    header {  
+        flex-direction: column; /* Вертикальное выравнивание на мобильных */  
+        align-items: center; /* Центрируем элементы */  
+        padding: 15px; /* Уменьшаем отступы */  
+    }  
+
+    .header-title {  
+        font-size: 30px; /* Уменьшаем размер заголовка */  
+    }  
+
+    .news-item img {  
+        width: 100%; /* Изображения занимают всю ширину */  
+        height: auto; /* Сохраняем пропорции */  
+    }  
+
+    .news-item h2 {  
+        font-size: 20px; /* Уменьшаем размер заголовка новости */  
+    }  
+
+    .read-more,  
+    .discuss-button {  
+        font-size: 12px; /* Уменьшаем размер шрифта */  
+        padding: 8px; /* Меньше отступов для кнопок */  
+    }  
+}  

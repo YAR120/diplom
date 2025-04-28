@@ -1,0 +1,38 @@
+<!DOCTYPE html>  
+<html lang="uk">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Форум</title>  
+    <link rel="stylesheet" href="jscss/styles.css">  
+    <link rel="stylesheet" href="jscss/forum.css">  
+</head>  
+<body>  
+    <header>  
+        <h1><a href="Untitled-1.html" class="header-title">EcoEnergy</a></h1>  
+        <div class="header-buttons">  
+            <a href="Untitled-1.html" class="button">Головна</a>  
+            <a href="forum.html" class="button active">Форум</a>  
+            <a href="profile.html" class="button">Профіль</a>  
+        </div>  
+    </header>  
+
+    <main>  
+        <h1 style="text-align: center;">Форум</h1>  
+        <div id="forum-section">  
+            <div id="posts" class="posts-section">  
+                <h2>Повідомлення</h2>  
+                <div id="post-list"></div>  
+            </div>  
+            <div id="post-form" class="post-form">  
+                <h2>Створити повідомлення</h2>  
+                <textarea id="post-content" placeholder="Введіть ваше повідомлення..."></textarea>  
+                <button id="submit-post" class="button">Відправити</button>  
+                <button id="scroll-up" title="Прокрутити вгору">&#8593;</button> <!-- Кнопка со стрелкой вверх -->  
+            </div>  
+        </div>  
+    </main>  
+
+    <script src="jscss/forum.js"></script>  
+</body>  
+</html>
