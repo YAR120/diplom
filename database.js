@@ -2,7 +2,7 @@ const sqlite3 = require("sqlite3").verbose();
 const { v4: uuidv4 } = require("uuid");
 const bcrypt = require("bcrypt");
 
-const db = new sqlite3.Database("./mydatabase.db", err => {
+const db = new sqlite3.Database(process.env.DB_PATH || "./mydatabase.db", err => {
     if (err) {
         console.error("Ошибка подключения к базе данных:", err.message);
     } else {

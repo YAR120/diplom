@@ -8,7 +8,7 @@ const authRouter = require("./routes/auth.js");
 const ordersRouter = require("./routes/orders.js");
 const projectsRouter = require("./routes/projects.js"); // Новый импорт
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 // Настройка CORS
 app.use((req, res, next) => {
@@ -26,7 +26,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
     session({
-        secret: "your-secret-key",
+        secret: process.env.SESSION_SECRET || "your-secret-key",
         resave: false,
         saveUninitialized: false,
         cookie: { maxAge: 365 * 24 * 60 * 60 * 1000 }
