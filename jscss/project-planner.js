@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     // Функция загрузки данных пользователя
     async function loadUserData() {
         try {
-            const response = await fetch('http://localhost:3000/api/profile', {
+            const response = await fetch('https://diplom-erqn.onrender.com/api/profile', {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
@@ -231,7 +231,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         };
 
         try {
-            const response = await fetch('http://localhost:3000/api/projects/save-project', {
+            const response = await fetch('https://diplom-erqn.onrender.com/api/projects/save-project', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

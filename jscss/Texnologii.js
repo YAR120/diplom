@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     orderBtn.onclick = async function() {  
         try {
-            const response = await fetch('http://localhost:3000/auth/login-with-token', {  
+            const response = await fetch('https://diplom-erqn.onrender.com/auth/login-with-token', {  
                 method: 'POST',  
                 headers: {  
                     'Content-Type': 'application/json'  
@@ -199,7 +199,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         try {  
             console.log("Sending order data:", orderData); // Лог для отладки
-            const response = await fetch('http://localhost:3000/api/orders', {  
+            const response = await fetch('https://diplom-erqn.onrender.com/api/orders', {  
                 method: 'POST',  
                 headers: {  
                     'Content-Type': 'application/json',  
