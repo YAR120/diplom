@@ -10,6 +10,8 @@ const projectsRouter = require("./routes/projects.js"); // Новый импор
 const app = express();
 const port = process.env.PORT || 3000;
 
+app.set('trust proxy', 1);
+
 // Настройка CORS
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
@@ -29,7 +31,8 @@ app.use(
         secret: process.env.SESSION_SECRET || "your-secret-key",
         resave: false,
         saveUninitialized: false,
-        cookie: { maxAge: 365 * 24 * 60 * 60 * 1000 }
+   
+        cookie: { maxAge: 365 * 24 * 60 * 60 * 1000, secure: true,  sameSite: 'none'  }
     })
 );
 app.use(express.static(__dirname));
