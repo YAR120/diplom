@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const fetchUserData = async () => {
         try {
             console.log("Fetching user data with token:", authToken);
-            const response = await fetch("http://localhost:3000/api/profile", {
+            const response = await fetch("https://diplom-erqn.onrender.com/api/profile", {
                 headers: { "Authorization": `Bearer ${authToken}` }
             });
             console.log("Response status:", response.status);
