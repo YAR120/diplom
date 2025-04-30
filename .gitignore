@@ -1,6 +1,4 @@
 node_modules/
-database.db
-sessions.db
 .env
 *.log
 dist/
