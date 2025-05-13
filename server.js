@@ -9,6 +9,7 @@ const ordersRouter = require("./routes/orders.js");
 const projectsRouter = require("./routes/projects.js"); // Новый импорт
 const app = express();
 const port = process.env.PORT || 3000;
+const cors = require("cors")
 
 app.set('trust proxy', 1);
 app.use(cors());
