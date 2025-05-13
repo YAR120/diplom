@@ -92,9 +92,9 @@ document.getElementById('calculate-payback').addEventListener('click', function 
 document.getElementById('calculate-balance').addEventListener('click', function () {  
     const totalEnergy = validatePositiveNumber(document.getElementById('total-energy').value, 'Загальна вироблення енергії');  
     const userConsumption = validatePositiveNumber(document.getElementById('user-consumption').value, 'Споживання енергії');  
-
+    const resultOperation = document.getElementById("excess-energy")
     if (totalEnergy !== false && userConsumption !== false) {  
-        const energyBalance = totalEnergy - userConsumption;  
+        const energyBalance = (totalEnergy - userConsumption) * 0.9;  
 
         let balanceText;  
         if (energyBalance >= 0) {  
@@ -104,6 +104,7 @@ document.getElementById('calculate-balance').addEventListener('click', function 
         }  
 
         document.getElementById('balance-output').innerHTML = `<p>${balanceText}</p>`;  
+        document.getElementById('excess-energy').value   = `${energyBalance.toFixed(2)}`
 
         // Сохраняем данные в localStorage  
         const balanceData = {  
@@ -120,10 +121,16 @@ document.getElementById('calculate-tariff').addEventListener('click', function (
     const tariffRate = validatePositiveNumber(document.getElementById('tariff-rate').value, 'Тариф');  
 
     if (excessEnergy !== false && tariffRate !== false) {  
-        const monthlyIncome = excessEnergy * tariffRate;  
-        const yearlyIncome = monthlyIncome * 12;  
+        const hourIncome = excessEnergy * tariffRate;
+         const dayIncome = (excessEnergy * tariffRate * 24 );
+        const weekIncome = (excessEnergy * tariffRate * 24 ) * 7;
+        const monthlyIncome = (excessEnergy  * tariffRate * 24) * 30;  
+        const yearlyIncome = (monthlyIncome * 9) + monthlyIncome * (3 * 0.4) ;  
 
         document.getElementById('tariff-output').innerHTML = `  
+        <p>Дохід за час: ${hourIncome.toFixed(2)} грн</p>  
+         <p>Дохід за день: ${dayIncome.toFixed(2)} грн</p>  
+        <p>Дохід за тиждень: ${weekIncome.toFixed(2)} грн</p>  
             <p>Дохід за місяць: ${monthlyIncome.toFixed(2)} грн</p>  
             <p>Дохід за рік: ${yearlyIncome.toFixed(2)} грн</p>  
         `;  
