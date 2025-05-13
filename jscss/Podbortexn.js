@@ -174,7 +174,7 @@ function updateEquipmentDisplay() {
     }  
 
     if (selectedConnectionType) {  
-        additionalEquipment.push(`Додатково для типу підключення: ${selectedConnectionType}`);  
+        additionalEquipment.push(`Додатково обладнання для  підключення: ${selectedConnectionType}`);  
     }  
 
     additionalEquipment.forEach(item => {  
