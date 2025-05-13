@@ -1,306 +1,389 @@
-<!DOCTYPE html>  
-<html lang="uk">  
-<head>  
-    <meta charset="UTF-8">  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <title>EcoEnergy - Планувальник</title>  
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">  
-    <link rel="stylesheet" href="jscss/project-planner.css">  
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet"> 
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EcoEnergy - Планувальник</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+    />
+    <link rel="stylesheet" href="jscss/project-planner.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
 
-    <style>  
-        * {
-            box-sizing: border-box;
-        }
-    
-        body {
-            font-family: 'Montserrat', sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            background: linear-gradient(135deg, #87CEEB 0%, #32CD32 70%, #1E3C72 100%);
-            background-image: url('https://ecopolitic.com.ua/wp-content/uploads/2021/04/shutterstock_1224817528.jpg');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-position: center;
-        }
-    
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            background: rgba(0, 0, 0, 0.2);
-            z-index: -1;
-        }
-    
-        header {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            background: #ADAEFF;
-            border: 18px solid #ADAEFF;
-            border-radius: 15px;
-            width: calc(100% - 40px);
-            position: relative;
-            margin: 20px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-        }
-    
-        .header-logo {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-    
-        .header-title {
-            text-decoration: none;
-            color: #00212B;
-            font-size: 40px;
-            font-weight: bold;
-            display: inline-block;
-            position: relative;
-            transition: color 0.5s ease, text-shadow 0.5s;
-        }
-    
-        .header-title:hover {
-            color: #ff0000;
-            text-shadow: 0 0 10px rgba(255, 0, 0, 0.8),
-                         0 0 20px rgba(255, 69, 0, 0.5);
-            animation: flame 1s ease-in-out forwards;
-        }
-    
-        .header-title:hover::before,
-        .header-title:hover::after {
-            content: '';
-            position: absolute;
-            width: 5px;
-            height: 5px;
-            background: rgba(255, 69, 0, 0.8);
-            border-radius: 50%;
-            animation: spark 0.8s ease-in-out infinite;
-            pointer-events: none;
-        }
-    
-        .header-title:hover::before {
-            top: -10px;
-            left: 20%;
-            animation-delay: 0.2s;
-        }
-    
-        .header-title:hover::after {
-            bottom: -10px;
-            right: 30%;
-            animation-delay: 0.4s;
-        }
-    
-        @keyframes spark {
-            0% {
-                opacity: 0;
-                transform: translate(0, 0) scale(1);
-            }
-            50% {
-                opacity: 1;
-                transform: translate(10px, -10px) scale(1.5);
-            }
-            100% {
-                opacity: 0;
-                transform: translate(20px, -20px) scale(0.5);
-            }
-        }
-    
-        @keyframes flame {
-            0% {
-                text-shadow: 0 0 5px rgba(255, 165, 0, 0.3);
-            }
-            50% {
-                text-shadow: 0 0 10px rgba(255, 140, 0, 0.7),
-                             0 0 15px rgba(255, 69, 0, 0.5);
-            }
-            100% {
-                text-shadow: 0 0 10px rgba(255, 0, 0, 0.8),
-                             0 0 20px rgba(255, 69, 0, 0.5);
-            }
-        }
-    
-        main {
-            flex: 1;
-            background: rgba(255, 255, 255, 1);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-            width: 600px; /* Фиксированная ширина как на скриншоте */
-            margin: 20px auto;
-            position: relative;
-        }
-    
-        h1 {
-            font-size: 34px;
-            margin: 0;
-            color: #00212B;
-            text-align: center;
-            font-weight: bold;
-        }
-    
-        h2 {
-            color: #444;
-            margin-top: 20px;
-            margin-bottom: 15px;
-        }
-    
-        .button {
-            padding: 10px 15px;
-            background: #AAEBFF;
-            color: black;
-            border: none;
-            border-radius: 4px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-    
-        .button:hover {
-            background: #5CB1C9;
-        }
-    
-        .button-container {
-            text-align: center;
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
+    <style>
+      * {
+        box-sizing: border-box;
+      }
 
-        /* Стили для таблицы */
-        table {
-            margin-bottom: 20px;
+      body {
+        font-family: "Montserrat", sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        background: linear-gradient(
+          135deg,
+          #87ceeb 0%,
+          #32cd32 70%,
+          #1e3c72 100%
+        );
+        background-image: url("https://ecopolitic.com.ua/wp-content/uploads/2021/04/shutterstock_1224817528.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.2);
+        z-index: -1;
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        background: #adaeff;
+        border: 18px solid #adaeff;
+        border-radius: 15px;
+        width: calc(100% - 40px);
+        position: relative;
+        margin: 20px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+      }
+
+      .header-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .header-title {
+        text-decoration: none;
+        color: #00212b;
+        font-size: 40px;
+        font-weight: bold;
+        display: inline-block;
+        position: relative;
+        transition: color 0.5s ease, text-shadow 0.5s;
+      }
+
+      .header-title:hover {
+        color: #ff0000;
+        text-shadow: 0 0 10px rgba(255, 0, 0, 0.8),
+          0 0 20px rgba(255, 69, 0, 0.5);
+        animation: flame 1s ease-in-out forwards;
+      }
+
+      .header-title:hover::before,
+      .header-title:hover::after {
+        content: "";
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        background: rgba(255, 69, 0, 0.8);
+        border-radius: 50%;
+        animation: spark 0.8s ease-in-out infinite;
+        pointer-events: none;
+      }
+
+      .header-title:hover::before {
+        top: -10px;
+        left: 20%;
+        animation-delay: 0.2s;
+      }
+
+      .header-title:hover::after {
+        bottom: -10px;
+        right: 30%;
+        animation-delay: 0.4s;
+      }
+
+      @keyframes spark {
+        0% {
+          opacity: 0;
+          transform: translate(0, 0) scale(1);
         }
+        50% {
+          opacity: 1;
+          transform: translate(10px, -10px) scale(1.5);
+        }
+        100% {
+          opacity: 0;
+          transform: translate(20px, -20px) scale(0.5);
+        }
+      }
+
+      @keyframes flame {
+        0% {
+          text-shadow: 0 0 5px rgba(255, 165, 0, 0.3);
+        }
+        50% {
+          text-shadow: 0 0 10px rgba(255, 140, 0, 0.7),
+            0 0 15px rgba(255, 69, 0, 0.5);
+        }
+        100% {
+          text-shadow: 0 0 10px rgba(255, 0, 0, 0.8),
+            0 0 20px rgba(255, 69, 0, 0.5);
+        }
+      }
+
+      main {
+        flex: 1;
+        background: rgba(255, 255, 255, 1);
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        width: 600px; /* Фиксированная ширина как на скриншоте */
+        margin: 20px auto;
+        position: relative;
+      }
+
+      h1 {
+        font-size: 34px;
+        margin: 0;
+        color: #00212b;
+        text-align: center;
+        font-weight: bold;
+      }
+
+      h2 {
+        color: #444;
+        margin-top: 20px;
+        margin-bottom: 15px;
+      }
+
+      .button {
+        padding: 10px 15px;
+        background: #aaebff;
+        color: black;
+        border: none;
+        border-radius: 4px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .button:hover {
+        background: #5cb1c9;
+      }
+
+      .button-container {
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+
+      /* Стили для таблицы */
+      table {
+        margin-bottom: 20px;
+      }
+
+      .header-title {
+        text-decoration: none;
+        color: #00212b;
+        position: relative;
+        font-size: 36px;
+        display: inline-block;
+        transition: color 0.5s ease;
+      }
+
+      a {
+        text-decoration: none;
+        color: #3d3d3e;
+        font-weight: 700;
+      }
+
+      .homeLink:hover {
+        text-decoration: underline;
+      }
     </style>
-</head>  
-<body>  
-    <header>  
-        <a href="Untitled-1.html" class="header-title">EcoEnergy</a>  
-    </header>  
+  </head>
+  <body>
+    <header>
+      <h1>
+        <a href="Untitled-1.html" class="header-title">EcoEnergy</a>
+        <a href="Untitled-1.html" class="homeLink">Назад</a>
+      </h1>
+    </header>
 
-    <main>  
-        <h2>Результати розрахунків</h2>  
-        <table class="table-auto w-full border-collapse border border-gray-300">  
-            <thead>  
-                <tr class="bg-gray-200">  
-                    <th class="border border-gray-300 px-4 py-2 text-left">Параметр</th>  
-                    <th class="border border-gray-300 px-4 py-2 text-left">Значення</th>  
-                </tr>  
-            </thead>  
-            <tbody>  
-                <tr>  
-                    <td class="border border-gray-300 px-4 py-2">Виробництво енергії</td>  
-                    <td class="border border-gray-300 px-4 py-2" id="energy-result">Завантаження...</td>  
-                </tr>  
-                <tr>  
-                    <td class="border border-gray-300 px-4 py-2">Окупність</td>  
-                    <td class="border border-gray-300 px-4 py-2" id="payback-result">Завантаження...</td>  
-                </tr>  
-                <tr>  
-                    <td class="border border-gray-300 px-4 py-2">Баланс енергії</td>  
-                    <td class="border border-gray-300 px-4 py-2" id="balance-result">Завантаження...</td>  
-                </tr>  
-                <tr>  
-                    <td class="border border-gray-300 px-4 py-2">Дохід за зеленим тарифом</td>  
-                    <td class="border border-gray-300 px-4 py-2" id="tariff-result">Завантаження...</td>  
-                </tr>  
-                <tr>  
-                    <td class="border border-gray-300 px-4 py-2">Необхідна площа</td>  
-                    <td class="border border-gray-300 px-4 py-2" id="space-result">Завантаження...</td>  
-                </tr>  
-                <tr>  
-                    <td class="border border-gray-300 px-4 py-2">Вибране обладнання</td>  
-                    <td class="border border-gray-300 px-4 py-2" id="equipment-result">Завантаження...</td>  
-                </tr>  
-                <tr>  
-                    <td class="border border-gray-300 px-4 py-2">Тип сонячних панелей</td>  
-                    <td class="border border-gray-300 px-4 py-2" id="solar-result">Завантаження...</td>  
-                </tr>  
-                <tr>  
-                    <td class="border border-gray-300 px-4 py-2">Тип вітрових турбін</td>  
-                    <td class="border border-gray-300 px-4 py-2" id="wind-result">Завантаження...</td>  
-                </tr>  
-                <tr>  
-                    <td class="border border-gray-300 px-4 py-2">Тип підключення</td>  
-                    <td class="border border-gray-300 px-4 py-2" id="connection-result">Завантаження...</td>  
-                </tr>  
-            </tbody>  
-        </table>  
+    <main>
+      <h2>Результати розрахунків</h2>
+      <table class="table-auto w-full border-collapse border border-gray-300">
+        <thead>
+          <tr class="bg-gray-200">
+            <th class="border border-gray-300 px-4 py-2 text-left">Параметр</th>
+            <th class="border border-gray-300 px-4 py-2 text-left">Значення</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="border border-gray-300 px-4 py-2">
+              Виробництво енергії
+            </td>
+            <td class="border border-gray-300 px-4 py-2" id="energy-result">
+              Завантаження...
+            </td>
+          </tr>
+          <tr>
+            <td class="border border-gray-300 px-4 py-2">Окупність</td>
+            <td class="border border-gray-300 px-4 py-2" id="payback-result">
+              Завантаження...
+            </td>
+          </tr>
+          <tr>
+            <td class="border border-gray-300 px-4 py-2">Баланс енергії</td>
+            <td class="border border-gray-300 px-4 py-2" id="balance-result">
+              Завантаження...
+            </td>
+          </tr>
+          <tr>
+            <td class="border border-gray-300 px-4 py-2">
+              Дохід за зеленим тарифом
+            </td>
+            <td class="border border-gray-300 px-4 py-2" id="tariff-result">
+              Завантаження...
+            </td>
+          </tr>
+          <tr>
+            <td class="border border-gray-300 px-4 py-2">Необхідна площа</td>
+            <td class="border border-gray-300 px-4 py-2" id="space-result">
+              Завантаження...
+            </td>
+          </tr>
+          <tr>
+            <td class="border border-gray-300 px-4 py-2">Вибране обладнання</td>
+            <td class="border border-gray-300 px-4 py-2" id="equipment-result">
+              Завантаження...
+            </td>
+          </tr>
+          <tr>
+            <td class="border border-gray-300 px-4 py-2">
+              Тип сонячних панелей
+            </td>
+            <td class="border border-gray-300 px-4 py-2" id="solar-result">
+              Завантаження...
+            </td>
+          </tr>
+          <tr>
+            <td class="border border-gray-300 px-4 py-2">
+              Тип вітрових турбін
+            </td>
+            <td class="border border-gray-300 px-4 py-2" id="wind-result">
+              Завантаження...
+            </td>
+          </tr>
+          <tr>
+            <td class="border border-gray-300 px-4 py-2">Тип підключення</td>
+            <td class="border border-gray-300 px-4 py-2" id="connection-result">
+              Завантаження...
+            </td>
+          </tr>
+        </tbody>
+      </table>
 
-        <div class="button-container">  
-            <button id="export-pdf" class="button">Завантажити PDF</button>  
-        </div>  
-    </main>  
+      <div class="button-container">
+        <button id="export-pdf" class="button">Завантажити PDF</button>
+      </div>
+    </main>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>  
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>  
-    <script>  
-        const params = new URLSearchParams(window.location.search);  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script>
+      const params = new URLSearchParams(window.location.search);
 
-        document.getElementById('energy-result').textContent = params.get('energy') || "Немає даних";  
-        document.getElementById('payback-result').textContent = params.get('payback') || "Немає даних";  
-        document.getElementById('balance-result').textContent = params.get('balance') || "Немає даних";  
-        document.getElementById('tariff-result').textContent = params.get('tariff') || "Немає даних";  
-        document.getElementById('space-result').textContent = params.get('space') || "Немає даних";  
-        document.getElementById('equipment-result').textContent = params.get('equipment') || "Нічого не вибрано";  
-        document.getElementById('solar-result').textContent = params.get('solar') || "Не вибрано";  
-        document.getElementById('wind-result').textContent = params.get('wind') || "Не вибрано";  
-        document.getElementById('connection-result').textContent = params.get('connection') || "Не вибрано";  
+      document.getElementById("energy-result").textContent =
+        params.get("energy") || "Немає даних";
+      document.getElementById("payback-result").textContent =
+        params.get("payback") || "Немає даних";
+      document.getElementById("balance-result").textContent =
+        params.get("balance") || "Немає даних";
+      document.getElementById("tariff-result").textContent =
+        params.get("tariff") || "Немає даних";
+      document.getElementById("space-result").textContent =
+        params.get("space") || "Немає даних";
+      document.getElementById("equipment-result").textContent =
+        params.get("equipment") || "Нічого не вибрано";
+      document.getElementById("solar-result").textContent =
+        params.get("solar") || "Не вибрано";
+      document.getElementById("wind-result").textContent =
+        params.get("wind") || "Не вибрано";
+      document.getElementById("connection-result").textContent =
+        params.get("connection") || "Не вибрано";
 
-        document.getElementById('export-pdf').addEventListener('click', function() {  
-            const { jsPDF } = window.jspdf;  
-            const doc = new jsPDF('p', 'mm', 'a4');  
+      document
+        .getElementById("export-pdf")
+        .addEventListener("click", function () {
+          const { jsPDF } = window.jspdf;
+          const doc = new jsPDF("p", "mm", "a4");
 
-            const button = document.getElementById('export-pdf');  
-            button.style.display = 'none';  
+          const button = document.getElementById("export-pdf");
+          button.style.display = "none";
 
-            // Создаем временный элемент для текста, который будет только в PDF
-            const tempDiv = document.createElement('div');
-            tempDiv.style.textAlign = 'center';
-            tempDiv.style.color = '#444';
-            tempDiv.style.fontSize = '16px';
-            tempDiv.style.marginTop = '20px';
-            tempDiv.innerHTML = 'Для уточнення деталей зателефонуйте нашому менеджеру за номером: +38 (012) 345 6789';
-            document.querySelector('main').appendChild(tempDiv);
+          // Создаем временный элемент для текста, который будет только в PDF
+          const tempDiv = document.createElement("div");
+          tempDiv.style.textAlign = "center";
+          tempDiv.style.color = "#444";
+          tempDiv.style.fontSize = "16px";
+          tempDiv.style.marginTop = "20px";
+          tempDiv.innerHTML =
+            "Для уточнення деталей зателефонуйте нашому менеджеру за номером: +38 (012) 345 6789";
+          document.querySelector("main").appendChild(tempDiv);
 
-            html2canvas(document.querySelector("main"), { 
-                scale: 2,
-                useCORS: true,
-                backgroundColor: '#ffffff',
-                width: 600, // Фиксируем ширину для canvas
-                windowWidth: 600 // Устанавливаем ширину окна для рендеринга
-            }).then(canvas => {  
-                const imgData = canvas.toDataURL('image/png');  
-                const pdfWidth = doc.internal.pageSize.getWidth();  
-                const pdfHeight = doc.internal.pageSize.getHeight();  
-                const canvasWidth = canvas.width;  
-                const canvasHeight = canvas.height;  
-                const ratio = Math.min(pdfWidth / canvasWidth, pdfHeight / canvasHeight);  
-                const imgWidth = canvasWidth * ratio;  
-                const imgHeight = canvasHeight * ratio;  
-                const xOffset = (pdfWidth - imgWidth) / 2;  
-                const yOffset = (pdfHeight - imgHeight) / 2;  
+          html2canvas(document.querySelector("main"), {
+            scale: 2,
+            useCORS: true,
+            backgroundColor: "#ffffff",
+            width: 600, // Фиксируем ширину для canvas
+            windowWidth: 600, // Устанавливаем ширину окна для рендеринга
+          })
+            .then((canvas) => {
+              const imgData = canvas.toDataURL("image/png");
+              const pdfWidth = doc.internal.pageSize.getWidth();
+              const pdfHeight = doc.internal.pageSize.getHeight();
+              const canvasWidth = canvas.width;
+              const canvasHeight = canvas.height;
+              const ratio = Math.min(
+                pdfWidth / canvasWidth,
+                pdfHeight / canvasHeight
+              );
+              const imgWidth = canvasWidth * ratio;
+              const imgHeight = canvasHeight * ratio;
+              const xOffset = (pdfWidth - imgWidth) / 2;
+              const yOffset = (pdfHeight - imgHeight) / 2;
 
-                doc.addImage(imgData, 'PNG', xOffset, yOffset, imgWidth, imgHeight);  
-                doc.save("результати_расчетов.pdf");  
+              doc.addImage(
+                imgData,
+                "PNG",
+                xOffset,
+                yOffset,
+                imgWidth,
+                imgHeight
+              );
+              doc.save("результати_расчетов.pdf");
 
-                // Удаляем временный элемент и восстанавливаем кнопку
-                document.querySelector('main').removeChild(tempDiv);
-                button.style.display = '';  
-            }).catch(error => {  
-                console.error('Ошибка при генерации PDF:', error);  
-                document.querySelector('main').removeChild(tempDiv);
-                button.style.display = '';  
-            });  
-        });  
-    </script>  
-</body>  
+              // Удаляем временный элемент и восстанавливаем кнопку
+              document.querySelector("main").removeChild(tempDiv);
+              button.style.display = "";
+            })
+            .catch((error) => {
+              console.error("Ошибка при генерации PDF:", error);
+              document.querySelector("main").removeChild(tempDiv);
+              button.style.display = "";
+            });
+        });
+    </script>
+  </body>
 </html>

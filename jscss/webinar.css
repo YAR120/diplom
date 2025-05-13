@@ -1,184 +1,395 @@
 * {
-    box-sizing: border-box; /* Учет границ и отступов для всех элементов */
+  box-sizing: border-box; /* Учет границ и отступов для всех элементов */
 }
 
 body {
-    font-family: 'Montserrat', sans-serif; /* Замена Arial на Montserrat */
-    margin: 0;
-    padding: 20px;
-    background: linear-gradient(135deg, #87CEEB 0%, #32CD32 70%, #1E3C72 100%);
-    background-image: url('https://ecopolitic.com.ua/wp-content/uploads/2021/04/shutterstock_1224817528.jpg'); /* Обновлено изображение */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    position: relative;
+  font-family: "Montserrat", sans-serif; /* Замена Arial на Montserrat */
+  margin: 0;
+  padding: 20px;
+  background: linear-gradient(135deg, #87ceeb 0%, #32cd32 70%, #1e3c72 100%);
+  background-image: url("https://ecopolitic.com.ua/wp-content/uploads/2021/04/shutterstock_1224817528.jpg"); /* Обновлено изображение */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  position: relative;
 }
 
 body::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.2);
-    z-index: -1;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: -1;
 }
 
 header {
-    background: #ADAEFF; /* Изменен цвет фона хедера */
-    border-radius: 10px;
-    padding: 26px 0;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-    margin: 20px; /* Добавляем отступы со всех сторон */
+  background: #adaeff; /* Изменен цвет фона хедера */
+  border-radius: 10px;
+  padding: 26px 0;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  margin: 20px; /* Добавляем отступы со всех сторон */
 }
 
 header:hover {
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-    transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-3px);
 }
 
 .header-logo {
-    flex: 1; /* Логотип занимает место слева */
+  flex: 1; /* Логотип занимает место слева */
 }
 
 .header-title a {
-    text-decoration: none; /* Убирает подчеркивание у ссылки */
-    color: #00212B; /* Устанавливает цвет текста ссылки */
-    font-size: 34px; /* Размер шрифта для логотипа */
-    font-weight: bold; /* Жирный текст */
-    transition: color 0.3s, text-shadow 0.3s; /* Эффекты при наведении */
+  text-decoration: none; /* Убирает подчеркивание у ссылки */
+  color: #00212b; /* Устанавливает цвет текста ссылки */
+  font-size: 34px; /* Размер шрифта для логотипа */
+  font-weight: bold; /* Жирный текст */
+  transition: color 0.3s, text-shadow 0.3s; /* Эффекты при наведении */
 }
 
 .header-title a:hover {
-    color: rgba(255, 0, 0, 1); /* Цвет при наведении */
-    text-shadow: 0 0 10px rgba(255, 0, 0, 0.8); /* Эффект тени при наведении */
+  color: rgba(255, 0, 0, 1); /* Цвет при наведении */
+  text-shadow: 0 0 10px rgba(255, 0, 0, 0.8); /* Эффект тени при наведении */
 }
 
 @keyframes flame {
-    0% {
-        text-shadow: 0 0 5px rgba(255, 165, 0, 0.3);
-    }
-    50% {
-        text-shadow: 0 0 10px rgba(255, 140, 0, 0.7),
-                     0 0 15px rgba(255, 69, 0, 0.5);
-    }
-    100% {
-        text-shadow: 0 0 10px rgba(255, 0, 0, 0.8),
-                     0 0 20px rgba(255, 69, 0, 0.5);
-    }
+  0% {
+    text-shadow: 0 0 5px rgba(255, 165, 0, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 10px rgba(255, 140, 0, 0.7), 0 0 15px rgba(255, 69, 0, 0.5);
+  }
+  100% {
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.8), 0 0 20px rgba(255, 69, 0, 0.5);
+  }
 }
 
 .header-title:hover::before,
 .header-title:hover::after {
-    content: '';
-    position: absolute;
-    width: 5px;
-    height: 5px;
-    background: rgba(255, 69, 0, 0.8);
-    border-radius: 50%;
-    animation: spark 0.8s ease-in-out infinite;
-    pointer-events: none;
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 69, 0, 0.8);
+  border-radius: 50%;
+  animation: spark 0.8s ease-in-out infinite;
+  pointer-events: none;
 }
 
 .header-title:hover::before {
-    top: -10px;
-    left: 20%;
-    animation-delay: 0.2s;
+  top: -10px;
+  left: 20%;
+  animation-delay: 0.2s;
 }
 
 .header-title:hover::after {
-    bottom: -10px;
-    right: 30%;
-    animation-delay: 0.4s;
+  bottom: -10px;
+  right: 30%;
+  animation-delay: 0.4s;
 }
 
 @keyframes spark {
-    0% {
-        opacity: 0;
-        transform: translate(0, 0) scale(1);
-    }
-    50% {
-        opacity: 1;
-        transform: translate(10px, -10px) scale(1.5);
-    }
-    100% {
-        opacity: 0;
-        transform: translate(20px, -20px) scale(0.5);
-    }
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(10px, -10px) scale(1.5);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(20px, -20px) scale(0.5);
+  }
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 main {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .webinars-container {
-    max-width: 1200px; /* Максимальная ширина контейнера с вебинарами */
-    margin: 0 auto; /* Центрирование */
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 20px;
+  max-width: 1200px; /* Максимальная ширина контейнера с вебинарами */
+  margin: 0 auto; /* Центрирование */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
 }
 
 .webinar-box {
-    border: 2px solid #000000;
-    border-radius: 10px;
-    margin: 10px;
-    width: 300px;
-    text-align: center;
-    padding: 10px;
-    box-shadow: 0 4px 8px rgba(34, 25, 25, 0.1);
-    transition: transform 0.2s;
-    display: flex; /* Давайвем Flexbox для выравнивания элементов */
-    flex-direction: column; /* Вертикальное выравнивание элементов */
-    justify-content: space-between; /* Распределение пространства между элементами */
-    height: 400px; /* Устанавливаем фиксированную высоту для всех блоков */
+  border: 2px solid #000000;
+  border-radius: 10px;
+  margin: 10px;
+  width: 300px;
+  text-align: center;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(34, 25, 25, 0.1);
+  transition: transform 0.2s;
+  display: flex; /* Давайвем Flexbox для выравнивания элементов */
+  flex-direction: column; /* Вертикальное выравнивание элементов */
+  justify-content: space-between; /* Распределение пространства между элементами */
+  height: 400px; /* Устанавливаем фиксированную высоту для всех блоков */
 }
 
 .webinar-box:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .webinar-box img {
-    width: 100%;
-    height: auto; /* Автоматическая высота для сохранения пропорций */
-    max-height: 200px; /* Максимальная высота для ограничения размера изображения */
-    object-fit: contain; /* Сохраняет пропорции изображения, не обрезает его */
-    border-radius: 10px;
+  width: 100%;
+  height: auto; /* Автоматическая высота для сохранения пропорций */
+  max-height: 200px; /* Максимальная высота для ограничения размера изображения */
+  object-fit: contain; /* Сохраняет пропорции изображения, не обрезает его */
+  border-radius: 10px;
 }
 
 .webinar-box h3 {
-    font-size: 20px; /* Увеличенный размер шрифта для заголовков */
-    font-weight: bold; /* Жирный шрифт для заголовков */
-    margin: 10px 0; /* Отступы для заголовков */
+  font-size: 20px; /* Увеличенный размер шрифта для заголовков */
+  font-weight: bold; /* Жирный шрифт для заголовков */
+  margin: 10px 0; /* Отступы для заголовков */
 }
 
 .webinar-box a {
-    display: block;
-    margin-top: auto; /* Отодвигаем кнопку вниз */
-    padding: 10px;
-    color: white; /* Цвет текста ссылки */
-    background: #3da6c6; /* Изменен цвет фона кнопки */
-    text-decoration: none;
-    border-radius: 5px;
-    transition: transform 0.3s, box-shadow 0.3s, background 0.6s; /* Увеличено время перехода для фона на 0.6s */
+  display: block;
+  margin-top: auto; /* Отодвигаем кнопку вниз */
+  padding: 10px;
+  color: white; /* Цвет текста ссылки */
+  background: #3da6c6; /* Изменен цвет фона кнопки */
+  text-decoration: none;
+  border-radius: 5px;
+  transition: transform 0.3s, box-shadow 0.3s, background 0.6s; /* Увеличено время перехода для фона на 0.6s */
 }
 
 .webinar-box a:hover {
-    transform: translateY(-3px); /* Поднимаем кнопку вверх при наведении */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4); /* Добавляем тень при наведении */
-    background: #69c8e2; /* Более светлый фон при наведении */
+  transform: translateY(-3px); /* Поднимаем кнопку вверх при наведении */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4); /* Добавляем тень при наведении */
+  background: #69c8e2; /* Более светлый фон при наведении */
+}
+
+* {
+  box-sizing: border-box; /* Учет границ и отступов для всех элементов */
+}
+
+body {
+  font-family: "Montserrat", sans-serif; /* Замена Arial на Montserrat */
+  margin: 0;
+  padding: 20px;
+  background: linear-gradient(135deg, #87ceeb 0%, #32cd32 70%, #1e3c72 100%);
+  background-image: url("https://ecopolitic.com.ua/wp-content/uploads/2021/04/shutterstock_1224817528.jpg"); /* Обновлено изображение */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: -1;
+}
+
+header {
+  display: flex;
+  align-items: center; /* Вертикальное выравнивание для элементов в заголовке */
+  justify-content: center; /* Центрирование элементов в заголовке */
+  padding: 20px;
+  background: #adaeff; /* Изменен цвет фона хедера */
+  border: 2px solid rgba(204, 204, 204, 0.5); /* Прозрачная рамка */
+  border-radius: 15px; /* Добавляем закругление углов */
+  width: 100%; /* Растягиваем по ширине экрана */
+  position: relative; /* Убедитесь, что элементы внутри позиционируются относительно хедера */
+  margin: 0; /* Убираем отступы */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+main {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-title {
+  text-decoration: none;
+  color: #00212b; /* Цвет заголовка */
+  position: relative;
+  font-size: 40px;
+  display: inline-block;
+  transition: color 0.5s ease;
+}
+
+.header-title:hover {
+  color: #ff0000; /* Цвет при наведении */
+  text-shadow: 0 0 10px rgba(255, 0, 0, 0.8), 0 0 20px rgba(255, 69, 0, 0.5);
+  animation: flame 1s ease-in-out forwards;
+  text-decoration: none; /* Убираем подчеркивание при наведении */
+}
+
+/* Добавляем искры при наведении */
+.header-title:hover::before,
+.header-title:hover::after {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 69, 0, 0.8);
+  border-radius: 50%;
+  animation: spark 0.8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.header-title:hover::before {
+  top: -10px;
+  left: 20%;
+  animation-delay: 0.2s;
+}
+
+.header-title:hover::after {
+  bottom: -10px;
+  right: 30%;
+  animation-delay: 0.4s;
+}
+
+@keyframes spark {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(10px, -10px) scale(1.5);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(20px, -20px) scale(0.5);
+  }
+}
+
+@keyframes flame {
+  0% {
+    text-shadow: 0 0 5px rgba(255, 165, 0, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 10px rgba(255, 140, 0, 0.7), 0 0 15px rgba(255, 69, 0, 0.5);
+  }
+  100% {
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.8), 0 0 20px rgba(255, 69, 0, 0.5);
+  }
+}
+
+.news-item {
+  margin-bottom: 20px;
+  text-align: center; /* Центрируем текст и изображения */
+}
+
+.news-item img {
+  width: 350px; /* Увеличиваем ширину изображений */
+  height: 220px; /* Увеличиваем высоту изображений */
+  object-fit: cover; /* Обеспечиваем сохранение пропорций изображения */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Добавляем тень к изображениям */
+}
+
+.news-item h2 {
+  font-size: 24px;
+  color: #00212b; /* Цвет заголовка новости изменён */
+}
+
+.news-item p {
+  color: #060606;
+}
+
+a {
+  text-decoration: none;
+  color: #3d3d3e; /* Цвет ссылок */
+}
+
+a:hover {
+  text-decoration: underline; /* Подчеркивание при наведении */
+}
+
+/* Стили для ссылок "Читать далее" и "Обсудити" */
+.read-more,
+.discuss-button {
+  display: inline-block; /* Делаем ссылку блочным элементом для добавления отступов */
+  padding: 10px 15px; /* Отступы вокруг текста */
+  background: #aaebff; /* Изменен цвет фона кнопки */
+  color: rgb(0, 0, 0); /* Цвет текста */
+  border-radius: 5px; /* Скругление углов */
+  transition: background-color 0.3s, transform 0.3s; /* Плавный переход для фона и трансформации */
+  font-weight: bold; /* Жирный текст */
+}
+
+.read-more:hover,
+.discuss-button:hover {
+  background: #5cb1c9; /* Более светлый фон при наведении */
+  transform: translateY(-2px); /* Поднимаем ссылку при наведении */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Добавляем тень при наведении */
+}
+
+/* Стили для разделителей */
+hr {
+  border: 1px solid #040404eb; /* Цвет и стиль линии */
+  margin: 20px 0; /* Отступы сверху и снизу */
+}
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+  body {
+    padding: 10px; /* Уменьшаем отступы на мобильных */
+  }
+
+  header {
+    flex-direction: column; /* Вертикальное выравнивание на мобильных */
+    align-items: center; /* Центрируем элементы */
+    padding: 15px; /* Уменьшаем отступы */
+  }
+
+  .header-title {
+    font-size: 30px; /* Уменьшаем размер заголовка */
+  }
+
+  .news-item img {
+    width: 100%; /* Изображения занимают всю ширину */
+    height: auto; /* Сохраняем пропорции */
+  }
+
+  .news-item h2 {
+    font-size: 20px; /* Уменьшаем размер заголовка новости */
+  }
+
+  .read-more,
+  .discuss-button {
+    font-size: 12px; /* Уменьшаем размер шрифта */
+    padding: 8px; /* Меньше отступов для кнопок */
+  }
 }

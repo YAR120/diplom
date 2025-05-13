@@ -1,144 +1,319 @@
-<!DOCTYPE html>  
-<html lang="uk">  
-<head>  
-    <meta charset="UTF-8">  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <title>EcoEnergy - Калькулятор</title>  
-    <link rel="stylesheet" href="jscss/calculatorst.css">  
-    <script src="jscss/calculator.js" defer></script>  
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet"> 
-</head>  
-<body>  
-    <header>
-        <div class="header-logo">
-            <h1><a href="Untitled-1.html" class="header-title" id="logo">EcoEnergy</a></h1>
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EcoEnergy - Калькулятор</title>
+    <link rel="stylesheet" href="jscss/calculatorst.css" />
+    <script src="jscss/calculator.js" defer></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .header-title {
+        text-decoration: none;
+        color: #00212b;
+        position: relative;
+        font-size: 36px;
+        display: inline-block;
+        transition: color 0.5s ease;
+      }
+
+      a {
+        text-decoration: none;
+        color: #3d3d3e;
+        font-weight: 700;
+      }
+
+      .homeLink:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header-logo">
+        <h1>
+          <a href="Untitled-1.html" class="header-title">EcoEnergy</a>
+          <a href="Untitled-1.html" class="homeLink">Назад</a>
+        </h1>
+      </header>
+    </div>
+
+    <main>
+      <!-- Калькулятор вироблення енергії -->
+      <section id="energy-production">
+        <h2>Калькулятор вироблення енергії</h2>
+        <div class="tooltip">
+          Потужність сонячної панелі (Вт)
+          <span class="tooltiptext"
+            >Введіть потужність однієї панелі у ватах</span
+          >
         </div>
-    </header> 
+        <input
+          type="number"
+          id="panel-power"
+          placeholder="Наприклад: 300"
+          min="0"
+          step="1"
+        />
+        <div class="tooltip">
+          Кількість панелей
+          <span class="tooltiptext">Введіть загальну кількість панелей</span>
+        </div>
+        <input
+          type="number"
+          id="number-of-panels"
+          placeholder="Наприклад: 3"
+          min="0"
+          step="1"
+        />
+        <div class="tooltip">
+          Середня кількість сонячних годин на день
+          <span class="tooltiptext"
+            >Введіть середню кількість сонячних годин</span
+          >
+        </div>
+        <input
+          type="number"
+          id="sun-hours"
+          placeholder="Наприклад: 8"
+          min="0"
+          step="0.1"
+        />
+        <button id="calculate-energy">Розрахувати вироблення</button>
+        <div id="energy-output"></div>
+      </section>
 
-    <main>  
-        <!-- Калькулятор вироблення енергії -->  
-        <section id="energy-production">  
-            <h2>Калькулятор вироблення енергії</h2>  
-            <div class="tooltip">Потужність сонячної панелі (Вт)  
-                <span class="tooltiptext">Введіть потужність однієї панелі у ватах</span>  
-            </div>  
-            <input type="number" id="panel-power" placeholder="Наприклад: 300" min="0" step="1">  
-            <div class="tooltip">Кількість панелей  
-                <span class="tooltiptext">Введіть загальну кількість панелей</span>  
-            </div>  
-            <input type="number" id="number-of-panels" placeholder="Наприклад: 3" min="0" step="1">  
-            <div class="tooltip">Середня кількість сонячних годин на день  
-                <span class="tooltiptext">Введіть середню кількість сонячних годин</span>  
-            </div>  
-            <input type="number" id="sun-hours" placeholder="Наприклад: 8" min="0" step="0.1">  
-            <button id="calculate-energy">Розрахувати вироблення</button>  
-            <div id="energy-output"></div>  
-        </section>  
+      <!-- Калькулятор окупності -->
+      <section id="payback-calculator">
+        <h2>Калькулятор окупності системи</h2>
+        <div class="tooltip">
+          Початкові інвестиції (грн)
+          <span class="tooltiptext"
+            >Введіть вартість обладнання та монтажу</span
+          >
+        </div>
+        <input
+          type="number"
+          id="initial-investment"
+          placeholder="Наприклад: 10000"
+          min="0"
+          step="1"
+        />
+        <div class="tooltip">
+          Середня економія на місяць (грн)
+          <span class="tooltiptext">Введіть середню економію на місяць</span>
+        </div>
+        <input
+          type="number"
+          id="monthly-savings"
+          placeholder="Наприклад: 200"
+          min="0"
+          step="1"
+        />
+        <div class="tooltip">
+          Прогнозований термін служби (роки)
+          <span class="tooltiptext">Введіть термін служби системи в роках</span>
+        </div>
+        <input
+          type="number"
+          id="system-lifetime"
+          placeholder="Наприклад: 20"
+          min="0"
+          step="1"
+        />
+        <button id="calculate-payback">Розрахувати окупність</button>
+        <div id="payback-output"></div>
+        <table id="payback-table"></table>
+      </section>
 
-        <!-- Калькулятор окупності -->  
-        <section id="payback-calculator">  
-            <h2>Калькулятор окупності системи</h2>  
-            <div class="tooltip">Початкові інвестиції (грн)  
-                <span class="tooltiptext">Введіть вартість обладнання та монтажу</span>  
-            </div>  
-            <input type="number" id="initial-investment" placeholder="Наприклад: 10000" min="0" step="1">  
-            <div class="tooltip">Середня економія на місяць (грн)  
-                <span class="tooltiptext">Введіть середню економію на місяць</span>  
-            </div>  
-            <input type="number" id="monthly-savings" placeholder="Наприклад: 200" min="0" step="1">  
-            <div class="tooltip">Прогнозований термін служби (роки)  
-                <span class="tooltiptext">Введіть термін служби системи в роках</span>  
-            </div>  
-            <input type="number" id="system-lifetime" placeholder="Наприклад: 20" min="0" step="1">  
-            <button id="calculate-payback">Розрахувати окупність</button>  
-            <div id="payback-output"></div>  
-            <table id="payback-table"></table>  
-        </section>  
+      <!-- Калькулятор балансу енергії -->
+      <section id="energy-balance">
+        <h2>Калькулятор балансу енергії</h2>
+        <div class="tooltip">
+          Загальна вироблення енергії (кВт·г)
+          <span class="tooltiptext"
+            >Введіть загальну вироблення енергії за місяць</span
+          >
+        </div>
+        <input
+          type="number"
+          id="total-energy"
+          placeholder="Наприклад: 500"
+          min="0"
+          step="0.1"
+        />
+        <div class="tooltip">
+          Загальне споживання енергії (кВт·г)
+          <span class="tooltiptext"
+            >Введіть загальне споживання енергії за місяць</span
+          >
+        </div>
+        <input
+          type="number"
+          id="user-consumption"
+          placeholder="Наприклад: 400"
+          min="0"
+          step="0.1"
+        />
+        <button id="calculate-balance">Розрахувати результати</button>
+        <div id="balance-output"></div>
+      </section>
 
-        <!-- Калькулятор балансу енергії -->  
-        <section id="energy-balance">  
-            <h2>Калькулятор балансу енергії</h2>  
-            <div class="tooltip">Загальна вироблення енергії (кВт·г)  
-                <span class="tooltiptext">Введіть загальну вироблення енергії за місяць</span>  
-            </div>  
-            <input type="number" id="total-energy" placeholder="Наприклад: 500" min="0" step="0.1">  
-            <div class="tooltip">Загальне споживання енергії (кВт·г)  
-                <span class="tooltiptext">Введіть загальне споживання енергії за місяць</span>  
-            </div>  
-            <input type="number" id="user-consumption" placeholder="Наприклад: 400" min="0" step="0.1">  
-            <button id="calculate-balance">Розрахувати результати</button>  
-            <div id="balance-output"></div>  
-        </section>  
+      <!-- Калькулятор зеленого тарифу -->
+      <section id="green-tariff">
+        <h2>Калькулятор зеленого тарифу</h2>
+        <div class="tooltip">
+          Зайва енергія (кВт·г)
+          <span class="tooltiptext"
+            >Введіть зайву енергію, яку ви продаєте</span
+          >
+        </div>
+        <input
+          type="number"
+          id="excess-energy"
+          placeholder="Наприклад: 100"
+          min="0"
+          step="0.1"
+        />
+        <div class="tooltip">
+          Тариф за 1 кВт·г (грн)
+          <span class="tooltiptext">Введіть вартість 1 кВт·г за тарифом</span>
+        </div>
+        <input
+          type="number"
+          id="tariff-rate"
+          placeholder="Наприклад: 1.5"
+          min="0"
+          step="0.01"
+        />
+        <button id="calculate-tariff">Розрахувати дохід</button>
+        <div id="tariff-output"></div>
+      </section>
 
-        <!-- Калькулятор зеленого тарифу -->  
-        <section id="green-tariff">  
-            <h2>Калькулятор зеленого тарифу</h2>  
-            <div class="tooltip">Зайва енергія (кВт·г)  
-                <span class="tooltiptext">Введіть зайву енергію, яку ви продаєте</span>  
-            </div>  
-            <input type="number" id="excess-energy" placeholder="Наприклад: 100" min="0" step="0.1">  
-            <div class="tooltip">Тариф за 1 кВт·г (грн)  
-                <span class="tooltiptext">Введіть вартість 1 кВт·г за тарифом</span>  
-            </div>  
-            <input type="number" id="tariff-rate" placeholder="Наприклад: 1.5" min="0" step="0.01">  
-            <button id="calculate-tariff">Розрахувати дохід</button>  
-            <div id="tariff-output"></div>  
-        </section>  
+      <!-- Калькулятор необхідного місця для обладнання -->
+      <section id="space-calculator">
+        <h2>Калькулятор необхідного місця для обладнання</h2>
+        <div class="tooltip">
+          Виберіть обладнання
+          <span class="tooltiptext"
+            >Виберіть тип обладнання, щоб побачити додаткові поля</span
+          >
+        </div>
+        <select id="equipment-type" onchange="toggleEquipmentFields()">
+          <option value="none">--Виберіть обладнання--</option>
+          <option value="solar">Сонячні панелі</option>
+          <option value="wind">Вітрові турбіни</option>
+        </select>
 
-        <!-- Калькулятор необхідного місця для обладнання -->  
-        <section id="space-calculator">  
-            <h2>Калькулятор необхідного місця для обладнання</h2>  
-            <div class="tooltip">Виберіть обладнання  
-                <span class="tooltiptext">Виберіть тип обладнання, щоб побачити додаткові поля</span>  
-            </div>  
-            <select id="equipment-type" onchange="toggleEquipmentFields()">  
-                <option value="none">--Виберіть обладнання--</option>  
-                <option value="solar">Сонячні панелі</option>  
-                <option value="wind">Вітрові турбіни</option>  
-            </select>  
+        <div id="solar-fields" style="display: none">
+          <div class="tooltip">
+            Площа сонячної панелі (м²)
+            <span class="tooltiptext"
+              >Введіть площу однієї сонячної панелі</span
+            >
+          </div>
+          <input
+            type="number"
+            id="solar-panel-area"
+            placeholder="Наприклад: 1.6"
+            min="0"
+            step="0.1"
+          />
+          <div class="tooltip">
+            Кількість сонячних панелей
+            <span class="tooltiptext"
+              >Введіть загальну кількість сонячних панелей</span
+            >
+          </div>
+          <input
+            type="number"
+            id="solar-panel-count"
+            placeholder="Наприклад: 3"
+            min="0"
+            step="1"
+          />
+          <div class="tooltip">
+            Кут установки панелей (градуси)
+            <span class="tooltiptext">Введіть кут установки панелей</span>
+          </div>
+          <input
+            type="number"
+            id="panel-angle"
+            placeholder="Наприклад: 30"
+            min="0"
+            max="90"
+            step="1"
+          />
+          <div class="tooltip">
+            Додаткова площа для обладнання (м²)
+            <span class="tooltiptext"
+              >Введіть додаткову площу для обладнання</span
+            >
+          </div>
+          <input
+            type="number"
+            id="solar-additional-area"
+            placeholder="Наприклад: 5"
+            min="0"
+            step="0.1"
+          />
+        </div>
 
-            <div id="solar-fields" style="display: none;">  
-                <div class="tooltip">Площа сонячної панелі (м²)  
-                    <span class="tooltiptext">Введіть площу однієї сонячної панелі</span>  
-                </div>  
-                <input type="number" id="solar-panel-area" placeholder="Наприклад: 1.6" min="0" step="0.1">  
-                <div class="tooltip">Кількість сонячних панелей  
-                    <span class="tooltiptext">Введіть загальну кількість сонячних панелей</span>  
-                </div>  
-                <input type="number" id="solar-panel-count" placeholder="Наприклад: 3" min="0" step="1">  
-                <div class="tooltip">Кут установки панелей (градуси)  
-                    <span class="tooltiptext">Введіть кут установки панелей</span>  
-                </div>  
-                <input type="number" id="panel-angle" placeholder="Наприклад: 30" min="0" max="90" step="1">  
-                <div class="tooltip">Додаткова площа для обладнання (м²)  
-                    <span class="tooltiptext">Введіть додаткову площу для обладнання</span>  
-                </div>  
-                <input type="number" id="solar-additional-area" placeholder="Наприклад: 5" min="0" step="0.1">  
-            </div>  
+        <div id="wind-fields" style="display: none">
+          <div class="tooltip">
+            Площа вітрової турбіни (м²)
+            <span class="tooltiptext"
+              >Введіть площу, необхідну для однієї вітрової турбіни</span
+            >
+          </div>
+          <input
+            type="number"
+            id="wind-turbine-area"
+            placeholder="Наприклад: 10"
+            min="0"
+            step="0.1"
+          />
+          <div class="tooltip">
+            Кількість вітрових турбін
+            <span class="tooltiptext"
+              >Введіть загальну кількість вітрових турбін</span
+            >
+          </div>
+          <input
+            type="number"
+            id="wind-turbine-count"
+            placeholder="Наприклад: 2"
+            min="0"
+            step="1"
+          />
+          <div class="tooltip">
+            Додаткова площа для обладнання (м²)
+            <span class="tooltiptext"
+              >Введіть додаткову площу для обладнання</span
+            >
+          </div>
+          <input
+            type="number"
+            id="wind-additional-area"
+            placeholder="Наприклад: 5"
+            min="0"
+            step="0.1"
+          />
+        </div>
 
-            <div id="wind-fields" style="display: none;">  
-                <div class="tooltip">Площа вітрової турбіни (м²)  
-                    <span class="tooltiptext">Введіть площу, необхідну для однієї вітрової турбіни</span>  
-                </div>  
-                <input type="number" id="wind-turbine-area" placeholder="Наприклад: 10" min="0" step="0.1">  
-                <div class="tooltip">Кількість вітрових турбін  
-                    <span class="tooltiptext">Введіть загальну кількість вітрових турбін</span>  
-                </div>  
-                <input type="number" id="wind-turbine-count" placeholder="Наприклад: 2" min="0" step="1">  
-                <div class="tooltip">Додаткова площа для обладнання (м²)  
-                    <span class="tooltiptext">Введіть додаткову площу для обладнання</span>  
-                </div>  
-                <input type="number" id="wind-additional-area" placeholder="Наприклад: 5" min="0" step="0.1">  
-            </div>  
+        <button id="calculate-space">Розрахувати необхідну площу</button>
+        <div id="space-output"></div>
+      </section>
 
-            <button id="calculate-space">Розрахувати необхідну площу</button>  
-            <div id="space-output"></div>  
-        </section>  
-
-        <!-- Кнопка внизу сторінки -->  
-        <div class="footer-button">  
-            <button onclick="goToPlanner()">Перейти на сторінку планувальника</button>  
-        </div>  
-    </main>  
-</body>  
+      <!-- Кнопка внизу сторінки -->
+      <div class="footer-button">
+        <button onclick="goToPlanner()">
+          Перейти на сторінку планувальника
+        </button>
+      </div>
+    </main>
+  </body>
 </html>

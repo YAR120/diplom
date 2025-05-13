@@ -1,181 +1,677 @@
-<!DOCTYPE html>  
-<html lang="uk">  
-<head>  
-    <meta charset="UTF-8">  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">   
-    <title>Готові технології</title>  
-    <style>  
-        * {  
-            box-sizing: border-box;  
-        }  
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <title>Готові технології</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
 
-        body {  
-            font-family: 'Montserrat', sans-serif;  
-            margin: 0;  
-            padding: 20px;  
-            background: linear-gradient(135deg, #87CEEB 0%, #32CD32 70%, #1E3C72 100%);  
-            background-image: url('https://ecopolitic.com.ua/wp-content/uploads/2021/04/shutterstock_1224817528.jpg');  
-            background-size: cover;  
-            background-repeat: no-repeat;  
-            background-attachment: fixed;  
-            background-position: center;  
-        }  
+      body {
+        font-family: "Montserrat", sans-serif;
+        margin: 0;
+        padding: 20px;
+        background: linear-gradient(
+          135deg,
+          #87ceeb 0%,
+          #32cd32 70%,
+          #1e3c72 100%
+        );
+        background-image: url("https://ecopolitic.com.ua/wp-content/uploads/2021/04/shutterstock_1224817528.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+      }
 
-        header {  
-            background: #ADAEFF; /* Изменен цвет фона хедера */  
-            border-bottom: 2px solid #ccc;  
-            border-radius: 10px;  
-            color: white;  
-            padding: 20px 0;  
-            text-align: center;  
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);  
-            transition: box-shadow 0.3s ease;  
-        }  
+      header {
+        background: #adaeff; /* Изменен цвет фона хедера */
+        border-bottom: 2px solid #ccc;
+        border-radius: 10px;
+        color: white;
+        padding: 20px 0;
+        text-align: center;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        transition: box-shadow 0.3s ease;
+      }
 
-        header:hover {  
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6),  
-                0 0 25px rgba(238, 46, 81, 0.7);  
-        }  
+      header:hover {
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6),
+          0 0 25px rgba(238, 46, 81, 0.7);
+      }
 
-        h1 {  
-            color: #00212B; /* Устанавливаем цвет заголовка */  
-            transition: color 0.3s ease;  
-            cursor: pointer;  
-            font-size: 3em;  
-            position: relative;  
-            font-weight: bold; /* жирный текст для заголовка */  
-        }  
+      h1 {
+        color: #00212b; /* Устанавливаем цвет заголовка */
+        transition: color 0.3s ease;
+        cursor: pointer;
+        position: relative;
+        font-weight: bold; /* жирный текст для заголовка */
+      }
 
-        .header-title:hover {  
-            color: #ff0000;  
-            text-shadow: 0 0 10px rgba(255, 0, 0, 0.8),  
-                        0 0 20px rgba(255, 69, 0, 0.5);  
-            animation: flame 1s ease-in-out forwards;  
-        }  
+      .header-title:hover {
+        color: #ff0000;
+        text-shadow: 0 0 10px rgba(255, 0, 0, 0.8),
+          0 0 20px rgba(255, 69, 0, 0.5);
+        animation: flame 1s ease-in-out forwards;
+      }
 
-        @keyframes flame {  
-            0% {  
-                text-shadow: 0 0 5px rgba(255, 165, 0, 0.3);  
-            }  
-            50% {  
-                text-shadow: 0 0 10px rgba(255, 140, 0, 0.7),  
-                            0 0 15px rgba(255, 69, 0, 0.5);  
-            }  
-            100% {  
-                text-shadow: 0 0 10px rgba(255, 0, 0, 0.8),  
-                            0 0 20px rgba(255, 69, 0, 0.5);  
-            }  
-        }  
+      @keyframes flame {
+        0% {
+          text-shadow: 0 0 5px rgba(255, 165, 0, 0.3);
+        }
+        50% {
+          text-shadow: 0 0 10px rgba(255, 140, 0, 0.7),
+            0 0 15px rgba(255, 69, 0, 0.5);
+        }
+        100% {
+          text-shadow: 0 0 10px rgba(255, 0, 0, 0.8),
+            0 0 20px rgba(255, 69, 0, 0.5);
+        }
+      }
 
-        h2 {  
-            font-size: 2em;   
-            margin-bottom: 30px;   
-            font-weight: bold; /* жирный текст для подзаголовка */  
-        }  
+      h2 {
+        font-size: 2em;
+        margin-bottom: 30px;
+        font-weight: bold; /* жирный текст для подзаголовка */
+      }
 
-        .card-container {  
-            display: flex;  
-            justify-content: center;  
-            margin: 30px 0;   
-            flex-wrap: wrap;   
-        }  
+      .card-container {
+        display: flex;
+        justify-content: center;
+        margin: 30px 0;
+        flex-wrap: wrap;
+      }
 
-        .card {  
-            background: #fff;  
-            border: 2px solid rgba(46, 174, 238, 0.8);  
-            border-radius: 8px;  
-            padding: 50px;  
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);  
-            width: 500px;  
-            margin: 20px;   
-            display: block;  
-            position: relative;  
-        }  
+      .card {
+        background: #fff;
+        border: 2px solid rgba(46, 174, 238, 0.8);
+        border-radius: 8px;
+        padding: 50px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        width: 500px;
+        margin: 20px;
+        display: block;
+        position: relative;
+      }
 
-        .card img {  
-            width: 100%;  
-            max-height: 200px;   
-            object-fit: contain;  
-            border-radius: 8px;   
-            margin: 10px 0;   
-        }  
+      .card img {
+        width: 100%;
+        max-height: 200px;
+        object-fit: contain;
+        border-radius: 8px;
+        margin: 10px 0;
+      }
 
-        .card h3 {  
-            margin: 10px 0;  
-            font-size: 2em;   
-            color: #00212B; /* Цвет заголовка карточки */  
-            font-weight: bold; /* жирный текст для заголовка карточки */  
-        }  
+      .card h3 {
+        margin: 10px 0;
+        font-size: 2em;
+        color: #00212b; /* Цвет заголовка карточки */
+        font-weight: bold; /* жирный текст для заголовка карточки */
+      }
 
-        .card p {  
-            padding: 0 10px 10px;  
-            font-size: 1.5em;   
-            margin: 0;  
-            color: #00212B; /* Цвет текста карточки */  
-            font-weight: bold; /* жирный текст для текста карточки */  
-        }  
+      .card p {
+        padding: 0 10px 10px;
+        font-size: 1.5em;
+        margin: 0;
+        color: #00212b; /* Цвет текста карточки */
+        font-weight: bold; /* жирный текст для текста карточки */
+      }
 
-        .link-button {  
-            display: inline-block;  
-            padding: 20px 30px;  
-            margin-top: 15px;  
-            background: #85e2fb; /* Изменен цвет фона кнопок */   
-            color: #000000;  
-            text-decoration: none;  
-            border-radius: 5px;  
-            font-size: 1.5em;   
-            position: relative;   
-            bottom: 0;  
-            left: 50%;  
-            transform: translateX(-50%);  
-        }  
+      .link-button {
+        display: inline-block;
+        padding: 20px 30px;
+        margin-top: 15px;
+        background: #85e2fb; /* Изменен цвет фона кнопок */
+        color: #000000;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 1.5em;
+        position: relative;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
 
-        .link-button:hover {  
-            background: #5ad6f8; /* Изменен цвет фона кнопок при наведении */   
-        }  
-    </style>  
-</head>  
-<body>  
+      .link-button:hover {
+        background: #5ad6f8; /* Изменен цвет фона кнопок при наведении */
+      }
 
-<header>  
-    <h1 class="header-title" onclick="goToHomePage()">EcoEnergy</h1>  
-</header>  
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background: linear-gradient(
+          135deg,
+          #87ceeb 0%,
+          #32cd32 70%,
+          #1e3c72 100%
+        );
+        background-image: url("https://ecopolitic.com.ua/wp-content/uploads/2021/04/shutterstock_1224817528.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        position: relative;
+      }
 
-<main>  
-    <h2>Вибір місця для встановлення обладнання</h2>  
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: -1;
+      }
 
-    <div class="card-container" id="imageContainer">  
-        <div class="card" id="apartmentCard">  
-            <img src="image/images (1).jpg" alt="Квартира">  
-            <h3>Квартира</h3>  
-            <p>Опис для квартири.</p>  
-            <a href="VIBOR3/Hata.html" class="link-button">Перейти до квартири</a>  
-        </div>  
-        <div class="card" id="houseCard">  
-            <img src="image/images (2).jpg" alt="Будинок">  
-            <h3>Дім</h3>  
-            <p>Опис для дому.</p>  
-            <a href="VIBOR3/DOM.html" class="link-button">Перейти до дому</a>  
-        </div>  
-        <div class="card" id="landCard">  
-            <img src="image/solar-panel.jpg" alt="Участок">  
-            <h3>Ділянка</h3>  
-            <p>Опис для ділянки.</p>  
-            <a href="VIBOR3/YCHACTOK.html" class="link-button">Перейти до ділянки</a>  
-        </div>  
-    </div>  
-</main>  
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 20px;
+        width: 100%;
+        border-radius: 10px;
+      }
 
-<footer>  
-    <p></p>  
-</footer>  
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 30px;
+        background: #adaeff;
+        border-bottom: 2px solid rgba(204, 204, 204, 0.5);
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        font-family: "Montserrat", sans-serif;
+        box-sizing: border-box;
+        margin: 0 auto;
+        max-width: 1700px; /* Ограничение ширины */
+      }
 
-<script>  
-    function goToHomePage() {  
-        window.location.href = "Untitled-1.html";  
-    }  
-</script>  
+      .header-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 20px;
+      }
 
-</body>  
-</html>  
+      .header-title {
+        text-decoration: none;
+        color: #00212b;
+        position: relative;
+        font-size: 36px;
+        display: inline-block;
+        transition: color 0.5s ease;
+      }
+
+      .header-title:hover {
+        color: #ff0000;
+        text-shadow: 0 0 10px rgba(255, 0, 0, 0.8),
+          0 0 20px rgba(255, 69, 0, 0.5);
+        text-decoration: none;
+      }
+
+      .header-title:hover::before,
+      .header-title:hover::after {
+        content: "";
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        background: rgba(255, 69, 0, 0.8);
+        border-radius: 50%;
+        animation: spark 0.8s ease-in-out infinite;
+        pointer-events: none;
+      }
+
+      .header-title:hover::before {
+        top: -10px;
+        left: 20%;
+        animation-delay: 0.2s;
+      }
+
+      .header-title:hover::after {
+        bottom: -10px;
+        right: 30%;
+        animation-delay: 0.4s;
+      }
+
+      .button {
+        display: inline-block;
+        background: #d4f6ff;
+        color: black;
+        padding: 10px 15px;
+        text-decoration: none;
+        border-radius: 10px;
+        transition: background 0.3s, color 0.3s;
+        border: 1px solid transparent;
+        border-radius: 10px;
+        font-size: 18px;
+      }
+
+      .button:hover {
+        background: #c3f1fe;
+      }
+
+      #forum-section {
+        margin-top: 20px;
+        position: relative;
+        border-radius: 10px;
+      }
+
+      #posts {
+        background: white;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        max-height: 400px;
+        overflow-y: auto;
+      }
+
+      #post-form {
+        position: relative;
+        background: white;
+        padding: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 10px;
+      }
+
+      #post-form h2 {
+        margin-top: 10px; /* Добавляем отступ сверху для заголовка "Створити повідомлення", чтобы он не пересекал рамку */
+      }
+
+      #post-content {
+        width: calc(100% - 20px);
+        height: 100px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+      }
+
+      #submit-post {
+        width: 160px;
+        height: 40px;
+        font-size: 16px;
+        margin: 0 auto;
+        display: block;
+        border-radius: 10px;
+      }
+
+      .button-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-top: 10px;
+        padding: 15px 20px;
+        border-radius: 10px;
+      }
+
+      #scroll-up {
+        padding: 10px;
+        font-size: 20px;
+        cursor: pointer;
+        background: #97dff3;
+        border: none;
+        border-radius: 50%;
+        color: rgb(0, 0, 0);
+        box-shadow: 0 4px 8px rgba(56, 55, 55, 0.2);
+        transition: transform 0.2s, background-color 0.3s;
+        margin-left: 20px;
+      }
+
+      #scroll-up:hover {
+        transform: scale(1.1);
+        background: #c3f1fe;
+      }
+
+      .post {
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 10px;
+        margin: 10px 0;
+        background-color: #f9f9f9;
+        opacity: 0;
+        transform: scale(0.95);
+        animation: fadeIn 0.5s forwards;
+      }
+
+      #discussionTitle {
+        text-align: center;
+      }
+
+      .posts-section h2 {
+        margin-top: 10px;
+      }
+
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      @keyframes spark {
+        0% {
+          opacity: 0;
+          transform: translate(0, 0) scale(1);
+        }
+        50% {
+          opacity: 1;
+          transform: translate(10px, -10px) scale(1.5);
+        }
+        100% {
+          opacity: 0;
+          transform: translate(20px, -20px) scale(0.5);
+        }
+      }
+
+      @keyframes flame {
+        0% {
+          text-shadow: 0 0 5px rgba(255, 165, 0, 0.3);
+        }
+        50% {
+          text-shadow: 0 0 10px rgba(255, 140, 0, 0.7),
+            0 0 15px rgba(255, 69, 0, 0.5);
+        }
+        100% {
+          text-shadow: 0 0 10px rgba(255, 0, 0, 0.8),
+            0 0 20px rgba(255, 0, 0, 0.5);
+        }
+      }
+
+      * {
+        box-sizing: border-box; /* Учет границ и отступов для всех элементов */
+      }
+
+      body {
+        font-family: "Montserrat", sans-serif; /* Замена Arial на Montserrat */
+        margin: 0;
+        padding: 20px;
+        background: linear-gradient(
+          135deg,
+          #87ceeb 0%,
+          #32cd32 70%,
+          #1e3c72 100%
+        );
+        background-image: url("https://ecopolitic.com.ua/wp-content/uploads/2021/04/shutterstock_1224817528.jpg"); /* Обновлено изображение */
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        position: relative;
+      }
+
+      body::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.2);
+        z-index: -1;
+      }
+
+      header {
+        display: flex;
+        align-items: center; /* Вертикальное выравнивание для элементов в заголовке */
+        justify-content: center; /* Центрирование элементов в заголовке */
+        padding: 20px;
+        background: #adaeff; /* Изменен цвет фона хедера */
+        border: 2px solid rgba(204, 204, 204, 0.5); /* Прозрачная рамка */
+        border-radius: 15px; /* Добавляем закругление углов */
+        width: 100%; /* Растягиваем по ширине экрана */
+        position: relative; /* Убедитесь, что элементы внутри позиционируются относительно хедера */
+        margin: 0; /* Убираем отступы */
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+      }
+
+      main {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        max-width: 800px;
+        margin: 20px auto;
+      }
+
+      .header-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .header-title {
+        text-decoration: none;
+        color: #00212b; /* Цвет заголовка */
+        position: relative;
+        font-size: 40px;
+        display: inline-block;
+        transition: color 0.5s ease;
+      }
+
+      .header-title:hover {
+        color: #ff0000; /* Цвет при наведении */
+        text-shadow: 0 0 10px rgba(255, 0, 0, 0.8),
+          0 0 20px rgba(255, 69, 0, 0.5);
+        animation: flame 1s ease-in-out forwards;
+        text-decoration: none; /* Убираем подчеркивание при наведении */
+      }
+
+      /* Добавляем искры при наведении */
+      .header-title:hover::before,
+      .header-title:hover::after {
+        content: "";
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        background: rgba(255, 69, 0, 0.8);
+        border-radius: 50%;
+        animation: spark 0.8s ease-in-out infinite;
+        pointer-events: none;
+      }
+
+      .header-title:hover::before {
+        top: -10px;
+        left: 20%;
+        animation-delay: 0.2s;
+      }
+
+      .header-title:hover::after {
+        bottom: -10px;
+        right: 30%;
+        animation-delay: 0.4s;
+      }
+
+      @keyframes spark {
+        0% {
+          opacity: 0;
+          transform: translate(0, 0) scale(1);
+        }
+        50% {
+          opacity: 1;
+          transform: translate(10px, -10px) scale(1.5);
+        }
+        100% {
+          opacity: 0;
+          transform: translate(20px, -20px) scale(0.5);
+        }
+      }
+
+      @keyframes flame {
+        0% {
+          text-shadow: 0 0 5px rgba(255, 165, 0, 0.3);
+        }
+        50% {
+          text-shadow: 0 0 10px rgba(255, 140, 0, 0.7),
+            0 0 15px rgba(255, 69, 0, 0.5);
+        }
+        100% {
+          text-shadow: 0 0 10px rgba(255, 0, 0, 0.8),
+            0 0 20px rgba(255, 69, 0, 0.5);
+        }
+      }
+
+      .news-item {
+        margin-bottom: 20px;
+        text-align: center; /* Центрируем текст и изображения */
+      }
+
+      .news-item img {
+        width: 350px; /* Увеличиваем ширину изображений */
+        height: 220px; /* Увеличиваем высоту изображений */
+        object-fit: cover; /* Обеспечиваем сохранение пропорций изображения */
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Добавляем тень к изображениям */
+      }
+
+      .news-item h2 {
+        font-size: 24px;
+        color: #00212b; /* Цвет заголовка новости изменён */
+      }
+
+      .news-item p {
+        color: #060606;
+      }
+
+      a {
+        text-decoration: none;
+        color: #3d3d3e; /* Цвет ссылок */
+      }
+
+      a:hover {
+        text-decoration: underline; /* Подчеркивание при наведении */
+      }
+
+      /* Стили для ссылок "Читать далее" и "Обсудити" */
+      .read-more,
+      .discuss-button {
+        display: inline-block; /* Делаем ссылку блочным элементом для добавления отступов */
+        padding: 10px 15px; /* Отступы вокруг текста */
+        background: #aaebff; /* Изменен цвет фона кнопки */
+        color: rgb(0, 0, 0); /* Цвет текста */
+        border-radius: 5px; /* Скругление углов */
+        transition: background-color 0.3s, transform 0.3s; /* Плавный переход для фона и трансформации */
+        font-weight: bold; /* Жирный текст */
+      }
+
+      .read-more:hover,
+      .discuss-button:hover {
+        background: #5cb1c9; /* Более светлый фон при наведении */
+        transform: translateY(-2px); /* Поднимаем ссылку при наведении */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Добавляем тень при наведении */
+      }
+
+      /* Стили для разделителей */
+      hr {
+        border: 1px solid #040404eb; /* Цвет и стиль линии */
+        margin: 20px 0; /* Отступы сверху и снизу */
+      }
+
+      /* Адаптивные стили */
+      @media (max-width: 768px) {
+        body {
+          padding: 10px; /* Уменьшаем отступы на мобильных */
+        }
+
+        header {
+          flex-direction: column; /* Вертикальное выравнивание на мобильных */
+          align-items: center; /* Центрируем элементы */
+          padding: 15px; /* Уменьшаем отступы */
+        }
+
+        .header-title {
+          font-size: 30px; /* Уменьшаем размер заголовка */
+        }
+
+        .news-item img {
+          width: 100%; /* Изображения занимают всю ширину */
+          height: auto; /* Сохраняем пропорции */
+        }
+
+        .news-item h2 {
+          font-size: 20px; /* Уменьшаем размер заголовка новости */
+        }
+
+        .read-more,
+        .discuss-button {
+          font-size: 12px; /* Уменьшаем размер шрифта */
+          padding: 8px; /* Меньше отступов для кнопок */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header-container"></div>
+    <!-- Контейнер для заголовку -->
+
+    <script>
+      fetch("/header/header2.html") // Ensure the path to header2.html is correct
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.text();
+        })
+        .then((data) => {
+          document.getElementById("header-container").innerHTML = data;
+          const homeLink = document.getElementById("homeLink");
+
+          homeLink.href = "Untitled-1.html"; // Задаємо новий шлях
+        })
+        .catch((error) =>
+          console.error("Ошибка при загрузке заголовка:", error)
+        );
+    </script>
+
+    <!-- <header>
+      <h1 class="header-title" onclick="goToHomePage()">EcoEnergy</h1>
+      <a class="homeLink" onclick="goToHomePage()">Назад</a>
+    </header> -->
+
+    <main>
+      <h2>Вибір місця для встановлення обладнання</h2>
+
+      <div class="card-container" id="imageContainer">
+        <div class="card" id="apartmentCard">
+          <img src="image/images (1).jpg" alt="Квартира" />
+          <h3>Квартира</h3>
+          <p>Опис для квартири.</p>
+          <a href="VIBOR3/Hata.html" class="link-button">Перейти до квартири</a>
+        </div>
+        <div class="card" id="houseCard">
+          <img src="image/images (2).jpg" alt="Будинок" />
+          <h3>Дім</h3>
+          <p>Опис для дому.</p>
+          <a href="VIBOR3/DOM.html" class="link-button">Перейти до дому</a>
+        </div>
+        <div class="card" id="landCard">
+          <img src="image/solar-panel.jpg" alt="Участок" />
+          <h3>Ділянка</h3>
+          <p>Опис для ділянки.</p>
+          <a href="VIBOR3/YCHACTOK.html" class="link-button"
+            >Перейти до ділянки</a
+          >
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p></p>
+    </footer>
+
+    <script>
+      function goToHomePage() {
+        window.location.href = "Untitled-1.html";
+      }
+    </script>
+  </body>
+</html>

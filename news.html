@@ -1,77 +1,137 @@
-<!DOCTYPE html>  
-<html lang="uk">  
-<head>  
-    <meta charset="UTF-8">  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <title>Новини Відновлювальної Енергетики</title>  
-    <link rel="stylesheet" href="news.css"> <!-- Підключення CSS -->  
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">   
-    <script>  
-        function discussArticle(articleId) {  
-            window.location.href = `forum.html?articleId=${articleId}`;  
-        }  
-    </script>  
-</head>  
-<body>  
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Новини Відновлювальної Енергетики</title>
+    <link rel="stylesheet" href="news.css" />
+    <!-- Підключення CSS -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      function discussArticle(articleId) {
+        window.location.href = `forum.html?articleId=${articleId}`;
+      }
+    </script>
+  </head>
+  <body>
+    <div id="header-container"></div>
+    <!-- Контейнер для заголовку -->
 
-    <div id="header-container"></div> <!-- Контейнер для заголовку -->  
+    <script>
+      fetch("/header/header2.html") // Ensure the path to header2.html is correct
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.text();
+        })
+        .then((data) => {
+          document.getElementById("header-container").innerHTML = data;
+          const homeLink = document.getElementById("homeLink");
 
-    <script>  
-        fetch('/header/header2.html')  // Ensure the path to header2.html is correct  
-            .then(response => {  
-                if (!response.ok) {  
-                    throw new Error('Network response was not ok');  
-                }  
-                return response.text();  
-            })  
-            .then(data => {  
-                document.getElementById('header-container').innerHTML = data;  
-            })  
-            .catch(error => console.error('Ошибка при загрузке заголовка:', error));  
-    </script>  
+          homeLink.href = "Untitled-1.html"; // Задаємо новий шлях
+        })
+        .catch((error) =>
+          console.error("Ошибка при загрузке заголовка:", error)
+        );
+    </script>
 
-<main>  
-    <div class="news-item">  
-        <h2>Старі вітряки можуть виробляти на 30% більше енергії: завдяки чому це можливо</h2>  
-        <img src="image/new1.JPG" alt="Старі вітряки">   
-        <p>Дізнайтеся, як старі вітряки можуть збільшувати продуктивність енергії завдяки новим технологіям.</p>  
-        <a onclick="relocated(`https://24tv.ua/trends24/stari-vitryaki-mozhut-viroblyati-bilshe-elektriki-yak-same_n2696325`)" class="read-more">Читати далі</a>  
-        <button class="discuss-button" onclick="discussArticle('article_1')">Обсудити</button> <!-- Кнопка "Обсудити" -->  
-    </div>  
-    <hr>  
+    <main>
+      <div class="news-item">
+        <h2>
+          Старі вітряки можуть виробляти на 30% більше енергії: завдяки чому це
+          можливо
+        </h2>
+        <img src="image/new1.JPG" alt="Старі вітряки" />
+        <p>
+          Дізнайтеся, як старі вітряки можуть збільшувати продуктивність енергії
+          завдяки новим технологіям.
+        </p>
+        <a
+          onclick="relocated(`https://24tv.ua/trends24/stari-vitryaki-mozhut-viroblyati-bilshe-elektriki-yak-same_n2696325`)"
+          class="read-more"
+          >Читати далі</a
+        >
+        <button class="discuss-button" onclick="discussArticle('article_1')">
+          Обсудити
+        </button>
+        <!-- Кнопка "Обсудити" -->
+      </div>
+      <hr />
 
-    <div class="news-item">  
-        <h2>Сонячні панелі на будь-якій поверхні: новий світлопоглинаючий матеріал в 150 разів тоньше кремнієвої пластини</h2>  
-        <img src="image/new2.JPG" alt="Сонячні панелі">  
-        <p>Дізнайтеся більше про новий світловідбивний матеріал, який змінить підхід до сонячних панелей.</p>  
-        <a onclick="relocated(`https://itc.ua/ua/novini/sonyachni-paneli-na-bud-yakij-poverhni-novyj-svitlopoglynalnyj-material-u-150-raziv-tonshyj-za-kremniyevu-plastynu/`)" class="read-more">Читати далі</a>  
-        <button class="discuss-button" onclick="discussArticle('article_2')">Обсудити</button> <!-- Кнопка "Обсудити" -->  
-    </div>  
-    <hr>  
+      <div class="news-item">
+        <h2>
+          Сонячні панелі на будь-якій поверхні: новий світлопоглинаючий матеріал
+          в 150 разів тоньше кремнієвої пластини
+        </h2>
+        <img src="image/new2.JPG" alt="Сонячні панелі" />
+        <p>
+          Дізнайтеся більше про новий світловідбивний матеріал, який змінить
+          підхід до сонячних панелей.
+        </p>
+        <a
+          onclick="relocated(`https://itc.ua/ua/novini/sonyachni-paneli-na-bud-yakij-poverhni-novyj-svitlopoglynalnyj-material-u-150-raziv-tonshyj-za-kremniyevu-plastynu/`)"
+          class="read-more"
+          >Читати далі</a
+        >
+        <button class="discuss-button" onclick="discussArticle('article_2')">
+          Обсудити
+        </button>
+        <!-- Кнопка "Обсудити" -->
+      </div>
+      <hr />
 
-    <div class="news-item">  
-        <h2>Огляд 2E PSPLW300: портативна сонячна панель на 300 Вт у зручному формфакторі</h2>  
-        <img src="image/new3.JPG" alt="Портативна сонячна панель">  
-        <p>Дізнайтеся про характеристики та переваги портативної сонячної панелі 2E PSPLW300.</p>  
-        <a onclick="relocated(`https://itc.ua/ua/articles/oglyad-2e-psplw300-portatyvna-sonyachna-panel-na-300-vt-u-zruchnomu-formfaktori/`)" class="read-more">Читати далі</a>  
-        <button class="discuss-button" onclick="discussArticle('article_3')">Обсудити</button> <!-- Кнопка "Обсудити" -->  
-    </div>  
-    <hr>  
+      <div class="news-item">
+        <h2>
+          Огляд 2E PSPLW300: портативна сонячна панель на 300 Вт у зручному
+          формфакторі
+        </h2>
+        <img src="image/new3.JPG" alt="Портативна сонячна панель" />
+        <p>
+          Дізнайтеся про характеристики та переваги портативної сонячної панелі
+          2E PSPLW300.
+        </p>
+        <a
+          onclick="relocated(`https://itc.ua/ua/articles/oglyad-2e-psplw300-portatyvna-sonyachna-panel-na-300-vt-u-zruchnomu-formfaktori/`)"
+          class="read-more"
+          >Читати далі</a
+        >
+        <button class="discuss-button" onclick="discussArticle('article_3')">
+          Обсудити
+        </button>
+        <!-- Кнопка "Обсудити" -->
+      </div>
+      <hr />
 
-    <div class="news-item">  
-        <h2>Чи вигідно встановлювати сонячну батарею на балконі і чи "поповнить" вона квартиру електроенергією</h2>  
-        <img src="image/new4.JPG" alt="Сонячна батарея на балконі"> 
-        <p>Дізнайтеся, чи вигідно встановлення сонячної батареї на вашому балконі та як це може вплинути на споживання електроенергії у вашій квартирі.</p>  
-        <a onclick="relocated(`https://tsn.ua/ukrayina/chi-vigidno-vstanovlyuvati-sonyachnu-batareyu-na-balkoni-ta-chi-zazhivit-vona-kvartiru-elektroenergiyeyu-2625222.html`)" class="read-more">Читати далі</a>  
-        <button class="discuss-button" onclick="discussArticle('article_4')">Обсудити</button> <!-- Кнопка "Обсудити" -->  
-    </div>  
-</main>  
+      <div class="news-item">
+        <h2>
+          Чи вигідно встановлювати сонячну батарею на балконі і чи "поповнить"
+          вона квартиру електроенергією
+        </h2>
+        <img src="image/new4.JPG" alt="Сонячна батарея на балконі" />
+        <p>
+          Дізнайтеся, чи вигідно встановлення сонячної батареї на вашому балконі
+          та як це може вплинути на споживання електроенергії у вашій квартирі.
+        </p>
+        <a
+          onclick="relocated(`https://tsn.ua/ukrayina/chi-vigidno-vstanovlyuvati-sonyachnu-batareyu-na-balkoni-ta-chi-zazhivit-vona-kvartiru-elektroenergiyeyu-2625222.html`)"
+          class="read-more"
+          >Читати далі</a
+        >
+        <button class="discuss-button" onclick="discussArticle('article_4')">
+          Обсудити
+        </button>
+        <!-- Кнопка "Обсудити" -->
+      </div>
+    </main>
 
-<script>
-    const relocated =(url) =>{
-        window.open(url)
-    }
-</script>
-
-</body>  
-</html>  
+    <script>
+      const relocated = (url) => {
+        window.open(url);
+      };
+    </script>
+  </body>
+</html>
