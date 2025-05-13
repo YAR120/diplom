@@ -14,13 +14,23 @@
 <body>  
     <div id="header-container"></div> 
 
-    <script>  
-        fetch('/header/header1.html')  
-            .then(response => response.text())  
-            .then(data => {  
-                document.getElementById('header-container').innerHTML = data;  
-            })  
-            .catch(error => console.error('Ошибка при загрузке заголовка:', error));  
+    <script defer>  
+
+    
+        // fetch('header/header1.html')  
+  fetch('header/header1.html')
+        .then(response => response.text())
+        .then(data => {
+            const headerContainer = document.getElementById('header-container');
+            if (headerContainer) {
+                headerContainer.innerHTML = data;
+                        // ✅ запускаем обработчики
+                autoLoginWithToken();         // ✅ проверка токена
+            } else {
+                console.error('Element with id "header-container" not found');
+            }
+        })
+        .catch(error => console.error('Помилка при завантаженні заголовка:', error));
     </script>  
 
     <main>  

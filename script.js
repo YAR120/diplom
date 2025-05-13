@@ -257,7 +257,7 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     // Завантаження заголовка
-    fetch('/header/header1.html')  
+    fetch('header/header1.html')  
         .then(response => response.text())  
         .then(data => {  
             const headerContainer = document.getElementById('header-container');

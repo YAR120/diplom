@@ -11,7 +11,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 app.set('trust proxy', 1);
-
+app.use(cors());
 // Настройка CORS
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
