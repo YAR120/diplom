@@ -1,92 +1,107 @@
-<!DOCTYPE html>  
-<html lang="uk">  
-<head>  
-    <meta charset="UTF-8">  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <title>Характеристики анемометра Benetech GM8904</title>  
-    <link rel="stylesheet" href="../jscss/SolnPAN1.css">  
-</head>  
-<body>  
-    <h1>Анемометр Benetech GM8904</h1>  
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Характеристики анемометра Benetech GM8904</title>
+    <link rel="stylesheet" href="../jscss/SolnPAN1.css" />
+  </head>
+  <body>
+    <div class="back-button-container">
+      <button class="back-button" onclick="goBack()">Назад</button>
+    </div>
+    <div class="header">
+      <h1>Анемометр Benetech GM8904</h1>
+    </div>
+    <div class="product-container">
+      <div class="main-image">
+        <img
+          id="mainImage"
+          src="../image/ane1.JPG"
+          alt="Анемометр Benetech GM8904"
+        />
+      </div>
+      <div class="thumbnails">
+        <img
+          src="../image/ane1.JPG"
+          alt="Анемометр Benetech GM8904"
+          onclick="changeImage('../image/ane1.JPG')"
+        />
+      </div>
+    </div>
 
-    <div class="product-container">  
-        <div class="main-image">  
-            <img id="mainImage" src="../image/ane1.JPG" alt="Анемометр Benetech GM8904">  
-        </div>  
-        <div class="thumbnails">  
-            <img src="../image/ane1.JPG" alt="Анемометр Benetech GM8904" onclick="changeImage('../image/ane1.JPG')">  
-             
-        </div>  
-    </div>  
+    <h2 class="btn-toggle" onclick="toggleTable(this)">Характеристики</h2>
+    <div class="characteristics">
+      <table>
+        <tr>
+          <td>Тип</td>
+          <td>Прилад</td>
+        </tr>
+        <tr>
+          <td>Країна реєстрації бренду</td>
+          <td>Китай</td>
+        </tr>
+        <tr>
+          <td>Гарантія</td>
+          <td>12 місяців</td>
+        </tr>
+        <tr>
+          <td>Країна-виробник товару</td>
+          <td>Китай</td>
+        </tr>
+        <tr>
+          <td>EAN</td>
+          <td>6939144001106</td>
+        </tr>
+        <tr>
+          <td>Робочий струм</td>
+          <td>7 ~ 10 мА (типовий 8 мА)</td>
+        </tr>
+        <tr>
+          <td>Операційна напруга</td>
+          <td>3.6 ~ 9.5 В (типово 5 В)</td>
+        </tr>
+        <tr>
+          <td>Похибка</td>
+          <td>± 3% / ± 0.2 ℃</td>
+        </tr>
+        <tr>
+          <td>Червоний</td>
+          <td>Джерело живлення постійного струму 3.6 ~ 5V</td>
+        </tr>
+        <tr>
+          <td>Зелений</td>
+          <td>RXD</td>
+        </tr>
+        <tr>
+          <td>Білий</td>
+          <td>TXD</td>
+        </tr>
+        <tr>
+          <td>Чорний</td>
+          <td>GND</td>
+        </tr>
+      </table>
+    </div>
 
-    <h2 class="btn-toggle" onclick="toggleTable(this)">Характеристики</h2>  
-    <div class="characteristics">  
-        <table>  
-            <tr>  
-                <td>Тип</td>  
-                <td>Прилад</td>  
-            </tr>  
-            <tr>  
-                <td>Країна реєстрації бренду</td>  
-                <td>Китай</td>  
-            </tr>  
-            <tr>  
-                <td>Гарантія</td>  
-                <td>12 місяців</td>  
-            </tr>  
-            <tr>  
-                <td>Країна-виробник товару</td>  
-                <td>Китай</td>  
-            </tr>  
-            <tr>  
-                <td>EAN</td>  
-                <td>6939144001106</td>  
-            </tr>  
-            <tr>  
-                <td>Робочий струм</td>  
-                <td>7 ~ 10 мА (типовий 8 мА)</td>  
-            </tr>  
-            <tr>  
-                <td>Операційна напруга</td>  
-                <td>3.6 ~ 9.5 В (типово 5 В)</td>  
-            </tr>  
-            <tr>  
-                <td>Похибка</td>  
-                <td>± 3% / ± 0.2 ℃</td>  
-            </tr>  
-            <tr>  
-                <td>Червоний</td>  
-                <td>Джерело живлення постійного струму 3.6 ~ 5V</td>  
-            </tr>  
-            <tr>  
-                <td>Зелений</td>  
-                <td>RXD</td>  
-            </tr>  
-            <tr>  
-                <td>Білий</td>  
-                <td>TXD</td>  
-            </tr>  
-            <tr>  
-                <td>Чорний</td>  
-                <td>GND</td>  
-            </tr>  
-        </table>  
-    </div>  
+    <h2>Опис</h2>
+    <p>
+      Анемометр Benetech GM8904 - це прилад для вимірювання швидкості вітру. Він
+      має компактний дизайн і простий у використанні. Ідеально підходить для
+      метеорологічних вимірювань.
+    </p>
 
-    <h2>Опис</h2>  
-    <p>Анемометр Benetech GM8904 - це прилад для вимірювання швидкості вітру. Він має компактний дизайн і простий у використанні. Ідеально підходить для метеорологічних вимірювань.</p>  
+    <h3>Особливості:</h3>
+    <ul>
+      <li>Робочий струм: 7 ~ 10 мА (типовий 8 мА)</li>
+      <li>Операційна напруга: 3.6 ~ 9.5 В (типово 5 В)</li>
+      <li>Похибка: ± 3% / ± 0.2 ℃</li>
+      <li>Червоний: джерело живлення постійного струму 3.6 ~ 5V</li>
+      <li>Зелений: RXD</li>
+      <li>Білий: TXD</li>
+      <li>Чорний: GND</li>
+    </ul>
 
-    <h3>Особливості:</h3>  
-    <ul>  
-        <li>Робочий струм: 7 ~ 10 мА (типовий 8 мА)</li>  
-        <li>Операційна напруга: 3.6 ~ 9.5 В (типово 5 В)</li>  
-        <li>Похибка: ± 3% / ± 0.2 ℃</li>  
-        <li>Червоний: джерело живлення постійного струму 3.6 ~ 5V</li>  
-        <li>Зелений: RXD</li>  
-        <li>Білий: TXD</li>  
-        <li>Чорний: GND</li>  
-    </ul>  
-
-    <script src="../jscss/SolnPAN1.js"></script>  
-</body>  
-</html>  
+    <script src="../jscss/SolnPAN1.js"></script>
+  </body>
+</html>
