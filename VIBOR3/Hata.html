@@ -1,458 +1,512 @@
-<!DOCTYPE html>  
-<html lang="uk">  
-<head>  
-    <meta charset="UTF-8">  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet"> 
-    <title>Вибір енергетичного комплекту</title>  
-    
-    <style>  
-        * {  
-    box-sizing: border-box;  
-}  
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <title>Вибір енергетичного комплекту</title>
 
-body {  
-    font-family: 'Montserrat', sans-serif;  
-    margin: 0;  
-    padding: 20px;  
-    background: linear-gradient(135deg, #87CEEB 0%, #32CD32 70%, #1E3C72 100%);  
-    background-image: url('https://ecopolitic.com.ua/wp-content/uploads/2021/04/shutterstock_1224817528.jpg'); 
-    background-size: cover;  
-    background-repeat: no-repeat;  
-    background-attachment: fixed;  
-    background-position: center;  
-}  
+    <style>
+      * {
+        box-sizing: border-box;
+      }
 
-body::before {  
-    content: '';  
-    position: fixed;  
-    top: 0;  
-    left: 0;  
-    width: 100%;  
-    height: 100vh;  
-    z-index: -1;  
-}  
+      body {
+        font-family: "Montserrat", sans-serif;
+        margin: 0;
+        padding: 20px;
+        background: linear-gradient(
+          135deg,
+          #87ceeb 0%,
+          #32cd32 70%,
+          #1e3c72 100%
+        );
+        background-image: url("https://ecopolitic.com.ua/wp-content/uploads/2021/04/shutterstock_1224817528.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+      }
 
-header {  
-    background: #ADAEFF;  
-    border-bottom: 2px solid #E1E1FA;  
-    border-radius: 8px;  
-    color: #00212B;  
-    padding: 20px 0;  
-    text-align: center;  
-}  
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: -1;
+      }
 
-.logo {  
-    font-size: 2.5em;  
-    color: #00212B;  
-    cursor: pointer;  
-    transition: color 0.3s, text-shadow 0.3s;  
-    position: relative;  
-    display: inline-block;  
-}  
+      header {
+        background: #adaeff;
+        border-bottom: 2px solid #e1e1fa;
+        border-radius: 8px;
+        color: #00212b;
+        padding: 20px 0;
+        text-align: center;
+      }
 
-.logo a {  
-    text-decoration: none;  
-    color: inherit;  
-}  
+      .logo {
+        font-size: 2.5em;
+        color: #00212b;
+        cursor: pointer;
+        transition: color 0.3s, text-shadow 0.3s;
+        position: relative;
+        display: inline-block;
+      }
 
-.logo:hover {  
-    color: #ff4500;  
-    text-shadow:   
-        0 0 5px rgba(255, 0, 0, 0.8),   
-        0 0 10px rgba(255, 69, 0, 0.6),   
-        0 0 15px rgba(255, 140, 0, 0.4),   
-        0 0 20px rgba(238, 46, 81, 0.7);  
-}  
+      .logo a {
+        text-decoration: none;
+        color: inherit;
+      }
 
-.container {  
-    max-width: 900px;  
-    margin: 20px auto;  
-    padding: 40px;  
-    background: rgba(255, 255, 255, 0.8);  
-    border-radius: 8px;  
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);  
-}  
+      .logo:hover {
+        color: #ff4500;
+        text-shadow: 0 0 5px rgba(255, 0, 0, 0.8),
+          0 0 10px rgba(255, 69, 0, 0.6), 0 0 15px rgba(255, 140, 0, 0.4),
+          0 0 20px rgba(238, 46, 81, 0.7);
+      }
 
-.page-title {  
-    font-size: 36px;  
-    text-align: center;  
-    color: #00212B;  
-}  
+      .container {
+        max-width: 900px;
+        margin: 20px auto;
+        padding: 40px;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
 
-.kit {  
-    display: flex;  
-    justify-content: space-between;  
-    margin-bottom: 21px;  
-    padding: 42px;  
-    border: 2px solid #AAEBFF;  
-    border-radius: 8px;  
-    background: #F0F9FF;  
-    transition: transform 0.3s, box-shadow 0.3s;  
-}  
+      .page-title {
+        font-size: 36px;
+        text-align: center;
+        color: #00212b;
+      }
 
-.kit:hover {  
-    transform: scale(1.02);  
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);  
-}  
+      .kit {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 21px;
+        padding: 42px;
+        border: 2px solid #aaebff;
+        border-radius: 8px;
+        background: #f0f9ff;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
 
-.kit-description h3 {  
-    margin: 0 0 14px;  
-    color: #00212B;  
-    font-size: 30px;  
-}  
+      .kit:hover {
+        transform: scale(1.02);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      }
 
-.kit-description p {  
-    margin: 6px 0;  
-    color: #333;  
-    font-size: 18px;  
-}  
+      .kit-description h3 {
+        margin: 0 0 14px;
+        color: #00212b;
+        font-size: 30px;
+      }
 
-.kit-buttons {  
-    display: flex;  
-    gap: 10px;  
-}  
+      .kit-description p {
+        margin: 6px 0;
+        color: #333;
+        font-size: 18px;
+      }
 
-.kit-buttons button {  
-    padding: 12px 24px;  
-    border: none;  
-    border-radius: 4px;  
-    background: #AAEBFF;  
-    color: black;  
-    cursor: pointer;  
-    font-size: 16px;  
-    font-weight: bold;  
-    transition: background-color 0.3s;  
-}  
+      .kit-buttons {
+        display: flex;
+        gap: 10px;
+      }
 
-.kit-buttons button:hover {  
-    background: #5CB1C9;  
-}  
+      .kit-buttons button {
+        padding: 12px 24px;
+        border: none;
+        border-radius: 4px;
+        background: #aaebff;
+        color: black;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+        transition: background-color 0.3s;
+      }
 
-.kit-images {  
-    display: flex;  
-    flex-direction: column;  
-    gap: 10px;  
-}  
+      .kit-buttons button:hover {
+        background: #5cb1c9;
+      }
 
-.kit-images img {  
-    width: 150px;  
-    height: 150px;  
-    border: 2px solid #ddd;  
-    border-radius: 8px;  
-    object-fit: cover;  
-}  
+      .kit-images {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
 
-.modal {  
-    display: none;  
-    position: fixed;  
-    top: 0;  
-    left: 0;  
-    width: 100%;  
-    height: 100%;  
-    background: rgba(0, 0, 0, 0.7);  
-    justify-content: center;  
-    align-items: center;  
-    z-index: 1000;  
-    padding: 20px;  
-    box-sizing: border-box;  
-}  
+      .kit-images img {
+        width: 150px;
+        height: 150px;
+        border: 2px solid #ddd;
+        border-radius: 8px;
+        object-fit: cover;
+      }
 
-.modal-content {  
-    background: rgba(255, 255, 255, 0.95);  
-    padding: 40px;  
-    border-radius: 8px;  
-    max-width: 800px;  
-    width: 90%;  
-    text-align: left;  
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);  
-    max-height: 80vh;  
-    overflow-y: auto;  
-    position: relative;  
-}  
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        padding: 20px;
+        box-sizing: border-box;
+      }
 
-.order-modal-content {  
-    background: linear-gradient(135deg, #ffffff, #f0f8ff);  
-    padding: 30px;  
-    border-radius: 20px;  
-    width: 90%;  
-    max-width: 500px;  
-    max-height: 80vh;  
-    overflow-y: auto;  
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);  
-    position: relative;  
-    border: 2px solid #ADAEFF;  
-}  
+      .modal-content {
+        background: rgba(255, 255, 255, 0.95);
+        padding: 40px;
+        border-radius: 8px;
+        max-width: 800px;
+        width: 90%;
+        text-align: left;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        max-height: 80vh;
+        overflow-y: auto;
+        position: relative;
+      }
 
-.order-modal-content::-webkit-scrollbar {  
-    width: 8px;  
-}  
+      .order-modal-content {
+        background: linear-gradient(135deg, #ffffff, #f0f8ff);
+        padding: 30px;
+        border-radius: 20px;
+        width: 90%;
+        max-width: 500px;
+        max-height: 80vh;
+        overflow-y: auto;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        position: relative;
+        border: 2px solid #adaeff;
+      }
 
-.order-modal-content::-webkit-scrollbar-track {  
-    background: #f1f1f1;  
-    border-radius: 4px;  
-}  
+      .order-modal-content::-webkit-scrollbar {
+        width: 8px;
+      }
 
-.order-modal-content::-webkit-scrollbar-thumb {  
-    background: #888;  
-    border-radius: 4px;  
-}  
+      .order-modal-content::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 4px;
+      }
 
-.order-modal-content::-webkit-scrollbar-thumb:hover {  
-    background: #555;  
-}  
+      .order-modal-content::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 4px;
+      }
 
-.close-button {  
-    position: absolute;  
-    top: 15px;  
-    right: 20px;  
-    font-size: 28px;  
-    cursor: pointer;  
-    color: #e74c3c;  
-    transition: color 0.3s ease, transform 0.3s ease;  
-}  
+      .order-modal-content::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
 
-.close-button:hover {  
-    color: #c0392b;  
-    transform: scale(1.2);  
-}  
+      .close-button {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        font-size: 28px;
+        cursor: pointer;
+        color: #e74c3c;
+        transition: color 0.3s ease, transform 0.3s ease;
+      }
 
-.modal-content h3, .order-modal-content h3 {  
-    margin-top: 0;  
-    color: #00212B;  
-    font-size: 28px;  
-    font-weight: bold;  
-}  
+      .close-button:hover {
+        color: #c0392b;
+        transform: scale(1.2);
+      }
 
-.order-modal-content h3 {  
-    font-size: 26px;  
-    text-align: center;  
-    margin-bottom: 25px;  
-    font-family: 'Montserrat', sans-serif;  
-    position: relative;  
-    background: linear-gradient(90deg, #1E3C72, #87CEEB);  
-    background-clip: text;  
-    -webkit-background-clip: text;  
-    text-fill-color: transparent;  
-    -webkit-text-fill-color: transparent;  
-}  
+      .modal-content h3,
+      .order-modal-content h3 {
+        margin-top: 0;
+        color: #00212b;
+        font-size: 28px;
+        font-weight: bold;
+      }
 
-.order-modal-content h3::after {  
-    content: '';  
-    display: block;  
-    width: 50px;  
-    height: 3px;  
-    background: #1E3C72;  
-    margin: 10px auto 0;  
-    border-radius: 2px;  
-}  
+      .order-modal-content h3 {
+        font-size: 26px;
+        text-align: center;
+        margin-bottom: 25px;
+        font-family: "Montserrat", sans-serif;
+        position: relative;
+        background: linear-gradient(90deg, #1e3c72, #87ceeb);
+        background-clip: text;
+        -webkit-background-clip: text;
+        text-fill-color: transparent;
+        -webkit-text-fill-color: transparent;
+      }
 
-.order-modal-content p {  
-    margin: 10px 0;  
-    color: #333;  
-    font-size: 16px;  
-}  
+      .order-modal-content h3::after {
+        content: "";
+        display: block;
+        width: 50px;
+        height: 3px;
+        background: #1e3c72;
+        margin: 10px auto 0;
+        border-radius: 2px;
+      }
 
-.close-btn, .order-btn, .cancel-btn {  
-    margin-top: 20px;  
-    padding: 12px 24px;  
-    border: none;  
-    border-radius: 4px;  
-    cursor: pointer;  
-    font-size: 16px;  
-    transition: background-color 0.3s;  
-    font-weight: bold;  
-}  
+      .order-modal-content p {
+        margin: 10px 0;
+        color: #333;
+        font-size: 16px;
+      }
 
-.close-btn {  
-    background: #AAEBFF;  
-    color: black;  
-}  
+      .close-btn,
+      .order-btn,
+      .cancel-btn {
+        margin-top: 20px;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+        font-weight: bold;
+      }
 
-.close-btn:hover {  
-    background: #5CB1C9;  
-}  
+      .close-btn {
+        background: #aaebff;
+        color: black;
+      }
 
-.order-btn {  
-    background: linear-gradient(90deg, #1E3C72, #87CEEB);  
-    color: white;  
-    padding: 10px 25px;  
-    border-radius: 25px;  
-}  
+      .close-btn:hover {
+        background: #5cb1c9;
+      }
 
-.order-btn:hover {  
-    transform: translateY(-2px);  
-    box-shadow: 0 5px 15px rgba(30, 60, 114, 0.4);  
-}  
+      .order-btn {
+        background: linear-gradient(90deg, #1e3c72, #87ceeb);
+        color: white;
+        padding: 10px 25px;
+        border-radius: 25px;
+      }
 
-.cancel-btn {  
-    background: linear-gradient(90deg, #e74c3c, #c0392b);  
-    color: white;  
-    padding: 10px 25px;  
-    border-radius: 25px;  
-}  
+      .order-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(30, 60, 114, 0.4);
+      }
 
-.cancel-btn:hover {  
-    background: linear-gradient(90deg, #c0392b, #a93226);  
-}  
+      .cancel-btn {
+        background: linear-gradient(90deg, #e74c3c, #c0392b);
+        color: white;
+        padding: 10px 25px;
+        border-radius: 25px;
+      }
 
-.modal-buttons {  
-    display: flex;  
-    gap: 15px;  
-    justify-content: center;  
-    margin-top: 20px;  
-}  
+      .cancel-btn:hover {
+        background: linear-gradient(90deg, #c0392b, #a93226);
+      }
 
-@media (max-width: 768px) {  
-    .order-modal-content {  
-        max-width: 90%;  
-        padding: 20px;  
-    }  
+      .modal-buttons {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        margin-top: 20px;
+      }
 
-    .order-modal-content h3 {  
-        font-size: 22px;  
-    }  
+      @media (max-width: 768px) {
+        .order-modal-content {
+          max-width: 90%;
+          padding: 20px;
+        }
 
-    .order-modal-content h3::after {  
-        width: 40px;  
-    }  
+        .order-modal-content h3 {
+          font-size: 22px;
+        }
 
-    .order-btn, .cancel-btn {  
-        padding: 8px 20px;  
-        font-size: 14px;  
-    }  
-}  
+        .order-modal-content h3::after {
+          width: 40px;
+        }
 
-@media (max-width: 480px) {  
-    .order-modal-content {  
-        padding: 15px;  
-        max-height: 90vh;  
-    }  
+        .order-btn,
+        .cancel-btn {
+          padding: 8px 20px;
+          font-size: 14px;
+        }
+      }
 
-    .order-modal-content h3 {  
-        font-size: 20px;  
-    }  
+      @media (max-width: 480px) {
+        .order-modal-content {
+          padding: 15px;
+          max-height: 90vh;
+        }
 
-    .order-modal-content h3::after {  
-        width: 30px;  
-    }  
+        .order-modal-content h3 {
+          font-size: 20px;
+        }
 
-    .order-btn, .cancel-btn {  
-        padding: 8px 15px;  
-        font-size: 13px;  
-    }  
+        .order-modal-content h3::after {
+          width: 30px;
+        }
 
-    .order-modal-content p {  
-        font-size: 14px;  
-    }  
+        .order-btn,
+        .cancel-btn {
+          padding: 8px 15px;
+          font-size: 13px;
+        }
 
-    .close-button {  
-        font-size: 24px;  
-        top: 10px;  
-        right: 15px;  
-    }  
-}  
+        .order-modal-content p {
+          font-size: 14px;
+        }
 
-@media (max-width: 360px) {  
-    .order-modal-content {  
-        padding: 10px;  
-    }  
+        .close-button {
+          font-size: 24px;
+          top: 10px;
+          right: 15px;
+        }
+      }
 
-    .order-modal-content h3 {  
-        font-size: 18px;  
-    }  
+      @media (max-width: 360px) {
+        .order-modal-content {
+          padding: 10px;
+        }
 
-    .order-btn, .cancel-btn {  
-        padding: 6px 12px;  
-        font-size: 12px;  
-    }  
-}  
-    </style>  
-</head>  
-<body>  
-    <header>  
-        <h1 class="logo"><a href="../Untitled-1.html">EcoEnergy</a></h1>  
-    </header>  
+        .order-modal-content h3 {
+          font-size: 18px;
+        }
 
-    <div class="container">  
-        <h1 class="page-title">Виберіть комплект</h1>  
+        .order-btn,
+        .cancel-btn {
+          padding: 6px 12px;
+          font-size: 12px;
+        }
+      }
 
-        <div class="kit">  
-            <div class="kit-description">  
-                <h3>Комплект 1: Збалансований комплект</h3>  
-                <p>Сонячні панелі: Hanwha Q CELLS Q.PEAK DUO-G5 320 (4 шт.) + First Solar FS-4122-3 (2 шт.)</p>  
-                <p>Енергія в день: 5,85 кВт·ч</p>  
-                <div class="kit-buttons">  
-                    <button onclick="showDetails(1)">Оглянути комплект</button>  
-                    <button onclick="showOrderModal(1)">Замовити комплект</button>  
-                </div>  
-            </div>  
-            <div class="kit-images">  
-                <img src="../image/photo_2025-03-31_08-41-52.jpg" alt="Комплект 1 - Зображення 1">  
-            </div>    
-        </div>  
+      .header-title {
+        text-decoration: none;
+        color: #00212b;
+        position: relative;
+        font-size: 36px;
+        display: inline-block;
+        transition: color 0.5s ease;
+      }
 
-        <div class="kit">  
-            <div class="kit-description">  
-                <h3>Комплект 2: Ефективний комплект</h3>  
-                <p>Сонячні панелі: Canadian Solar CS6K-300P (4 шт.) + Hanwha Q CELLS Q.PEAK DUO-G5 320 (1 шт.)</p>  
-                <p>Енергія в день: 8,1 кВт·ч</p>  
-                <div class="kit-buttons">  
-                    <button onclick="showDetails(2)">Оглянути комплект</button>  
-                    <button onclick="showOrderModal(2)">Замовити комплект</button>  
-                </div>  
-            </div>  
-            <div class="kit-images">  
-                <img src="../image/photo_2025-03-31_08-43-13.jpg" alt="Комплект 2 - Зображення 1">  
-            </div>  
-        </div>  
+      a {
+        text-decoration: none;
+        color: #3d3d3e;
+        font-weight: 700;
+      }
 
-        <div class="kit">  
-            <div class="kit-description">  
-                <h3>Комплект 3: Максимальний вихід</h3>  
-                <p>Сонячні панелі: Hanwha Q CELLS Q.PEAK DUO-G5 320 (3 шт.) + First Solar FS-4122-3 (3 шт.)</p>  
-                <p>Енергія в день: 6,6375 кВт·ч</p>  
-                <div class="kit-buttons">  
-                    <button onclick="showDetails(3)">Оглянути комплект</button>  
-                    <button onclick="showOrderModal(3)">Замовити комплект</button>  
-                </div>  
-            </div>  
-            <div class="kit-images">  
-                <img src="../image/363509749670006794.png" alt="Комплект 3 - Зображення 1">  
-            </div>  
-        </div>  
-    </div>  
+      .homeLink:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>
+        <a href="Untitled-1.html" class="header-title">EcoEnergy</a>
+        <a href="Gotovi texnologii.html" class="homeLink">Назад</a>
+      </h1>
+    </header>
 
-    <!-- Модальное окно для деталей -->  
-    <div id="modal" class="modal">  
-        <div class="modal-content">  
-            <h3 id="modal-title"></h3>  
-            <p id="modal-description"></p>  
-            <button class="close-btn" onclick="closeModal()">Закрити</button>  
-        </div>  
-    </div>  
+    <div class="container">
+      <h1 class="page-title">Виберіть комплект</h1>
 
-    <!-- Модальное окно для заказа -->  
-    <div id="order-modal" class="modal">  
-        <div class="order-modal-content">  
-            <span class="close-button" onclick="closeOrderModal()">×</span>  
-            <h3>Підтвердіть замовлення</h3>  
-            <p>Комплект: <span id="order-kit"></span></p>  
-            <div class="modal-buttons">  
-                <button class="order-btn" onclick="submitOrder()">Відправити</button>  
-                <button class="cancel-btn" onclick="closeOrderModal()">Скасувати</button>  
-            </div>  
-        </div>  
+      <div class="kit">
+        <div class="kit-description">
+          <h3>Комплект 1: Збалансований комплект</h3>
+          <p>
+            Сонячні панелі: Hanwha Q CELLS Q.PEAK DUO-G5 320 (4 шт.) + First
+            Solar FS-4122-3 (2 шт.)
+          </p>
+          <p>Енергія в день: 5,85 кВт·ч</p>
+          <div class="kit-buttons">
+            <button onclick="showDetails(1)">Оглянути комплект</button>
+            <button onclick="showOrderModal(1)">Замовити комплект</button>
+          </div>
+        </div>
+        <div class="kit-images">
+          <img
+            src="../image/photo_2025-03-31_08-41-52.jpg"
+            alt="Комплект 1 - Зображення 1"
+          />
+        </div>
+      </div>
+
+      <div class="kit">
+        <div class="kit-description">
+          <h3>Комплект 2: Ефективний комплект</h3>
+          <p>
+            Сонячні панелі: Canadian Solar CS6K-300P (4 шт.) + Hanwha Q CELLS
+            Q.PEAK DUO-G5 320 (1 шт.)
+          </p>
+          <p>Енергія в день: 8,1 кВт·ч</p>
+          <div class="kit-buttons">
+            <button onclick="showDetails(2)">Оглянути комплект</button>
+            <button onclick="showOrderModal(2)">Замовити комплект</button>
+          </div>
+        </div>
+        <div class="kit-images">
+          <img
+            src="../image/photo_2025-03-31_08-43-13.jpg"
+            alt="Комплект 2 - Зображення 1"
+          />
+        </div>
+      </div>
+
+      <div class="kit">
+        <div class="kit-description">
+          <h3>Комплект 3: Максимальний вихід</h3>
+          <p>
+            Сонячні панелі: Hanwha Q CELLS Q.PEAK DUO-G5 320 (3 шт.) + First
+            Solar FS-4122-3 (3 шт.)
+          </p>
+          <p>Енергія в день: 6,6375 кВт·ч</p>
+          <div class="kit-buttons">
+            <button onclick="showDetails(3)">Оглянути комплект</button>
+            <button onclick="showOrderModal(3)">Замовити комплект</button>
+          </div>
+        </div>
+        <div class="kit-images">
+          <img
+            src="../image/363509749670006794.png"
+            alt="Комплект 3 - Зображення 1"
+          />
+        </div>
+      </div>
     </div>
 
-    <script>  
-    let selectedKit = null;
-    let userData = null;
+    <!-- Модальное окно для деталей -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <h3 id="modal-title"></h3>
+        <p id="modal-description"></p>
+        <button class="close-btn" onclick="closeModal()">Закрити</button>
+      </div>
+    </div>
 
-    const kits = {  
-        1: {  
-            title: "Комплект 1: Збалансований комплект",  
-            description: `  
+    <!-- Модальное окно для заказа -->
+    <div id="order-modal" class="modal">
+      <div class="order-modal-content">
+        <span class="close-button" onclick="closeOrderModal()">×</span>
+        <h3>Підтвердіть замовлення</h3>
+        <p>Комплект: <span id="order-kit"></span></p>
+        <div class="modal-buttons">
+          <button class="order-btn" onclick="submitOrder()">Відправити</button>
+          <button class="cancel-btn" onclick="closeOrderModal()">
+            Скасувати
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let selectedKit = null;
+      let userData = null;
+
+      const kits = {
+        1: {
+          title: "Комплект 1: Збалансований комплект",
+          description: `  
                 <h4>Огляд комплекту</h4>  
                 <p>Збалансований комплект сонячної електростанції, призначений для забезпечення стабільного електроживлення приватного будинку або невеликого господарства.</p>  
                 <h4>Сонячні панелі</h4>  
@@ -500,11 +554,11 @@ header {
                 <ul>  
                     <li>Приватних будинків, дач, літніх будинків</li>  
                 </ul>  
-            `  
-        },  
-        2: {  
-            title: "Комплект 2: Ефективний комплект",  
-            description: `  
+            `,
+        },
+        2: {
+          title: "Комплект 2: Ефективний комплект",
+          description: `  
                 <h4>Огляд комплекту</h4>  
                 <p>Високоефективний комплект сонячної електростанції для споживачів з підвищеними енергетичними потребами.</p>  
                 <h4>Сонячні панелі</h4>  
@@ -554,11 +608,11 @@ header {
                     <li>Невеликих фермерських господарств</li>  
                     <li>Підприємств з середнім рівнем споживання</li>  
                 </ul>  
-            `  
-        },  
-        3: {  
-            title: "Комплект 3: Максимальний вихід",  
-            description: `  
+            `,
+        },
+        3: {
+          title: "Комплект 3: Максимальний вихід",
+          description: `  
                 <h4>Огляд комплекту</h4>  
                 <p>Потужний комплект сонячної електростанції для споживачів з високими енергетичними потребами та бажанням максимізувати автономність.</p>  
                 <h4>Сонячні панелі</h4>  
@@ -609,132 +663,178 @@ header {
                     <li>Фермерських господарств з високим споживанням</li>  
                     <li>Об'єктів, що потребують стабільного електропостачання</li>  
                 </ul>  
-            `  
-        }  
-    };  
+            `,
+        },
+      };
 
-    // Проверка авторизации при загрузке страницы
-    const authToken = localStorage.getItem("authToken");
-    if (!authToken) {
+      // Проверка авторизации при загрузке страницы
+      const authToken = localStorage.getItem("authToken");
+      if (!authToken) {
         window.location.href = "../Untitled-1.html";
-    }
+      }
 
-    // Функция для загрузки данных пользователя
-    async function fetchUserData() {
+      // Функция для загрузки данных пользователя
+      async function fetchUserData() {
         try {
-            const response = await fetch("https://diplom-erqn.onrender.com/profile", {
-                headers: { "Authorization": `Bearer ${authToken}` }
-            });
-
-            if (!response.ok) {
-                const errorData = await response.json();
-                throw new Error(errorData.error || "Помилка завантаження даних користувача");
+          const response = await fetch(
+            "https://diplom-erqn.onrender.com/profile",
+            {
+              headers: { Authorization: `Bearer ${authToken}` },
             }
+          );
 
-            const data = await response.json();
-            if (data.error) {
-                throw new Error(data.error);
-            }
+          if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(
+              errorData.error || "Помилка завантаження даних користувача"
+            );
+          }
 
-            userData = {
-                username: data.username || "Невідомий користувач",
-                phone: data.phone || null
-            };
+          const data = await response.json();
+          if (data.error) {
+            throw new Error(data.error);
+          }
 
-            if (!userData.phone) {
-                throw new Error("Телефон користувача не вказано. Будь ласка, заповніть профіль.");
-            }
+          userData = {
+            username: data.username || "Невідомий користувач",
+            phone: data.phone || null,
+          };
+
+          if (!userData.phone) {
+            throw new Error(
+              "Телефон користувача не вказано. Будь ласка, заповніть профіль."
+            );
+          }
         } catch (error) {
-            alert("Помилка: " + error.message);
-            localStorage.removeItem("authToken");
-            window.location.href = "../Untitled-1.html";
+          alert("Помилка: " + error.message);
+          localStorage.removeItem("authToken");
+          window.location.href = "../Untitled-1.html";
         }
-    }
+      }
 
-    // Загружаем данные пользователя при загрузке страницы
-    document.addEventListener("DOMContentLoaded", async () => {
+      // Загружаем данные пользователя при загрузке страницы
+      document.addEventListener("DOMContentLoaded", async () => {
         await fetchUserData();
-    });
+      });
 
-    function showDetails(kitId) {  
-        const modal = document.getElementById("modal");  
-        const title = document.getElementById("modal-title");  
-        const description = document.getElementById("modal-description");  
+      function showDetails(kitId) {
+        const modal = document.getElementById("modal");
+        const title = document.getElementById("modal-title");
+        const description = document.getElementById("modal-description");
 
-        title.innerHTML = kits[kitId].title;  
-        description.innerHTML = kits[kitId].description;  
+        title.innerHTML = kits[kitId].title;
+        description.innerHTML = kits[kitId].description;
 
-        modal.style.display = "flex";  
-        document.body.style.overflow = "hidden";  
-    }  
+        modal.style.display = "flex";
+        document.body.style.overflow = "hidden";
+      }
 
-    function closeModal() {  
-        const modal = document.getElementById("modal");  
-        modal.style.display = "none";  
-        document.body.style.overflow = "auto";  
-    }  
+      function closeModal() {
+        const modal = document.getElementById("modal");
+        modal.style.display = "none";
+        document.body.style.overflow = "auto";
+      }
 
-    function showOrderModal(kitId) {  
-        selectedKit = kitId;  
-        const orderModal = document.getElementById("order-modal");  
-        const orderKit = document.getElementById("order-kit");  
-        orderKit.innerText = kits[kitId].title;  
-        orderModal.style.display = "flex";  
-        document.body.style.overflow = "hidden";  
-    }  
+      function showOrderModal(kitId) {
+        selectedKit = kitId;
+        const orderModal = document.getElementById("order-modal");
+        const orderKit = document.getElementById("order-kit");
+        orderKit.innerText = kits[kitId].title;
+        orderModal.style.display = "flex";
+        document.body.style.overflow = "hidden";
+      }
 
-    function closeOrderModal() {  
-        const orderModal = document.getElementById("order-modal");  
-        orderModal.style.display = "none";  
-        document.body.style.overflow = "auto";  
-        selectedKit = null;  
-    }  
+      function closeOrderModal() {
+        const orderModal = document.getElementById("order-modal");
+        orderModal.style.display = "none";
+        document.body.style.overflow = "auto";
+        selectedKit = null;
+      }
 
-    async function submitOrder() {  
-        if (!selectedKit) {  
-            alert("Будь ласка, оберіть комплект.");  
-            return;  
+      async function submitOrder() {
+        if (!selectedKit) {
+          alert("Будь ласка, оберіть комплект.");
+          return;
         }
 
         if (!userData) {
-            alert("Дані користувача не завантажені. Спробуйте перезавантажити сторінку.");
-            return;
+          alert(
+            "Дані користувача не завантажені. Спробуйте перезавантажити сторінку."
+          );
+          return;
         }
 
-        const orderData = {  
-            kit: kits[selectedKit].title,
-            username: userData.username,
-            phone: userData.phone,
-            date: new Date().toISOString().split('T')[0]
-        };  
+        const orderData = {
+          kit: kits[selectedKit].title,
+          username: userData.username,
+          phone: userData.phone,
+          date: new Date().toISOString().split("T")[0],
+        };
 
-        try {  
-            const response = await fetch('/api/orders', {  
-                method: 'POST',  
-                headers: {  
-                    'Content-Type': 'application/json',  
-                    'Authorization': `Bearer ${authToken}`  
-                },  
-                body: JSON.stringify(orderData)  
-            });  
+        try {
+          const response = await fetch("/api/orders", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${authToken}`,
+            },
+            body: JSON.stringify(orderData),
+          });
 
-            const result = await response.json();  
+          const result = await response.json();
 
-            if (response.ok) {  
-                alert('Заявка успішно надіслана! ID замовлення: ' + result.orderId);  
-                closeOrderModal();  
-            } else {  
-                alert('Помилка: ' + result.error);  
-                if (response.status === 401) {  
-                    localStorage.removeItem("authToken");  
-                    window.location.href = "../Untitled-1.html";  
-                }  
-            }  
-        } catch (error) {  
-            console.error('Помилка:', error);  
-            alert('Помилка при відправці заявки. Перевірте підключення до мережі.');  
-        }  
-    }  
-    </script> 
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'934de05c2d3a6730',t:'MTc0NTQxNjcxMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>  
+          if (response.ok) {
+            alert("Заявка успішно надіслана! ID замовлення: " + result.orderId);
+            closeOrderModal();
+          } else {
+            alert("Помилка: " + result.error);
+            if (response.status === 401) {
+              localStorage.removeItem("authToken");
+              window.location.href = "../Untitled-1.html";
+            }
+          }
+        } catch (error) {
+          console.error("Помилка:", error);
+          alert(
+            "Помилка при відправці заявки. Перевірте підключення до мережі."
+          );
+        }
+      }
+    </script>
+    <script>
+      (function () {
+        function c() {
+          var b = a.contentDocument || a.contentWindow.document;
+          if (b) {
+            var d = b.createElement("script");
+            d.innerHTML =
+              "window.__CF$cv$params={r:'934de05c2d3a6730',t:'MTc0NTQxNjcxMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+            b.getElementsByTagName("head")[0].appendChild(d);
+          }
+        }
+        if (document.body) {
+          var a = document.createElement("iframe");
+          a.height = 1;
+          a.width = 1;
+          a.style.position = "absolute";
+          a.style.top = 0;
+          a.style.left = 0;
+          a.style.border = "none";
+          a.style.visibility = "hidden";
+          document.body.appendChild(a);
+          if ("loading" !== document.readyState) c();
+          else if (window.addEventListener)
+            document.addEventListener("DOMContentLoaded", c);
+          else {
+            var e = document.onreadystatechange || function () {};
+            document.onreadystatechange = function (b) {
+              e(b);
+              "loading" !== document.readyState &&
+                ((document.onreadystatechange = e), c());
+            };
+          }
+        }
+      })();
+    </script>
+  </body>
 </html>

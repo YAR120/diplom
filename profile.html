@@ -1,100 +1,218 @@
 <!DOCTYPE html>
 <html lang="uk">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="jscss/profilest.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="jscss/profilest.css" />
     <script src="jscss/profilest.js" type="text/javascript" defer></script>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
     <title>Профіль</title>
-</head>
-<body>
+
+    <style>
+      .header-title {
+        text-decoration: none;
+        color: #00212b;
+        position: relative;
+        font-size: 36px;
+        display: inline-block;
+        transition: color 0.5s ease;
+      }
+
+      a {
+        text-decoration: none;
+        color: #3d3d3e;
+        font-weight: 700;
+      }
+
+      .homeLink:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
     <header class="bg-white shadow-md">
-        <div class="container mx-auto flex justify-center items-center p-4">
-            <h1>
-                <a href="Untitled-1.html" class="header-title text-3xl font-bold transition duration-300">
-                    EcoEnergy
-                </a>
-            </h1>
-        </div>
+      <div class="container mx-auto flex justify-center items-center p-4">
+        <h1>
+          <a href="Untitled-1.html" class="header-title">EcoEnergy</a>
+          <a href="Untitled-1.html" class="homeLink">Назад</a>
+        </h1>
+      </div>
     </header>
 
     <div class="profile-container" id="profileContainer">
-        <div class="profile-header flex justify-between items-center">
-            <h2 id="profileName">Логін: <span id="usernameDisplay"></span></h2>
-            <img id="ordersIcon" src="https://cdn-icons-png.flaticon.com/512/893/893303.png" alt="Orders Icon" class="orders-icon cursor-pointer">
-        </div>
-        <p id="status" class="status">Активний</p>
-        <button id="setStatusBtn" class="status-button">Встановити статус</button>
+      <div class="profile-header flex justify-between items-center">
+        <h2 id="profileName">Логін: <span id="usernameDisplay"></span></h2>
+        <img
+          id="ordersIcon"
+          src="https://cdn-icons-png.flaticon.com/512/893/893303.png"
+          alt="Orders Icon"
+          class="orders-icon cursor-pointer"
+        />
+      </div>
+      <p id="status" class="status">Активний</p>
+      <button id="setStatusBtn" class="status-button">Встановити статус</button>
 
-        <p class="local-time" id="localTime">11:43:11 місцевий час</p>
+      <p class="local-time" id="localTime">11:43:11 місцевий час</p>
 
-        <div class="contact-info">
-            <h3>Контактна інформація</h3>
-            <p>Email адреса: <span id="email">немає даних</span></p>
-            <p>Телефон: <span id="phone">немає даних</span></p>
-        </div>
+      <div class="contact-info">
+        <h3>Контактна інформація</h3>
+        <p>Email адреса: <span id="email">немає даних</span></p>
+        <p>Телефон: <span id="phone">немає даних</span></p>
+      </div>
 
-        <div class="about-me">
-            <h3>Про мене</h3>
-            <p id="aboutMeText">Тут ваша інформація про себе.</p>
-        </div>
+      <div class="about-me">
+        <h3>Про мене</h3>
+        <p id="aboutMeText">Тут ваша інформація про себе.</p>
+      </div>
 
-        <div class="edit-profile">
-            <button id="editProfileBtn" class="auth-button">Редагувати профіль</button>
-        </div>
-        <button id="logoutBtn" class="auth-button">Вихід</button>
+      <div class="edit-profile">
+        <button id="editProfileBtn" class="auth-button">
+          Редагувати профіль
+        </button>
+      </div>
+      <button id="logoutBtn" class="auth-button">Вихід</button>
     </div>
 
     <div class="modal" id="editModal">
-        <div class="modal-content">
-            <span class="close" id="closeModal">×</span>
-            <h2>Редагувати профіль</h2>
-            <form id="editProfileForm">
-                <label for="emailInput">Email:</label>
-                <input type="email" id="emailInput" class="input-field" required>
-                
-                <label for="phoneInput">Телефон:</label>
-                <input type="tel" id="phoneInput" class="input-field" pattern="\+380[0-9]{9}" title="Формат: +380XXXXXXXXX">
-                
-                <label for="aboutMeInput">Про мене:</label>
-                <textarea id="aboutMeInput" class="input-field" rows="4"></textarea>
-                <button type="button" class="auth-button" id="saveChangesBtn">Зберегти зміни</button>
-            </form>
-        </div>
+      <div class="modal-content">
+        <span class="close" id="closeModal">×</span>
+        <h2>Редагувати профіль</h2>
+        <form id="editProfileForm">
+          <label for="emailInput">Email:</label>
+          <input type="email" id="emailInput" class="input-field" required />
+
+          <label for="phoneInput">Телефон:</label>
+          <input
+            type="tel"
+            id="phoneInput"
+            class="input-field"
+            pattern="\+380[0-9]{9}"
+            title="Формат: +380XXXXXXXXX"
+          />
+
+          <label for="aboutMeInput">Про мене:</label>
+          <textarea id="aboutMeInput" class="input-field" rows="4"></textarea>
+          <button type="button" class="auth-button" id="saveChangesBtn">
+            Зберегти зміни
+          </button>
+        </form>
+      </div>
     </div>
 
     <div id="statusModal" class="modal">
-        <div class="modal-content">
-            <span id="closeStatusModal" class="close">×</span>
-            <h2>Виберіть статус</h2>
-            <select id="statusSelect">
-                <option value="активний">Активний</option>
-                <option value="неактивний">Неактивний</option>
-                <option value="в відпустці">В відпустці</option>
-            </select>
-            <div class="button-container">
-                <button id="confirmStatusBtn">OK</button>
-            </div>
+      <div class="modal-content">
+        <span id="closeStatusModal" class="close">×</span>
+        <h2>Виберіть статус</h2>
+        <select id="statusSelect">
+          <option value="активний">Активний</option>
+          <option value="неактивний">Неактивний</option>
+          <option value="в відпустці">В відпустці</option>
+        </select>
+        <div class="button-container">
+          <button id="confirmStatusBtn">OK</button>
         </div>
+      </div>
     </div>
 
     <div id="ordersModal" class="modal">
-        <div class="modal-content">
-            <span id="closeOrdersModal" class="close">×</span>
-            <h2>Ваші замовлення</h2>
-            <div class="tabs">
-                <button class="tab-button active" data-tab="active">Активні замовлення</button>
-                <button class="tab-button" data-tab="history">Історія замовлень</button>
-            </div>
-            <div id="ordersList">
-                <div id="active-orders" class="tab-content active" style="display: block;"></div>
-                <div id="history-orders" class="tab-content" style="display: none;"></div>
-            </div>
+      <div class="modal-content">
+        <span id="closeOrdersModal" class="close">×</span>
+        <h2>Ваші замовлення</h2>
+        <div class="tabs">
+          <button class="tab-button active" data-tab="active">
+            Активні замовлення
+          </button>
+          <button class="tab-button" data-tab="history">
+            Історія замовлень
+          </button>
         </div>
+        <div id="ordersList">
+          <div
+            id="active-orders"
+            class="tab-content active"
+            style="display: block"
+          ></div>
+          <div
+            id="history-orders"
+            class="tab-content"
+            style="display: none"
+          ></div>
+        </div>
+      </div>
     </div>
 
-    <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9357b656ab80452d',t:'MTc0NTUxOTg1MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
-    <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9365037e19ad8834',t:'MTc0NTY1OTMyNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
-</body>
+    <script>
+      (function () {
+        function c() {
+          var b = a.contentDocument || a.contentWindow.document;
+          if (b) {
+            var d = b.createElement("script");
+            d.innerHTML =
+              "window.__CF$cv$params={r:'9357b656ab80452d',t:'MTc0NTUxOTg1MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+            b.getElementsByTagName("head")[0].appendChild(d);
+          }
+        }
+        if (document.body) {
+          var a = document.createElement("iframe");
+          a.height = 1;
+          a.width = 1;
+          a.style.position = "absolute";
+          a.style.top = 0;
+          a.style.left = 0;
+          a.style.border = "none";
+          a.style.visibility = "hidden";
+          document.body.appendChild(a);
+          if ("loading" !== document.readyState) c();
+          else if (window.addEventListener)
+            document.addEventListener("DOMContentLoaded", c);
+          else {
+            var e = document.onreadystatechange || function () {};
+            document.onreadystatechange = function (b) {
+              e(b);
+              "loading" !== document.readyState &&
+                ((document.onreadystatechange = e), c());
+            };
+          }
+        }
+      })();
+    </script>
+    <script>
+      (function () {
+        function c() {
+          var b = a.contentDocument || a.contentWindow.document;
+          if (b) {
+            var d = b.createElement("script");
+            d.innerHTML =
+              "window.__CF$cv$params={r:'9365037e19ad8834',t:'MTc0NTY1OTMyNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+            b.getElementsByTagName("head")[0].appendChild(d);
+          }
+        }
+        if (document.body) {
+          var a = document.createElement("iframe");
+          a.height = 1;
+          a.width = 1;
+          a.style.position = "absolute";
+          a.style.top = 0;
+          a.style.left = 0;
+          a.style.border = "none";
+          a.style.visibility = "hidden";
+          document.body.appendChild(a);
+          if ("loading" !== document.readyState) c();
+          else if (window.addEventListener)
+            document.addEventListener("DOMContentLoaded", c);
+          else {
+            var e = document.onreadystatechange || function () {};
+            document.onreadystatechange = function (b) {
+              e(b);
+              "loading" !== document.readyState &&
+                ((document.onreadystatechange = e), c());
+            };
+          }
+        }
+      })();
+    </script>
+  </body>
 </html>
