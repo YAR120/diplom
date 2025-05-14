@@ -14,3 +14,7 @@ function toggleTable() {
         btnToggle.classList.remove('active');  
     }  
 }
+
+function goBack() {  
+    window.history.back();  
+}

@@ -408,7 +408,66 @@ input[type=tel]:focus {
     box-shadow: 0 5px 15px rgba(30, 0, 114, 0.4);
 }
 
-/* Адаптивность */
+/* Стилі для кнопки "Назад" */
+.back-button-container {
+    margin: 20px;
+}
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(90deg, #1E3C72, #87CEEB, #1E3C72);
+    background-size: 200% 100%;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    animation: gradientFlow 3s ease infinite;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.back-button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(30, 60, 114, 0.5), 0 0 20px rgba(135, 206, 235, 0.3);
+    animation: gradientFlow 1.5s ease infinite; /* Прискорюємо анімацію при наведенні */
+}
+
+.back-button:active {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 4px 10px rgba(30, 60, 114, 0.3);
+}
+
+.back-button::before {
+    content: '←';
+    margin-right: 8px;
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+.back-button:hover::before {
+    transform: translateX(-2px); /* Легке зміщення стрілки при наведенні */
+}
+
+/* Анімація градієнта */
+@keyframes gradientFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Адаптивність */
 @media (max-width: 768px) {
     .main-image {
         width: 400px;
@@ -436,6 +495,17 @@ input[type=tel]:focus {
     .submit-button, .cancel-button {
         padding: 8px 20px;
         font-size: 14px;
+    }
+}
+
+@media (max-width: 600px) {
+    .back-button {
+        padding: 10px 18px;
+        font-size: 14px;
+    }
+
+    .back-button::before {
+        font-size: 16px;
     }
 }
 
