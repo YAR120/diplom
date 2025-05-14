@@ -337,9 +337,11 @@
           tempDiv.style.textAlign = "center";
           tempDiv.style.color = "#444";
           tempDiv.style.fontSize = "16px";
-          tempDiv.style.marginTop = "20px";
+          tempDiv.style.marginTop = "15px";
           tempDiv.innerHTML =
             "Для уточнення деталей зателефонуйте нашому менеджеру за номером: +38 (012) 345 6789";
+          const table = document.querySelector("table");
+          table.style.marginTop = "20px";
           document.querySelector("main").appendChild(tempDiv);
 
           html2canvas(document.querySelector("main"), {
